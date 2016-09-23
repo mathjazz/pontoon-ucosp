@@ -1,0 +1,3471 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Pontoon</title>
+    <meta name="description" content="Live web localization tool">
+    <meta name="author" content="Mozilla">
+
+    
+      <link href="static/style.css" rel="stylesheet" type="text/css">
+<link href="static/font-awesome.css" rel="stylesheet" type="text/css">
+      
+  <link href="static/jquery-ui.css" rel="stylesheet" type="text/css">
+<link href="static/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css">
+<link href="static/translate.css" rel="stylesheet" type="text/css">
+
+    
+
+    
+  </head>
+
+  <body class="translate">
+    
+<div id="browserid-info" style="display: none;" data-info="{&quot;loginUrl&quot;: &quot;/browserid/login/&quot;, &quot;requestArgs&quot;: {&quot;siteName&quot;: &quot;Pontoon&quot;}, &quot;logoutUrl&quot;: &quot;/browserid/logout/&quot;, &quot;csrfUrl&quot;: &quot;/browserid/csrf/&quot;}">
+</div>
+    
+<!-- Server data -->
+<div id="server" class="hidden" data-site-url="http://localhost:8000" data-csrf="CIwHlM3sYsyYUpbat2RlZjU1AHpQy29W" data-id="4" data-username="dvgiVCmoeidF2xcqSnBHtpzLTFU" data-user-translated-locales="[&quot;a&quot;, &quot;af&quot;, &quot;sq&quot;, &quot;ar&quot;, &quot;an&quot;, &quot;hy-AM&quot;, &quot;as&quot;, &quot;ast&quot;, &quot;az&quot;, &quot;eu&quot;, &quot;be&quot;, &quot;bn-BD&quot;, &quot;bn-IN&quot;, &quot;bs&quot;, &quot;br&quot;, &quot;bg&quot;, &quot;my&quot;, &quot;ca&quot;, &quot;zh-CN&quot;, &quot;zh-TW&quot;, &quot;hr&quot;, &quot;cs&quot;, &quot;da&quot;, &quot;nl&quot;, &quot;en&quot;, &quot;en-GB&quot;, &quot;en-US&quot;, &quot;en-ZA&quot;, &quot;en-1&quot;, &quot;eo&quot;, &quot;et&quot;, &quot;fi&quot;, &quot;fr&quot;, &quot;fur&quot;, &quot;ff&quot;, &quot;gd&quot;, &quot;gl&quot;, &quot;ka&quot;, &quot;de&quot;, &quot;el&quot;, &quot;gn&quot;, &quot;gu-IN&quot;, &quot;ht&quot;, &quot;he&quot;, &quot;hi-IN&quot;, &quot;hu&quot;, &quot;is&quot;, &quot;ilo&quot;, &quot;id&quot;, &quot;ga-IE&quot;, &quot;it&quot;, &quot;ja&quot;, &quot;kn&quot;, &quot;csb&quot;, &quot;kk&quot;, &quot;km&quot;, &quot;ko&quot;, &quot;ku&quot;, &quot;lv&quot;, &quot;lij&quot;, &quot;lt&quot;, &quot;dsb&quot;, &quot;mk&quot;, &quot;mai&quot;, &quot;ms&quot;, &quot;ml&quot;, &quot;mr&quot;, &quot;mn&quot;, &quot;ne-NP&quot;, &quot;nso&quot;, &quot;nb-NO&quot;, &quot;nn-NO&quot;, &quot;oc&quot;, &quot;or&quot;, &quot;fa&quot;, &quot;pl&quot;, &quot;pt-BR&quot;, &quot;pt-PT&quot;, &quot;pa-IN&quot;, &quot;ro&quot;, &quot;rm&quot;, &quot;ru&quot;, &quot;sr&quot;, &quot;si&quot;, &quot;sk&quot;, &quot;sl&quot;, &quot;son&quot;, &quot;es&quot;, &quot;es-AR&quot;, &quot;es-CL&quot;, &quot;es-ES&quot;, &quot;es-MX&quot;, &quot;sw&quot;, &quot;sv-SE&quot;, &quot;tl&quot;, &quot;ta&quot;, &quot;ta-LK&quot;, &quot;te&quot;, &quot;th&quot;, &quot;tr&quot;, &quot;uk&quot;, &quot;hsb&quot;, &quot;ur&quot;, &quot;uz&quot;, &quot;vi&quot;, &quot;cy&quot;, &quot;fy-NL&quot;, &quot;wo&quot;, &quot;xh&quot;, &quot;zu&quot;]" data-manager="true" data-authors="[{&quot;display_name&quot;: &quot;Matja\u017e Horvat&quot;, &quot;gravatar_url&quot;: &quot;//www.gravatar.com/avatar/b7aed7b21e849ab3d67ffd811313a75b?s=44&quot;, &quot;id&quot;: 4, &quot;role&quot;: &quot;Admin&quot;, &quot;translation_count&quot;: 12, &quot;email&quot;: &quot;matjaz.horvat@gmail.com&quot;}]" data-counts-per-minute="[[1466664060000, 38], [1470042120000, 1], [1470073680000, 1], [1470074280000, 1], [1470075540000, 1], [1470121860000, 1], [1470121920000, 1], [1470121980000, 1], [1470132780000, 1], [1470132840000, 1], [1470676620000, 1], [1471457880000, 1]]" data-display-name="Matjaž Horvat" data-locales-order="[&quot;it&quot;, &quot;fr&quot;, &quot;de&quot;]">
+</div>
+
+<!-- Main toolbar -->
+<header>
+  <div class="container clearfix">
+    
+
+
+<!-- Locale selector -->
+<div class="locale select">
+  
+  <div class="button breadcrumbs selector noselect">
+    <span class="language" data-code="sl">Slovenian</span><span class="code">sl</span>
+  </div>
+  
+  <div class="menu" style="display: none;">
+    <div class="search-wrapper clearfix">
+      <div class="icon fa fa-search"></div>
+      <input autocomplete="off" autofocus="" type="search">
+    </div>
+    
+    <ul>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1]" data-code="a" data-plural_rule="" data-name="A" data-nplurals="1">
+            
+              A
+            
+          </span>
+
+          <span class="code">
+            
+              a
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="af" data-plural_rule="(n != 1)" data-name="Afrikaans" data-nplurals="2">
+            
+              Afrikaans
+            
+          </span>
+
+          <span class="code">
+            
+              af
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="sq" data-plural_rule="(n != 1)" data-name="Albanian" data-nplurals="2">
+            
+              Albanian
+            
+          </span>
+
+          <span class="code">
+            
+              sq
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[0, 1, 2, 3, 4, 5]" data-code="ar" data-plural_rule="(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100&gt;=3 &amp;&amp; n%100&lt;=10 ? 3 : n%100&gt;=11 ? 4 : 5)" data-name="Arabic" data-nplurals="6">
+            
+              Arabic
+            
+          </span>
+
+          <span class="code">
+            
+              ar
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="an" data-plural_rule="(n != 1)" data-name="Aragonese" data-nplurals="2">
+            
+              Aragonese
+            
+          </span>
+
+          <span class="code">
+            
+              an
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="hy-AM" data-plural_rule="(n != 1)" data-name="Armenian" data-nplurals="2">
+            
+              Armenian
+            
+          </span>
+
+          <span class="code">
+            
+              hy-AM
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="as" data-plural_rule="(n != 1)" data-name="Assamese" data-nplurals="2">
+            
+              Assamese
+            
+          </span>
+
+          <span class="code">
+            
+              as
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="ast" data-plural_rule="(n != 1)" data-name="Asturian" data-nplurals="2">
+            
+              Asturian
+            
+          </span>
+
+          <span class="code">
+            
+              ast
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="az" data-plural_rule="(n != 1)" data-name="Azerbaijani" data-nplurals="2">
+            
+              Azerbaijani
+            
+          </span>
+
+          <span class="code">
+            
+              az
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="eu" data-plural_rule="(n != 1)" data-name="Basque" data-nplurals="2">
+            
+              Basque
+            
+          </span>
+
+          <span class="code">
+            
+              eu
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 3, 5]" data-code="be" data-plural_rule="(n%10==1 &amp;&amp; n%100!=11 ? 0 : n%10&gt;=2 &amp;&amp; n%10&lt;=4 &amp;&amp; (n%100&lt;10 || n%100&gt;=20) ? 1 : 2)" data-name="Belarusian" data-nplurals="3">
+            
+              Belarusian
+            
+          </span>
+
+          <span class="code">
+            
+              be
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="bn-BD" data-plural_rule="(n != 1)" data-name="Bengali" data-nplurals="2">
+            
+              Bengali
+            
+          </span>
+
+          <span class="code">
+            
+              bn-BD
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="bn-IN" data-plural_rule="(n != 1)" data-name="Bengali" data-nplurals="2">
+            
+              Bengali
+            
+          </span>
+
+          <span class="code">
+            
+              bn-IN
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 3, 5]" data-code="bs" data-plural_rule="(n%10==1 &amp;&amp; n%100!=11 ? 0 : n%10&gt;=2 &amp;&amp; n%10&lt;=4 &amp;&amp; (n%100&lt;10 || n%100&gt;=20) ? 1 : 2)" data-name="Bosnian" data-nplurals="3">
+            
+              Bosnian
+            
+          </span>
+
+          <span class="code">
+            
+              bs
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="br" data-plural_rule="(n &gt; 1)" data-name="Breton" data-nplurals="2">
+            
+              Breton
+            
+          </span>
+
+          <span class="code">
+            
+              br
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="bg" data-plural_rule="(n != 1)" data-name="Bulgarian" data-nplurals="2">
+            
+              Bulgarian
+            
+          </span>
+
+          <span class="code">
+            
+              bg
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="my" data-plural_rule="0" data-name="Burmese" data-nplurals="1">
+            
+              Burmese
+            
+          </span>
+
+          <span class="code">
+            
+              my
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="ca" data-plural_rule="(n != 1)" data-name="Catalan" data-nplurals="2">
+            
+              Catalan
+            
+          </span>
+
+          <span class="code">
+            
+              ca
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="zh-CN" data-plural_rule="0" data-name="Chinese" data-nplurals="1">
+            
+              Chinese
+            
+          </span>
+
+          <span class="code">
+            
+              zh-CN
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="zh-TW" data-plural_rule="0" data-name="Chinese" data-nplurals="1">
+            
+              Chinese
+            
+          </span>
+
+          <span class="code">
+            
+              zh-TW
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 3, 5]" data-code="hr" data-plural_rule="(n%10==1 &amp;&amp; n%100!=11 ? 0 : n%10&gt;=2 &amp;&amp; n%10&lt;=4 &amp;&amp; (n%100&lt;10 || n%100&gt;=20) ? 1 : 2)" data-name="Croatian" data-nplurals="3">
+            
+              Croatian
+            
+          </span>
+
+          <span class="code">
+            
+              hr
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 3, 5]" data-code="cs" data-plural_rule="(n==1) ? 0 : (n&gt;=2 &amp;&amp; n&lt;=4) ? 1 : 2" data-name="Czech" data-nplurals="3">
+            
+              Czech
+            
+          </span>
+
+          <span class="code">
+            
+              cs
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="da" data-plural_rule="(n != 1)" data-name="Danish" data-nplurals="2">
+            
+              Danish
+            
+          </span>
+
+          <span class="code">
+            
+              da
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="nl" data-plural_rule="(n != 1)" data-name="Dutch" data-nplurals="2">
+            
+              Dutch
+            
+          </span>
+
+          <span class="code">
+            
+              nl
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="en-GB" data-plural_rule="(n != 1)" data-name="English" data-nplurals="2">
+            
+              English
+            
+          </span>
+
+          <span class="code">
+            
+              en-GB
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="en-ZA" data-plural_rule="(n != 1)" data-name="English" data-nplurals="2">
+            
+              English
+            
+          </span>
+
+          <span class="code">
+            
+              en-ZA
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1]" data-code="en-1" data-plural_rule="" data-name="English #1" data-nplurals="1">
+            
+              English #1
+            
+          </span>
+
+          <span class="code">
+            
+              en-1
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="eo" data-plural_rule="(n != 1)" data-name="Esperanto" data-nplurals="2">
+            
+              Esperanto
+            
+          </span>
+
+          <span class="code">
+            
+              eo
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="et" data-plural_rule="(n != 1)" data-name="Estonian" data-nplurals="2">
+            
+              Estonian
+            
+          </span>
+
+          <span class="code">
+            
+              et
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="fi" data-plural_rule="(n != 1)" data-name="Finnish" data-nplurals="2">
+            
+              Finnish
+            
+          </span>
+
+          <span class="code">
+            
+              fi
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="fr" data-plural_rule="(n &gt; 1)" data-name="French" data-nplurals="2">
+            
+              French
+            
+          </span>
+
+          <span class="code">
+            
+              fr
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="fur" data-plural_rule="(n != 1)" data-name="Friulian" data-nplurals="2">
+            
+              Friulian
+            
+          </span>
+
+          <span class="code">
+            
+              fur
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="ff" data-plural_rule="(n != 1)" data-name="Fulah" data-nplurals="2">
+            
+              Fulah
+            
+          </span>
+
+          <span class="code">
+            
+              ff
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 2, 3, 5]" data-code="gd" data-plural_rule="(n==1 || n==11) ? 0 : (n==2 || n==12) ? 1 : (n &gt; 2 &amp;&amp; n &lt; 20) ? 2 : 3" data-name="Gaelic, Scottish" data-nplurals="4">
+            
+              Gaelic, Scottish
+            
+          </span>
+
+          <span class="code">
+            
+              gd
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="gl" data-plural_rule="(n != 1)" data-name="Galician" data-nplurals="2">
+            
+              Galician
+            
+          </span>
+
+          <span class="code">
+            
+              gl
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="ka" data-plural_rule="0" data-name="Georgian" data-nplurals="1">
+            
+              Georgian
+            
+          </span>
+
+          <span class="code">
+            
+              ka
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="de" data-plural_rule="(n != 1)" data-name="German" data-nplurals="2">
+            
+              German
+            
+          </span>
+
+          <span class="code">
+            
+              de
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="el" data-plural_rule="(n != 1)" data-name="Greek" data-nplurals="2">
+            
+              Greek
+            
+          </span>
+
+          <span class="code">
+            
+              el
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="gu-IN" data-plural_rule="(n != 1)" data-name="Gujarati" data-nplurals="2">
+            
+              Gujarati
+            
+          </span>
+
+          <span class="code">
+            
+              gu-IN
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="ht" data-plural_rule="(n != 1)" data-name="Haitian" data-nplurals="2">
+            
+              Haitian
+            
+          </span>
+
+          <span class="code">
+            
+              ht
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="he" data-plural_rule="(n != 1)" data-name="Hebrew" data-nplurals="2">
+            
+              Hebrew
+            
+          </span>
+
+          <span class="code">
+            
+              he
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="hi-IN" data-plural_rule="(n != 1)" data-name="Hindi" data-nplurals="2">
+            
+              Hindi
+            
+          </span>
+
+          <span class="code">
+            
+              hi-IN
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="hu" data-plural_rule="(n != 1)" data-name="Hungarian" data-nplurals="2">
+            
+              Hungarian
+            
+          </span>
+
+          <span class="code">
+            
+              hu
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="is" data-plural_rule="(n%10!=1 || n%100==11)" data-name="Icelandic" data-nplurals="2">
+            
+              Icelandic
+            
+          </span>
+
+          <span class="code">
+            
+              is
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="ilo" data-plural_rule="(n != 1)" data-name="Iloko" data-nplurals="2">
+            
+              Iloko
+            
+          </span>
+
+          <span class="code">
+            
+              ilo
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="id" data-plural_rule="0" data-name="Indonesian" data-nplurals="1">
+            
+              Indonesian
+            
+          </span>
+
+          <span class="code">
+            
+              id
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 2, 3, 4, 5]" data-code="ga-IE" data-plural_rule="n==1 ? 0 : n==2 ? 1 : n&lt;7 ? 2 : n&lt;11 ? 3 : 4" data-name="Irish" data-nplurals="5">
+            
+              Irish
+            
+          </span>
+
+          <span class="code">
+            
+              ga-IE
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="it" data-plural_rule="(n != 1)" data-name="Italian" data-nplurals="2">
+            
+              Italian
+            
+          </span>
+
+          <span class="code">
+            
+              it
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="ja" data-plural_rule="0" data-name="Japanese" data-nplurals="1">
+            
+              Japanese
+            
+          </span>
+
+          <span class="code">
+            
+              ja
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="kn" data-plural_rule="(n != 1)" data-name="Kannada" data-nplurals="2">
+            
+              Kannada
+            
+          </span>
+
+          <span class="code">
+            
+              kn
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 3, 5]" data-code="csb" data-plural_rule="(n==1 ? 0 : n%10&gt;=2 &amp;&amp; n%10&lt;=4 &amp;&amp; (n%100&lt;10 || n%100&gt;=20) ? 1 : 2)" data-name="Kashubian" data-nplurals="3">
+            
+              Kashubian
+            
+          </span>
+
+          <span class="code">
+            
+              csb
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="kk" data-plural_rule="0" data-name="Kazakh" data-nplurals="1">
+            
+              Kazakh
+            
+          </span>
+
+          <span class="code">
+            
+              kk
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="km" data-plural_rule="0" data-name="Khmer" data-nplurals="1">
+            
+              Khmer
+            
+          </span>
+
+          <span class="code">
+            
+              km
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="ko" data-plural_rule="0" data-name="Korean" data-nplurals="1">
+            
+              Korean
+            
+          </span>
+
+          <span class="code">
+            
+              ko
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="ku" data-plural_rule="(n != 1)" data-name="Kurdish" data-nplurals="2">
+            
+              Kurdish
+            
+          </span>
+
+          <span class="code">
+            
+              ku
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[0, 1, 5]" data-code="lv" data-plural_rule="(n%10==1 &amp;&amp; n%100!=11 ? 0 : n != 0 ? 1 : 2)" data-name="Latvian" data-nplurals="3">
+            
+              Latvian
+            
+          </span>
+
+          <span class="code">
+            
+              lv
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="lij" data-plural_rule="(n != 1)" data-name="Ligurian" data-nplurals="2">
+            
+              Ligurian
+            
+          </span>
+
+          <span class="code">
+            
+              lij
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 3, 5]" data-code="lt" data-plural_rule="(n%10==1 &amp;&amp; n%100!=11 ? 0 : n%10&gt;=2 &amp;&amp; (n%100&lt;10 || n%100&gt;=20) ? 1 : 2)" data-name="Lithuanian" data-nplurals="3">
+            
+              Lithuanian
+            
+          </span>
+
+          <span class="code">
+            
+              lt
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 2, 3, 5]" data-code="dsb" data-plural_rule="(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3)" data-name="Lower Sorbian" data-nplurals="4">
+            
+              Lower Sorbian
+            
+          </span>
+
+          <span class="code">
+            
+              dsb
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="mk" data-plural_rule="(n==1 || n%10==1 ? 0 : 1)" data-name="Macedonian" data-nplurals="2">
+            
+              Macedonian
+            
+          </span>
+
+          <span class="code">
+            
+              mk
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="mai" data-plural_rule="(n != 1)" data-name="Maithili" data-nplurals="2">
+            
+              Maithili
+            
+          </span>
+
+          <span class="code">
+            
+              mai
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="ms" data-plural_rule="0" data-name="Malay" data-nplurals="1">
+            
+              Malay
+            
+          </span>
+
+          <span class="code">
+            
+              ms
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="ml" data-plural_rule="(n != 1)" data-name="Malayalam" data-nplurals="2">
+            
+              Malayalam
+            
+          </span>
+
+          <span class="code">
+            
+              ml
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="mr" data-plural_rule="(n != 1)" data-name="Marathi" data-nplurals="2">
+            
+              Marathi
+            
+          </span>
+
+          <span class="code">
+            
+              mr
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="mn" data-plural_rule="(n != 1)" data-name="Mongolian" data-nplurals="2">
+            
+              Mongolian
+            
+          </span>
+
+          <span class="code">
+            
+              mn
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="ne-NP" data-plural_rule="(n != 1)" data-name="Nepali" data-nplurals="2">
+            
+              Nepali
+            
+          </span>
+
+          <span class="code">
+            
+              ne-NP
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="nso" data-plural_rule="(n != 1)" data-name="Northern Sotho" data-nplurals="2">
+            
+              Northern Sotho
+            
+          </span>
+
+          <span class="code">
+            
+              nso
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="nb-NO" data-plural_rule="(n != 1)" data-name="Norwegian Bokmål" data-nplurals="2">
+            
+              Norwegian Bokmål
+            
+          </span>
+
+          <span class="code">
+            
+              nb-NO
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="nn-NO" data-plural_rule="(n != 1)" data-name="Norwegian Nynorsk" data-nplurals="2">
+            
+              Norwegian Nynorsk
+            
+          </span>
+
+          <span class="code">
+            
+              nn-NO
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="oc" data-plural_rule="(n &gt; 1)" data-name="Occitan" data-nplurals="2">
+            
+              Occitan
+            
+          </span>
+
+          <span class="code">
+            
+              oc
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="or" data-plural_rule="(n != 1)" data-name="Oriya" data-nplurals="2">
+            
+              Oriya
+            
+          </span>
+
+          <span class="code">
+            
+              or
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="fa" data-plural_rule="0" data-name="Persian" data-nplurals="1">
+            
+              Persian
+            
+          </span>
+
+          <span class="code">
+            
+              fa
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 3, 5]" data-code="pl" data-plural_rule="(n==1 ? 0 : n%10&gt;=2 &amp;&amp; n%10&lt;=4 &amp;&amp; (n%100&lt;10 || n%100&gt;=20) ? 1 : 2)" data-name="Polish" data-nplurals="3">
+            
+              Polish
+            
+          </span>
+
+          <span class="code">
+            
+              pl
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="pt-BR" data-plural_rule="(n &gt; 1)" data-name="Portuguese" data-nplurals="2">
+            
+              Portuguese
+            
+          </span>
+
+          <span class="code">
+            
+              pt-BR
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="pt-PT" data-plural_rule="(n != 1)" data-name="Portuguese" data-nplurals="2">
+            
+              Portuguese
+            
+          </span>
+
+          <span class="code">
+            
+              pt-PT
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="pa-IN" data-plural_rule="(n != 1)" data-name="Punjabi" data-nplurals="2">
+            
+              Punjabi
+            
+          </span>
+
+          <span class="code">
+            
+              pa-IN
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 3, 5]" data-code="ro" data-plural_rule="(n==1 ? 0 : (n==0 || (n%100 &gt; 0 &amp;&amp; n%100 &lt; 20)) ? 1 : 2)" data-name="Romanian" data-nplurals="3">
+            
+              Romanian
+            
+          </span>
+
+          <span class="code">
+            
+              ro
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="rm" data-plural_rule="(n != 1)" data-name="Romansh" data-nplurals="2">
+            
+              Romansh
+            
+          </span>
+
+          <span class="code">
+            
+              rm
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 3, 5]" data-code="ru" data-plural_rule="(n%10==1 &amp;&amp; n%100!=11 ? 0 : n%10&gt;=2 &amp;&amp; n%10&lt;=4 &amp;&amp; (n%100&lt;10 || n%100&gt;=20) ? 1 : 2)" data-name="Russian" data-nplurals="3">
+            
+              Russian
+            
+          </span>
+
+          <span class="code">
+            
+              ru
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 3, 5]" data-code="sr" data-plural_rule="(n%10==1 &amp;&amp; n%100!=11 ? 0 : n%10&gt;=2 &amp;&amp; n%10&lt;=4 &amp;&amp; (n%100&lt;10 || n%100&gt;=20) ? 1 : 2)" data-name="Serbian" data-nplurals="3">
+            
+              Serbian
+            
+          </span>
+
+          <span class="code">
+            
+              sr
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="si" data-plural_rule="(n != 1)" data-name="Sinhala" data-nplurals="2">
+            
+              Sinhala
+            
+          </span>
+
+          <span class="code">
+            
+              si
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 3, 5]" data-code="sk" data-plural_rule="(n==1) ? 0 : (n&gt;=2 &amp;&amp; n&lt;=4) ? 1 : 2" data-name="Slovak" data-nplurals="3">
+            
+              Slovak
+            
+          </span>
+
+          <span class="code">
+            
+              sk
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix current">
+          <span class="language" data-cldr_plurals="[1, 2, 3, 5]" data-code="sl" data-plural_rule="(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3)" data-name="Slovenian" data-nplurals="4" data-projects="[&quot;amo&quot;, &quot;fake-aurora&quot;, &quot;mad&quot;, &quot;firefox-for-ios&quot;, &quot;firefox-hello&quot;, &quot;sumo&quot;, &quot;mozillaorg&quot;, &quot;pocket&quot;, &quot;fundraising&quot;, &quot;l20n-demo&quot;, &quot;the-mozilla-learning-network&quot;, &quot;sys-addon&quot;, &quot;mad2&quot;, &quot;mdn&quot;, &quot;out-of-date-addon&quot;, &quot;mo&quot;, &quot;mad3&quot;, &quot;thimble&quot;, &quot;fihe&quot;, &quot;mozilla-advocacy&quot;, &quot;pontoon-intro&quot;, &quot;fejk-aurora&quot;, &quot;fak-aurora-2&quot;, &quot;firefox-aurora-1&quot;, &quot;firefox-aurora-2&quot;, &quot;firefox-hel&quot;, &quot;test-amo&quot;, &quot;test-pilot&quot;, &quot;fak-aurora-3&quot;, &quot;fak-aurora-4&quot;]">
+            
+              Slovenian
+            
+          </span>
+
+          <span class="code">
+            
+              sl
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="son" data-plural_rule="(n != 1)" data-name="Songhay" data-nplurals="2">
+            
+              Songhay
+            
+          </span>
+
+          <span class="code">
+            
+              son
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="es" data-plural_rule="(n != 1)" data-name="Spanish" data-nplurals="2">
+            
+              Spanish
+            
+          </span>
+
+          <span class="code">
+            
+              es
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="es-AR" data-plural_rule="(n != 1)" data-name="Spanish" data-nplurals="2">
+            
+              Spanish
+            
+          </span>
+
+          <span class="code">
+            
+              es-AR
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="es-CL" data-plural_rule="(n != 1)" data-name="Spanish" data-nplurals="2">
+            
+              Spanish
+            
+          </span>
+
+          <span class="code">
+            
+              es-CL
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="es-ES" data-plural_rule="(n != 1)" data-name="Spanish" data-nplurals="2">
+            
+              Spanish
+            
+          </span>
+
+          <span class="code">
+            
+              es-ES
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="es-MX" data-plural_rule="(n != 1)" data-name="Spanish" data-nplurals="2">
+            
+              Spanish
+            
+          </span>
+
+          <span class="code">
+            
+              es-MX
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="sw" data-plural_rule="(n != 1)" data-name="Swahili" data-nplurals="2">
+            
+              Swahili
+            
+          </span>
+
+          <span class="code">
+            
+              sw
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="sv-SE" data-plural_rule="(n != 1)" data-name="Swedish" data-nplurals="2">
+            
+              Swedish
+            
+          </span>
+
+          <span class="code">
+            
+              sv-SE
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="tl" data-plural_rule="(n &gt; 3) &amp;&amp; (n%10 == 4 || n%10 == 6 || n%10 == 9)" data-name="Tagalog" data-nplurals="2">
+            
+              Tagalog
+            
+          </span>
+
+          <span class="code">
+            
+              tl
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="ta" data-plural_rule="(n != 1)" data-name="Tamil" data-nplurals="2">
+            
+              Tamil
+            
+          </span>
+
+          <span class="code">
+            
+              ta
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="ta-LK" data-plural_rule="(n != 1)" data-name="Tamil" data-nplurals="2">
+            
+              Tamil
+            
+          </span>
+
+          <span class="code">
+            
+              ta-LK
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="te" data-plural_rule="(n != 1)" data-name="Telugu" data-nplurals="2">
+            
+              Telugu
+            
+          </span>
+
+          <span class="code">
+            
+              te
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="th" data-plural_rule="0" data-name="Thai" data-nplurals="1">
+            
+              Thai
+            
+          </span>
+
+          <span class="code">
+            
+              th
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="tr" data-plural_rule="(n &gt; 1)" data-name="Turkish" data-nplurals="2">
+            
+              Turkish
+            
+          </span>
+
+          <span class="code">
+            
+              tr
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 3, 5]" data-code="uk" data-plural_rule="(n%10==1 &amp;&amp; n%100!=11 ? 0 : n%10&gt;=2 &amp;&amp; n%10&lt;=4 &amp;&amp; (n%100&lt;10 || n%100&gt;=20) ? 1 : 2)" data-name="Ukrainian" data-nplurals="3">
+            
+              Ukrainian
+            
+          </span>
+
+          <span class="code">
+            
+              uk
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 2, 3, 5]" data-code="hsb" data-plural_rule="(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3)" data-name="Upper Sorbian" data-nplurals="4">
+            
+              Upper Sorbian
+            
+          </span>
+
+          <span class="code">
+            
+              hsb
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="ur" data-plural_rule="(n != 1)" data-name="Urdu" data-nplurals="2">
+            
+              Urdu
+            
+          </span>
+
+          <span class="code">
+            
+              ur
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="uz" data-plural_rule="(n &gt; 1)" data-name="Uzbek" data-nplurals="2">
+            
+              Uzbek
+            
+          </span>
+
+          <span class="code">
+            
+              uz
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[5]" data-code="vi" data-plural_rule="0" data-name="Vietnamese" data-nplurals="1">
+            
+              Vietnamese
+            
+          </span>
+
+          <span class="code">
+            
+              vi
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 2, 3, 5]" data-code="cy" data-plural_rule="(n==1) ? 0 : (n==2) ? 1 : (n != 8 &amp;&amp; n != 11) ? 2 : 3" data-name="Welsh" data-nplurals="4">
+            
+              Welsh
+            
+          </span>
+
+          <span class="code">
+            
+              cy
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="fy-NL" data-plural_rule="(n != 1)" data-name="Western Frisian" data-nplurals="2">
+            
+              Western Frisian
+            
+          </span>
+
+          <span class="code">
+            
+              fy-NL
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="wo" data-plural_rule="(n != 1)" data-name="Wolof" data-nplurals="2">
+            
+              Wolof
+            
+          </span>
+
+          <span class="code">
+            
+              wo
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="xh" data-plural_rule="(n != 1)" data-name="Xhosa" data-nplurals="2">
+            
+              Xhosa
+            
+          </span>
+
+          <span class="code">
+            
+              xh
+            
+          </span>
+
+          
+        </li>
+      
+        
+          
+        
+        <li class="clearfix">
+          <span class="language" data-cldr_plurals="[1, 5]" data-code="zu" data-plural_rule="(n != 1)" data-name="Zulu" data-nplurals="2">
+            
+              Zulu
+            
+          </span>
+
+          <span class="code">
+            
+              zu
+            
+          </span>
+
+          
+        </li>
+      
+      <li class="no-match">No results</li>
+    </ul>
+
+    
+    <div class="static-links">
+      <a href="http://localhost:8000/teams/">
+        <div class="all-teams">
+          <span class="title">All Teams</span>
+        </div>
+      </a>
+      <a href="http://localhost:8000/sl">
+        <div class="current-team">
+          <span class="title">Current Team</span>
+        </div>
+      </a>
+    </div>
+    
+  </div>
+</div>
+
+    
+
+
+<!-- Project selector -->
+<div class="project select">
+  
+  <div class="button breadcrumbs selector">
+    <span class="title noselect" data-slug="pontoon-intro">Pontoon Intro</span>
+  </div>
+  
+  <div class="menu" style="display: none;">
+    <div class="search-wrapper clearfix">
+      
+      <a class="new" title="Request new projects" href="#new">
+        <span class="fa fa-plus-square"></span>
+      </a>
+      
+      <div class="icon fa fa-search"></div>
+      <input autocomplete="off" autofocus="" type="search">
+    </div>
+    
+    <ul>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="AMO" data-links="" data-url="" data-width="" data-pk="5" data-slug="amo">
+            
+              AMO
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Fak Aurora 2" data-links="" data-url="" data-width="" data-pk="154" data-slug="fak-aurora-2">
+            
+              Fak Aurora 2
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Fak Aurora 3" data-links="" data-url="" data-width="" data-pk="155" data-slug="fak-aurora-3">
+            
+              Fak Aurora 3
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Fak Aurora 4" data-links="" data-url="" data-width="" data-pk="156" data-slug="fak-aurora-4">
+            
+              Fak Aurora 4
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Fake Aurora" data-links="" data-url="" data-width="" data-pk="141" data-slug="fake-aurora">
+            
+              Fake Aurora
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Fejk Aurora" data-links="" data-url="" data-width="" data-pk="152" data-slug="fejk-aurora">
+            
+              Fejk Aurora
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="FiHe" data-links="" data-url="" data-width="" data-pk="139" data-slug="fihe">
+            
+              FiHe
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix">
+          <span class="name" data-info="" data-name="Firefox Aurora" data-links="" data-url="" data-width="" data-pk="31" data-slug="firefox-aurora">
+            
+              Firefox Aurora
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Firefox Aurora 1" data-links="" data-url="" data-width="" data-pk="145" data-slug="firefox-aurora-1">
+            
+              Firefox Aurora 1
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Firefox Aurora 2" data-links="" data-url="" data-width="" data-pk="144" data-slug="firefox-aurora-2">
+            
+              Firefox Aurora 2
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Firefox Hel" data-links="" data-url="" data-width="" data-pk="138" data-slug="firefox-hel">
+            
+              Firefox Hel
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Firefox Hello" data-links="" data-url="" data-width="" data-pk="2" data-slug="firefox-hello">
+            
+              Firefox Hello
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Firefox Out-of-date Add-on" data-links="" data-url="" data-width="" data-pk="132" data-slug="out-of-date-addon">
+            
+              Firefox Out-of-date Add-on
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Firefox for iOS" data-links="" data-url="" data-width="" data-pk="6" data-slug="firefox-for-ios">
+            
+              Firefox for iOS
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Fundraising" data-links="" data-url="https://donate.mofostaging.net/en-US/" data-width="" data-pk="72" data-slug="fundraising">
+            
+              Fundraising
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix">
+          <span class="name" data-info="" data-name="Internet Health Report" data-links="" data-url="" data-width="" data-pk="147" data-slug="internet-health-report">
+            
+              Internet Health Report
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="L20n Demo" data-links="" data-url="" data-width="" data-pk="133" data-slug="l20n-demo">
+            
+              L20n Demo
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="MDN" data-links="" data-url="" data-width="" data-pk="49" data-slug="mdn">
+            
+              MDN
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="MO" data-links="" data-url="" data-width="" data-pk="157" data-slug="mo">
+            
+              MO
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Mad" data-links="" data-url="" data-width="" data-pk="135" data-slug="mad">
+            
+              Mad
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Mad2" data-links="" data-url="" data-width="" data-pk="136" data-slug="mad2">
+            
+              Mad2
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Mad3" data-links="" data-url="" data-width="" data-pk="137" data-slug="mad3">
+            
+              Mad3
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Mozilla Advocacy" data-links="" data-url="https://advocacy-mozilla-org-staging.herokuapp.com/en-US/" data-width="" data-pk="124" data-slug="mozilla-advocacy">
+            
+              Mozilla Advocacy
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Mozilla Learning Network" data-links="" data-url="" data-width="" data-pk="140" data-slug="the-mozilla-learning-network">
+            
+              Mozilla Learning Network
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Mozilla.org" data-links="" data-url="" data-width="" data-pk="24" data-slug="mozillaorg">
+            
+              Mozilla.org
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Pocket" data-links="" data-url="" data-width="" data-pk="148" data-slug="pocket">
+            
+              Pocket
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited current" style="display: list-item;">
+          <span class="name" data-info="This is a demo website, used for demonstration purposes only. You can translate on the website itself by double clicking on page elements. Access to advanced features like translation memory and machine translation is available by clicking on the menu icon in the top-left corner." data-name="Pontoon Intro" data-links="" data-url="http://localhost:8000/intro/" data-width="" data-pk="1" data-slug="pontoon-intro" data-parts="{&quot;sl&quot;: [{&quot;fuzzy_strings&quot;: 0, &quot;title&quot;: &quot;messages.properties&quot;, &quot;resource__total_strings&quot;: 50, &quot;approved_strings&quot;: 43, &quot;resource__path&quot;: &quot;messages.properties&quot;, &quot;url&quot;: &quot;http://localhost:8000/intro/&quot;, &quot;translated_strings&quot;: 1}, {&quot;fuzzy_strings&quot;: 0, &quot;title&quot;: &quot;all-resources&quot;, &quot;resource__total_strings&quot;: 50, &quot;approved_strings&quot;: 43, &quot;resource__path&quot;: [&quot;messages.properties&quot;], &quot;translated_strings&quot;: 1}]}">
+            
+              Pontoon Intro
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="SUMO" data-links="" data-url="" data-width="" data-pk="39" data-slug="sumo">
+            
+              SUMO
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Sys Addon" data-links="" data-url="" data-width="" data-pk="131" data-slug="sys-addon">
+            
+              Sys Addon
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Test AMO" data-links="" data-url="" data-width="" data-pk="151" data-slug="test-amo">
+            
+              Test AMO
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Test Pilot" data-links="" data-url="http://testpilot.dev.mozaws.net/" data-width="" data-pk="134" data-slug="test-pilot">
+            
+              Test Pilot
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+        
+          
+        
+
+        
+
+        <li class="clearfix limited">
+          <span class="name" data-info="" data-name="Thimble" data-links="" data-url="" data-width="" data-pk="70" data-slug="thimble">
+            
+              Thimble
+            
+          </span>
+
+          
+            <span class="check fa fa-fw"></span>
+          
+
+          
+        </li>
+      
+      <li class="no-match">No results</li>
+    </ul>
+
+    
+    <div class="static-links">
+      <a href="http://localhost:8000/projects/">
+        <div class="all-projects">
+          <span class="title">All Projects</span>
+        </div>
+      </a>
+      
+      <a href="http://localhost:8000/projects/pontoon-intro">
+        <div class="current-project">
+          <span class="title">Current Project</span>
+        </div>
+      </a>
+      
+    </div>
+    
+
+    
+      <button id="request-projects">Request new projects</button>
+    
+  </div>
+</div>
+
+    
+
+
+<!-- Part selector -->
+<div class="part select">
+  
+  <div class="button breadcrumbs selector" title="All Resources">
+    <span class="title noselect">All Resources</span>
+  </div>
+  
+
+  <div class="menu" style="display: none;">
+    <div class="search-wrapper clearfix">
+      <div class="icon fa fa-search"></div>
+      <input autocomplete="off" autofocus="" type="search">
+    </div>
+
+    
+
+    <ul>
+      
+
+      <li class="no-match">No results</li>
+    </ul>
+
+    <div class="static-links">
+      
+      <div class="all-resources">
+        <span class="title">All Resources</span>
+        <span class="percent"></span>
+      </div>
+      
+      
+      <a href="http://localhost:8000/sl/pontoon-intro">
+        <div class="current-localization">
+          <span class="title">Current Localization</span>
+          <span class="percent"></span>
+        </div>
+      </a>
+      
+    </div>
+  </div>
+</div>
+
+    <!-- Go -->
+    <div class="go select">
+      <a id="go" class="noselect" href="#">Go</a>
+    </div>
+
+    <!-- Progress indicator -->
+    <div id="progress" class="select" style="display: block;">
+      <div class="selector">
+        <canvas class="graph" width="44" height="44"></canvas>
+        <span class="number noselect">86</span>
+      </div>
+      <aside class="menu" style="display: none;">
+        <div>
+          <header>
+            <h2>All strings <span>50</span></h2>
+          </header>
+          <canvas class="big graph" width="220" height="220"></canvas>
+          <span class="number">86</span>
+        </div>
+        <div class="details">
+          <div class="translated">
+            <span>Translated</span>
+            <p>43</p>
+          </div><div class="suggested">
+            <span>Suggested</span>
+            <p>1</p>
+          </div><div class="fuzzy">
+            <span>Fuzzy</span>
+            <p>0</p>
+          </div><div class="missing">
+            <span>Missing</span>
+            <p>6</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Project Info -->
+    <div id="info" class="select" style="display: block;">
+      <div class="button selector fa fa-info"></div>
+      <aside class="menu" style="display: none;">
+        <h2>Project info</h2>
+        <p class="content">This is a demo website, used for 
+demonstration purposes only. You can translate on the website itself by 
+double clicking on page elements. Access to advanced features like 
+translation memory and machine translation is available by clicking on 
+the menu icon in the top-left corner.</p>
+      </aside>
+    </div>
+
+    <div class="right">
+      <!-- Hide by default to prevent covering the Next button -->
+      <ul class="notification hide">
+      
+      </ul>
+      <span id="loading" class="fa fa-refresh fa-spin"></span>
+
+      <!-- Profile -->
+      <div id="profile" class="select">
+        <div class="button selector">
+          <span class="title noselect">Matjaž Horvat</span>
+          <img class="rounded" src="static/b7aed7b21e849ab3d67ffd811313a75b.jpg">
+        </div>
+        <div class="menu" style="display: none;">
+          <ul>
+            
+            <li><a href="http://localhost:8000/profile/"><i class="fa fa-user fa-fw"></i>View Profile</a></li>
+            <li><a href="http://localhost:8000/settings/"><i class="fa fa-cog fa-fw"></i>Change Settings</a></li>
+            <li class="horizontal-separator"></li>
+            
+
+            <li class="download"><i class="fa fa-cloud-download fa-fw"></i>Download Translations</li>
+            <li class="upload" style="display: none;"><i class="fa fa-cloud-upload fa-fw"></i>Upload Translations</li>
+
+            <li class="horizontal-separator"></li>
+
+            <li><a href="http://localhost:8000/contributors/"><i class="fa fa-trophy fa-fw"></i>Top Contributors</a></li>
+            <li><a href="http://localhost:8000/terminology/"><i class="fa fa-search fa-fw"></i>Terminology Search</a></li>
+            <li><a href="http://localhost:8000/terms/"><i class="fa fa-legal fa-fw"></i>Terms of Use</a></li>
+            <li><a href="https://developer.mozilla.org/docs/Mozilla/Localization/Localizing_with_Pontoon"><i class="fa fa-life-ring fa-fw"></i>Help</a></li>
+
+            <li class="horizontal-separator"></li>
+
+            
+            <li><a href="http://localhost:8000/admin/">Admin</a></li>
+            <li class="admin-current-project"><a href="http://localhost:8000/admin/projects/pontoon-intro/">Admin · Current Project</a></li>
+            
+
+            
+            <li class="sign-out"><a href="http://localhost:8000/signout/"><i class="fa fa-sign-out fa-fw"></i>Sign Out</a></li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<aside id="sidebar" class="advanced" style="width: 100%;">
+  <!-- Strings placeholder -->
+  <div id="entitylist">
+    <div class="search-wrapper clearfix">
+      <div class="icon fa fa-search"></div>
+      <input id="search" autocomplete="off" placeholder="Search in All" title="Search Strings (Ctrl + Shift + F)" type="search">
+      <div id="filter" class="select" data-current-filter="all">
+        <div class="button selector all">
+          <span class="status fa"></span>
+        </div>
+        <div class="menu" style="display: none;">
+          <ul>
+            <li class="horizontal-separator">Translation Status</li>
+
+            
+<li class="all" data-type="all">
+  <span class="status fa"></span>
+  <span class="title">All</span>
+  
+    <span class="count">50</span>
+  
+</li>
+
+            
+<li class="missing" data-type="missing">
+  <span class="status fa"></span>
+  <span class="title">Missing</span>
+  
+    <span class="count">6</span>
+  
+</li>
+
+            
+<li class="fuzzy" data-type="fuzzy">
+  <span class="status fa"></span>
+  <span class="title">Fuzzy</span>
+  
+    <span class="count">0</span>
+  
+</li>
+
+            
+<li class="suggested" data-type="suggested">
+  <span class="status fa"></span>
+  <span class="title">Suggested</span>
+  
+    <span class="count">1</span>
+  
+</li>
+
+            
+<li class="translated" data-type="translated">
+  <span class="status fa"></span>
+  <span class="title">Translated</span>
+  
+    <span class="count">43</span>
+  
+</li>
+
+
+            <li class="horizontal-separator">Smart Filters</li>
+
+            
+<li class="untranslated" data-type="untranslated">
+  <span class="status fa"></span>
+  <span class="title">Untranslated</span>
+  
+</li>
+
+            
+<li class="unchanged" data-type="unchanged">
+  <span class="status fa"></span>
+  <span class="title">Unchanged</span>
+  
+</li>
+
+            
+<li class="has-suggestions" data-type="has-suggestions">
+  <span class="status fa"></span>
+  <span class="title">Has Suggestions</span>
+  
+</li>
+
+
+            <li class="horizontal-separator for-time-range">Translation Time<button class="edit" data-alternative="Save Range">Edit Range</button></li>
+
+            <li class="time-range clearfix" data-type="time-range">
+              <span class="status fa"></span>
+              <span class="title">Time Range</span>
+              <div class="clearfix">
+                <label for="from">From<input id="from" disabled="disabled" value="23/06/2016 02:41" type="datetime"></label>
+                <label for="to">To<input id="to" disabled="disabled" value="17/08/2016 14:18" type="datetime"></label>
+              </div>
+              <div id="range-picker" data-highcharts-chart="1"><div class="highcharts-container" id="highcharts-2" style="position: relative; overflow: hidden; width: 306px; height: 120px; text-align: left; line-height: normal; z-index: 0; font-family: inherit; left: 0px; top: 0px;"><svg version="1.1" style="font-family:inherit;font-size:12px;" xmlns="http://www.w3.org/2000/svg" width="306" height="120"><desc>Created with Highstock 4.2.5</desc><defs><clipPath id="highcharts-3"><rect x="0" y="0" width="297" height="0"></rect></clipPath><clipPath id="highcharts-4"><rect x="0" y="0" width="297" height="0"></rect></clipPath><clipPath id="highcharts-5"><rect x="0" y="0" width="297" height="80"></rect></clipPath></defs><rect x="0" y="0" width="306" height="120" fill="transparent" class=" highcharts-background"></rect><g class="highcharts-range-selector-buttons" transform="translate(0,95)"><text x="-2" y="15" style="color:#666;fill:#666;"></text><g class="highcharts-button" states="[object Object]" style="cursor:pointer;text-transform:uppercase;text-align:center;" transform="translate(3,0)"><rect x="0" y="0" width="26" height="22" fill="none" rx="0" ry="0"></rect><text x="2" style="font-size:11;font-weight:300;color:#7BC876;fill:#7BC876;" y="14">All</text></g><g class="highcharts-button" states="[object Object]" style="cursor:pointer;text-transform:uppercase;text-align:center;" transform="translate(34,0)"><rect x="0" y="0" width="51" height="22" fill="none" rx="0" ry="0"></rect><text x="2" style="font-size:11;font-weight:300;color:#FFFFFF;fill:#FFFFFF;" y="14"><tspan>30 days</tspan></text></g><g class="highcharts-button" states="[object Object]" style="cursor:pointer;text-transform:uppercase;text-align:center;" transform="translate(90,0)"><rect x="0" y="0" width="45" height="22" fill="none" rx="0" ry="0"></rect><text x="2" style="font-size:11;font-weight:300;color:#FFFFFF;fill:#FFFFFF;" y="14"><tspan>7 days</tspan></text></g><g class="highcharts-button" states="[object Object]" style="cursor:pointer;text-transform:uppercase;text-align:center;" transform="translate(139,0)"><rect x="0" y="0" width="31" height="22" fill="none" rx="0" ry="0"></rect><text x="2" style="font-size:11;font-weight:300;color:#FFFFFF;fill:#FFFFFF;" y="14"><tspan>24 h</tspan></text></g><g class="highcharts-button" states="[object Object]" style="cursor:pointer;text-transform:uppercase;text-align:center;" transform="translate(176,0)"><rect x="0" y="0" width="45" height="22" fill="none" rx="0" ry="0"></rect><text x="2" style="font-size:11;font-weight:300;color:#FFFFFF;fill:#FFFFFF;" y="14"><tspan>60 min</tspan></text></g></g><g class="highcharts-input-group" transform="translate(33,85)" visibility="hidden"><g style="fill:#666;" transform="translate(0,0)"><text x="2" style="font-size:12px;font-family:inherit;color:#666;fill:#666;" y="14">From</text></g><g style="text-align:center;" transform="translate(41,0)"><rect x="0.5" y="0.5" width="94" height="21" fill="none" stroke="silver" stroke-width="1"></rect><text x="11.38333511352539" style="font-size:12px;font-family:inherit;color:#444;fill:#444;" y="14"><tspan>Jun 23, 2016</tspan></text></g><g style="fill:#666;" transform="translate(145,0)"><text x="2" style="font-size:12px;font-family:inherit;color:#666;fill:#666;" y="14">To</text></g><g style="text-align:center;" transform="translate(169,0)"><rect x="0.5" y="0.5" width="94" height="21" fill="none" stroke="silver" stroke-width="1"></rect><text x="10.049999237060547" style="font-size:12px;font-family:inherit;color:#444;fill:#444;" y="14"><tspan>Aug 17, 2016</tspan></text></g></g><g class="highcharts-grid"></g><g class="highcharts-grid"></g><g class="highcharts-grid"></g><g class="highcharts-grid"></g><g class="highcharts-axis"></g><g class="highcharts-axis"><path fill="none" d="M 5 90.5 L 302 90.5" stroke="#4D5967" stroke-width="1"></path></g><g class="highcharts-axis"></g><g class="highcharts-axis"></g><g class="highcharts-series-group"><g class="highcharts-series highcharts-series-0 highcharts-tracker" transform="translate(5,35) scale(1 1)" style="" clip-path="url(#highcharts-4)"><rect x="6" y="1" width="12" height="0" fill="#7cb5ec" rx="0" ry="0"></rect><rect x="31" y="1" width="12" height="0" fill="#7cb5ec" rx="0" ry="0"></rect><rect x="56" y="1" width="12" height="0" fill="#7cb5ec" rx="0" ry="0"></rect><rect x="81" y="1" width="12" height="0" fill="#7cb5ec" rx="0" ry="0"></rect><rect x="105" y="1" width="12" height="0" fill="#7cb5ec" rx="0" ry="0"></rect><rect x="130" y="1" width="12" height="0" fill="#7cb5ec" rx="0" ry="0"></rect><rect x="155" y="1" width="12" height="0" fill="#7cb5ec" rx="0" ry="0"></rect><rect x="180" y="1" width="12" height="0" fill="#7cb5ec" rx="0" ry="0"></rect><rect x="204" y="1" width="12" height="0" fill="#7cb5ec" rx="0" ry="0"></rect><rect x="229" y="1" width="12" height="0" fill="#7cb5ec" rx="0" ry="0"></rect><rect x="254" y="1" width="12" height="0" fill="#7cb5ec" rx="0" ry="0"></rect><rect x="279" y="1" width="12" height="0" fill="#7cb5ec" rx="0" ry="0"></rect></g><g class="highcharts-markers highcharts-series-0" transform="translate(5,35) scale(1 1)" clip-path="none"></g><g class="highcharts-series highcharts-series-1" transform="translate(5,10) scale(1 1)" clip-path="url(#highcharts-5)"><rect x="-6" y="8" width="13" height="73" fill="#7BC876" rx="0" ry="0"></rect><rect x="21" y="74" width="13" height="7" fill="#7BC876" rx="0" ry="0"></rect><rect x="48" y="74" width="13" height="7" fill="#7BC876" rx="0" ry="0"></rect><rect x="75" y="74" width="13" height="7" fill="#7BC876" rx="0" ry="0"></rect><rect x="102" y="74" width="13" height="7" fill="#7BC876" rx="0" ry="0"></rect><rect x="129" y="74" width="13" height="7" fill="#7BC876" rx="0" ry="0"></rect><rect x="156" y="74" width="13" height="7" fill="#7BC876" rx="0" ry="0"></rect><rect x="183" y="74" width="13" height="7" fill="#7BC876" rx="0" ry="0"></rect><rect x="210" y="74" width="13" height="7" fill="#7BC876" rx="0" ry="0"></rect><rect x="237" y="74" width="13" height="7" fill="#7BC876" rx="0" ry="0"></rect><rect x="264" y="74" width="13" height="7" fill="#7BC876" rx="0" ry="0"></rect><rect x="291" y="74" width="13" height="7" fill="#7BC876" rx="0" ry="0"></rect></g><g class="highcharts-markers highcharts-series-1" transform="translate(5,10) scale(1 1)" clip-path="none"></g></g><g class="highcharts-navigator"><rect fill="rgba(77, 89, 103, 0.2)" style="cursor:ew-resize;" x="5" y="10" width="297" height="80"></rect><path fill="none" stroke="#4D5967" stroke-width="1" d="M 5 10.5 L 4.5 10.5 4.5 90.5 L 301.5 90.5 L 301.5 10.5 302 10.5 M 5.5 10.5 L 301.5 10.5"></path></g><g class="highcharts-axis-labels highcharts-xaxis-labels"></g><g class="highcharts-axis-labels highcharts-xaxis-labels"></g><g class="highcharts-axis-labels highcharts-yaxis-labels"></g><g class="highcharts-axis-labels highcharts-yaxis-labels"></g><g class="highcharts-navigator-handle-right" style="cursor:ew-resize;" transform="translate(302,42)"><rect x="-4.5" y="0.5" width="8" height="15" fill="#4D5967" stroke="#272A2F" stroke-width="1"></rect><path fill="#4D5967" d="M -1.5 4 L -1.5 12 M 0.5 4 L 0.5 12" stroke="#272A2F" stroke-width="1"></path></g><g class="highcharts-navigator-handle-left" style="cursor:ew-resize;" transform="translate(5,42)"><rect x="-4.5" y="0.5" width="8" height="15" fill="#4D5967" stroke="#272A2F" stroke-width="1"></rect><path fill="#4D5967" d="M -1.5 4 L -1.5 12 M 0.5 4 L 0.5 12" stroke="#272A2F" stroke-width="1"></path></g></svg></div></div>
+            </li>
+
+            <li class="horizontal-separator for-authors">Translation Authors</li><li class="author" data-type="matjaz.horvat@gmail.com"><figure><img class="rounded" src="static/b7aed7b21e849ab3d67ffd811313a75b.jpg"><figcaption><p class="name">Matjaž Horvat</p><p class="role">Admin</p></figcaption><span class="count">12</span></figure></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper unselectable">
+      <ul class="editables"></ul>
+      <h2 id="not-on-page" style="display: none;" class="hidden">Not on the current page</h2>
+      <ul class="uneditables"><li class="entity translated uneditable hovered" data-entry-pk="178838"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Novo</span><span class="translation-string" dir="auto" lang="sl">Bizgec-dd</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity uneditable" data-entry-pk="181230"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Novo<mark class="placeable" title="Number">3</mark></span><span class="translation-string" dir="auto" lang="sl"></span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178824"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">What</span><span class="translation-string" dir="auto" lang="sl">Kaj</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178850"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">More</span><span class="translation-string" dir="auto" lang="sl">Več</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity uneditable" data-entry-pk="178843"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Developers</span><span class="translation-string" dir="auto" lang="sl"></span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity uneditable" data-entry-pk="178856"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Pontoon by Mozilla</span><span class="translation-string" dir="auto" lang="sl"></span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity uneditable" data-entry-pk="178852"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Localize the web.</span><span class="translation-string" dir="auto" lang="sl"></span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity uneditable" data-entry-pk="178836"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">In place.</span><span class="translation-string" dir="auto" lang="sl"></span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity uneditable" data-entry-pk="178857"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Tell Me More</span><span class="translation-string" dir="auto" lang="sl"></span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178832"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">What is Pontoon?</span><span class="translation-string" dir="auto" lang="sl">Kaj JE PONTOON?</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178817"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Pontoon allows you to localize web content in place, with context and spatial limitations right in front of you.</span><span class="translation-string" dir="auto" lang="sl">Pontoon vam omogoča bla bla.</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178853"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Understand context</span><span class="translation-string" dir="auto" lang="sl">Razumite vsebino</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178811"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">By localizing web page on the page itself, you no longer need to worry if the word you are translating is a verb or noun.</span><span class="translation-string" dir="auto" lang="sl">S prevajanjem besedila na strani sami vam ni več potrebno skrbeti, ali je beseda, ki jo prevajate, glagol ali samostalnik.</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178823"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">See spatial limitations</span><span class="translation-string" dir="auto" lang="sl">Oglejte si prostorske omejitve</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178818"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Avoid breaking user interface by seeing how much space is available for your translations, which is especially useful with apps.</span><span class="translation-string" dir="auto" lang="sl">Izognite
+ se podrtju vsebin na spletni strani, tako da vidite natanko koliko 
+prostora imate za prevod, kar je posebej priročno za aplikacije.</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178855"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Get instant preview</span><span class="translation-string" dir="auto" lang="sl">Takojšnji predogled</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178834"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">The moment you submit translation, it replaces the original text in the web page, making you the first proofreader and tester.</span><span class="translation-string" dir="auto" lang="sl">V trenutku, ko shranite prevod, ta zamenja besedilo na spletni strani, kar vam omogoča takojšnji predogled.</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178826"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">How does it work?</span><span class="translation-string" dir="auto" lang="sl">KAKO DELUJE?</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178849"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Pontoon is a very simple and intuitive tool that requires little to no technical skill for localizers to use.</span><span class="translation-string" dir="auto" lang="sl">Pontoon je preprost in intuitiven pripomoček, ki od prevajalcev ne zahteva posebnih tehničnih izkušenj za uporabo.</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity suggested uneditable" data-entry-pk="178848"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Hover</span><span class="translation-string" dir="auto" lang="sl">POMAKNITE SE123</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178835"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">over web content</span><span class="translation-string" dir="auto" lang="sl">čez vsebino spletne strani</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178814"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Move
+ your mouse over headings, links, paragraphs or other text blocks on 
+this page. A dashed rectangle will appear around each of these blocks, 
+marking strings that are available for localization on the page itself.</span><span class="translation-string" dir="auto" lang="sl">Pomaknite
+ miškin kazalec na naslove, povezave, odstavke ali druge okvirčke z 
+besedilom na tej strani. Okoli vsake vsebine se pojavi pravokotni 
+okvirček, ki označuje nize, ki so na voljo za prevajanje na sami spletni
+ strani.</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178854"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Select</span><span class="translation-string" dir="auto" lang="sl">OZNAČITE</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178841"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">a text block</span><span class="translation-string" dir="auto" lang="sl">okvirček z besedilom</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178846"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">A
+ toolbar appears above the dashed rectangle, allowing you to select the 
+corresponding text block for editing. To do so, either click on the Edit
+ button in the toolbar, or double-click anywhere inside the dashed 
+border.</span><span class="translation-string" dir="auto" lang="sl">Nad 
+pravokotnim okvirčkom se pojavi orodna vrstica, ki vam omogoča, da 
+izberete pripadajoči okvirček z besedilom za urejanje. Da to storite, 
+kliknite na gumb Uredi v orodni vrstici ali dvakrat kliknite kjerkoli 
+znotraj pravokotnega okvirčka.</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178830"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Translate</span><span class="translation-string" dir="auto" lang="sl">PREVEDITE</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178828"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">selected text</span><span class="translation-string" dir="auto" lang="sl">izbrano besedilo</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178822"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">When
+ you enter editing mode, the entire text block will be selected. You can
+ start typing your translation immediately while seeing the exact 
+context of your source string and how much space is available for your 
+translation.</span><span class="translation-string" dir="auto" lang="sl">Ko
+ ste v načinu za urejanje, bo izbrano celotno besedilo. Besedilo lahko 
+začnete prevajati takoj in hkrati vidite vsebino izvirnega besedila in 
+prostor, ki je na voljo za vaš prevod.</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178819"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Save</span><span class="translation-string" dir="auto" lang="sl">SHRANITE</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178810"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">your translation</span><span class="translation-string" dir="auto" lang="sl">vaš prevod</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178825"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">As
+ soon as you are happy with your translation, you can save it by 
+pressing Enter or clicking the save icon in the toolbar. To quit 
+translation mode without saving changes, press Esc or click the cancel 
+icon in the toolbar.</span><span class="translation-string" dir="auto" lang="sl">Ko
+ ste s svojim prevodom zadovoljni, ga lahko shranite s pritiskom na 
+tipko Enter ali klikom na gumb Shrani v orodni vrstici. Če želite 
+zapustiti način za urejanje, brez da bi shranili spremembe, pritisnite 
+tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178837"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Learn more</span><span class="translation-string" dir="auto" lang="sl">SPOZNAJTE VEČ</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178851"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">What else can it do?</span><span class="translation-string" dir="auto" lang="sl">KAJ ŠE LAHKO POČNE?</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178821"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Pontoon's in place translation mode is what puts it above others, but it also has many other benefits.</span><span class="translation-string" dir="auto" lang="sl">Pontoonov takojšnji način za urejanje je tisto, kar ga naredi najboljšega, ima pa tudi druge prednosti.</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178812"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Quality checks</span><span class="translation-string" dir="auto" lang="sl">Preverjanje kakovosti</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178827"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Translations are automatically reviewed for quality before saving</span><span class="translation-string" dir="auto" lang="sl">Pred shranjevanjem sistem avtomatsko preveri kakovost prevoda</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178816"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Translation helpers</span><span class="translation-string" dir="auto" lang="sl">Pomoč pri prevajanju</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178829"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Get help from translation memory, machine translation and the likes</span><span class="translation-string" dir="auto" lang="sl">Pridobite pomoč iz zgodovine in od strojnega prevajalnika</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178831"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Plurals support</span><span class="translation-string" dir="auto" lang="sl">Podpora za množino</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178815"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Strings with plurals can be translated to all plural forms available in your languge</span><span class="translation-string" dir="auto" lang="sl">Nize lahko prevajate v vse množinske oblike v vašem jeziku</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178833"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Get involved</span><span class="translation-string" dir="auto" lang="sl">RAZVIJALCI</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178813"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Are you a developer, interested in Pontoon? There are plenty of ways to get your hands dirty.</span><span class="translation-string" dir="auto" lang="sl">Ste razvijalec in se zanimate za Pontoon? Vključite se lahko na več načinov.</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178839"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Enable it on your site</span><span class="translation-string" dir="auto" lang="sl">Vključite ga na svojo spletno stran</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178847"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Add a script and you are halfway through</span><span class="translation-string" dir="auto" lang="sl">Dodajte skripto in ste že na pol poti</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178820"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Hack it on <mark class="placeable" title="Camel case string">GitHub</mark></span><span class="translation-string" dir="auto" lang="sl">Hekajte na GitHubu</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178844"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">It's completely free and open source</span><span class="translation-string" dir="auto" lang="sl">Je popolnoma brezplačen in odprtokoden</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178842"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">By someone you trust</span><span class="translation-string" dir="auto" lang="sl">Od nekoga, ki mu zaupate</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178840"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Developed by the non-profit behind Firefox</span><span class="translation-string" dir="auto" lang="sl">Izdelan s strani neprofitnih razvijalcev Firefoxa</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178809"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Crafted by Mozilla</span><span class="translation-string" dir="auto" lang="sl">Izdelek organizacije Mozilla</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li><li class="entity translated uneditable" data-entry-pk="178845"><span class="status fa"></span><p class="string-wrapper"><span class="source-string">Join us</span><span class="translation-string" dir="auto" lang="sl">Pridružite se nam</span></p><span class="arrow fa fa-chevron-right fa-lg"></span></li></ul>
+      <h3 class="no-match" style="display: none;"><div class="fa fa-exclamation-circle"></div>No results</h3>
+      <h3 class="loading"><div class="fa fa-refresh fa-spin"></div></h3>
+    </div>
+    <div class="batch-bar topbar clearfix">
+      <a class="select-all" href="#select-all" title="Select All Strings (Ctrl + Shift + A)">
+        <span class="fa fa-check fa-lg"></span>
+        Select All
+      </a>
+      <a class="edit-all" href="#edit-all" title="Edit Selected Strings">
+        <span>Edit</span>
+        <span class="selected-count"></span>
+        <span class="variant">
+          <span class="singular">string</span>
+          <span class="plural">strings</span>
+        </span>
+        <span class="fa fa-chevron-right fa-lg"></span>
+      </a>
+      <div class="selecting fa fa-refresh fa-spin"></div>
+    </div>
+  </div>
+
+  <!-- Translation editor -->
+  <div id="editor" class="opened">
+    <!-- Element for dragging entity list and editor -->
+    <div id="drag-1" draggable="true"></div>
+
+    <!-- Single string editor -->
+    <section id="single">
+      <div class="topbar clearfix">
+        <a id="back" href="#back" title="Cancel Translation (Esc)"><span class="fa fa-chevron-left fa-lg"></span>Back to list</a>
+        <a id="next" href="#next" title="Go To Next String (Alt + Down)"><span class="fa fa-chevron-down fa-lg"></span>Next</a>
+        <a id="previous" href="#previous" title="Go To Previous String (Alt + Up)"><span class="fa fa-chevron-up fa-lg"></span>Previous</a>
+      </div>
+
+      <div id="source-pane">
+          <h2></h2>
+          <p id="original">Novo</p>
+          <div id="metadata"><p><span class="title">Comment</span> <span class="content">Navigation</span></p><p><span class="title">Context</span> <span class="content">novo</span></p><p><span class="title">Resource path</span> <span class="content">messages.properties</span></p></div>
+          <div id="screenshots"></div>
+      </div>
+
+      <nav id="plural-tabs">
+        <ul>
+          <li class="active" style="display: none;"><a href="#plural1"><span></span><sup></sup></a></li>
+          <li style="display: none;"><a href="#plural2"><span></span><sup></sup></a></li>
+          <li style="display: none;"><a href="#plural3"><span></span><sup></sup></a></li>
+          <li style="display: none;"><a href="#plural4"><span></span><sup></sup></a></li>
+          <li style="display: none;"><a href="#plural5"><span></span><sup></sup></a></li>
+          <li style="display: none;"><a href="#plural6"><span></span><sup></sup></a></li>
+        </ul>
+      </nav>
+
+      <textarea dir="auto" id="translation" placeholder="Type translation and press Enter to save" lang="sl">Bizgec-dd</textarea>
+
+      <menu>
+        
+          <div id="unsaved" class="warning-overlay">
+            <a href="#" class="cancel">×</a>
+            <h2>You have unsaved changes</h2>
+            <p>Sure you want to leave?</p>
+            <button id="leave-anyway">Leave anyway</button>
+          </div>
+          <div id="quality" class="warning-overlay">
+            <a href="#" class="cancel">×</a>
+            <h2>The following checks have failed</h2>
+            <ul></ul>
+            <button id="save-anyway"></button>
+          </div>
+
+          <!-- Settings -->
+          <div id="settings" class="select">
+            <div class="selector fa fa-cog" title="Settings"></div>
+            <div class="menu" style="display: none;">
+              <ul>
+                
+<li class="check-box quality-checks enabled" data-attribute="quality_checks"><i class="fa fa-fw"></i>Quality Checks</li>
+
+                
+                
+<li class="check-box force-suggestions" data-attribute="force_suggestions"><i class="fa fa-fw"></i>Make Suggestions</li>
+
+                
+                <li class="horizontal-separator"></li>
+                <li><a href="http://localhost:8000/settings/">Change All Settings</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Keyboard shortcuts -->
+          <div id="hotkeys" class="select">
+            <div class="selector fa fa-keyboard-o" title="Keyboard Shortcuts"></div>
+            <aside class="menu" style="display: none;">
+              <h2>Keyboard shortcuts</h2>
+              <table>
+                <tbody>
+                  
+<tr>
+    <td>Save Translation</td>
+    <td>
+        
+            <span>Enter</span>
+            
+        
+    </td>
+</tr>
+
+                  
+<tr>
+    <td>Cancel Translation</td>
+    <td>
+        
+            <span>Esc</span>
+            
+        
+    </td>
+</tr>
+
+                  
+<tr>
+    <td>Insert A New Line</td>
+    <td>
+        
+            <span>Shift</span>
+            +
+        
+            <span>Enter</span>
+            
+        
+    </td>
+</tr>
+
+                  
+<tr>
+    <td>Go To Next String</td>
+    <td>
+        
+            <span>Alt</span>
+            +
+        
+            <span>Down</span>
+            
+        
+    </td>
+</tr>
+
+                  
+<tr>
+    <td>Go To Previous String</td>
+    <td>
+        
+            <span>Alt</span>
+            +
+        
+            <span>Up</span>
+            
+        
+    </td>
+</tr>
+
+                  
+<tr>
+    <td>Copy From Source</td>
+    <td>
+        
+            <span>Ctrl</span>
+            +
+        
+            <span>Shift</span>
+            +
+        
+            <span>C</span>
+            
+        
+    </td>
+</tr>
+
+                  
+<tr>
+    <td>Clear Translation</td>
+    <td>
+        
+            <span>Ctrl</span>
+            +
+        
+            <span>Shift</span>
+            +
+        
+            <span>Backspace</span>
+            
+        
+    </td>
+</tr>
+
+                  
+<tr>
+    <td>Search Strings</td>
+    <td>
+        
+            <span>Ctrl</span>
+            +
+        
+            <span>Shift</span>
+            +
+        
+            <span>F</span>
+            
+        
+    </td>
+</tr>
+
+                  
+<tr>
+    <td>Select All Strings</td>
+    <td>
+        
+            <span>Ctrl</span>
+            +
+        
+            <span>Shift</span>
+            +
+        
+            <span>A</span>
+            
+        
+    </td>
+</tr>
+
+                  
+<tr>
+    <td>Copy From Helpers</td>
+    <td>
+        
+            <span>Tab</span>
+            
+        
+    </td>
+</tr>
+
+                </tbody>
+              </table>
+            </aside>
+          </div>
+
+          <div id="translation-length" style="display: block;">
+            <span class="current-length">9</span>|<span class="original-length">4</span>
+          </div>
+
+          <button id="copy" title="Copy From Source (Ctrl + Shift + C)">Copy</button>
+          <button id="clear" title="Clear Translation (Ctrl + Shift + Backspace)">Clear</button>
+          <button id="save" title="Save Translation (Enter)"></button>
+        
+      </menu>
+
+      <div id="helpers" class="tabs">
+        <nav>
+          <ul>
+            <li class="active">
+              <a href="#history" title="Translation history" class="">
+                <span>History
+                  <span class="fa fa-cog fa-lg fa-spin"></span>
+                  <span class="count">1</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="#machinery" title="Translation memory, machine translation &amp; terminology" class="">
+                <span>Machinery
+                  <span class="fa fa-cog fa-lg fa-spin"></span>
+                  <span class="count" style="display: inline;">3</span>
+                </span>
+              </a>
+            </li><li>
+              <a href="#other-locales" title="Translations to other languages" class="">
+                <span>Locales
+                  <span class="fa fa-cog fa-lg fa-spin"></span>
+                  <span class="count"><span class="preferred" style="display: none;">0</span><span class="plus" style="display: none;">+</span><span class="remaining">1</span></span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <section class="history" style="display: block;">
+          <ul><li data-id="401371" class="suggestion translated" title="Copy Into Translation (Tab)"><header class="clearfix translator"><div class="info"><a href="http://localhost:8000/contributors/dvgiVCmoeidF2xcqSnBHtpzLTFU" title="Approved by Matjaž Horvat">Matjaž Horvat</a><time class="stress" datetime="2016-08-17T18:18:18.948113+00:00+0000" title="Aug 17, 2016 18:18 UTC">about a month ago</time></div><menu class="toolbar"><button class="unapprove fa" title="Unapprove"></button><button class="delete fa" title="Delete"></button></menu></header><p class="translation" dir="auto" lang="sl">Bizgec-dd</p></li></ul>
+        </section>
+
+        <section class="machinery">
+          <div class="search-wrapper clearfix">
+            <div class="icon fa fa-search"></div>
+            <input autocomplete="off" placeholder="Type to search machinery" type="search">
+          </div>
+          <ul><li class="suggestion" title="Copy Into Translation (Tab)" data-clipboard-text="Nov"><header><span class="stress">86%</span><ul class="sources"><li data-source="Translation memory"><a class="translation-source" href="http://localhost:8000/" target="_blank" title="Pontoon Homepage"><span>Translation memory</span><sup title="Number of translation occurrences">10</sup></a></li></ul></header><p class="original">Nov</p><p class="translation" dir="auto" lang="sl">Nov</p></li><li class="suggestion" title="Copy Into Translation (Tab)" data-clipboard-text="nov"><header><span class="stress">86%</span><ul class="sources"><li data-source="Translation memory"><a class="translation-source" href="http://localhost:8000/" target="_blank" title="Pontoon Homepage"><span>Translation memory</span><sup title="Number of translation occurrences">3</sup></a></li></ul></header><p class="original">Nov</p><p class="translation" dir="auto" lang="sl">nov</p></li><li class="suggestion" title="Copy Into Translation (Tab)" data-clipboard-text="Novo"><header><ul class="sources"><li data-source="Machine Translation"><a class="translation-source" href="http://www.bing.com/translator" target="_blank" title="Visit Bing Translator"><span>Machine Translation</span></a></li></ul></header><p class="original"></p><p class="translation" dir="auto" lang="sl">Novo</p></li></ul>
+        </section>
+
+        <section class="other-locales">
+          <ul><li class="suggestion" title="Copy Into Translation (Tab)"><header>A<span class="stress">a</span></header><p class="translation" dir="auto" lang="a">Qwe</p></li></ul>
+        </section>
+      </div>
+    </section>
+
+    <!-- Batch string editor -->
+    <section id="batch">
+      <div class="batch-bar topbar clearfix">
+        <div class="selecting fa fa-refresh fa-spin"></div>
+        <a class="quit-batch-editing" href="#quit-batch-editing" title="Quit Batch Editing (Esc)">
+          <span class="fa fa-remove fa-lg"></span>
+          <span class="fa fa-chevron-left fa-lg"></span>
+          <span class="selected-count"></span>
+          <span class="variant">
+            <span class="singular">string</span>
+            <span class="plural">strings</span>
+          </span>
+          <span class="selected">selected</span>
+        </a>
+        <a class="select-all" href="#select-all" title="Select All Strings (Ctrl + Shift + A)">
+          <span class="fa fa-check fa-lg"></span>
+          Select All
+        </a>
+      </div>
+
+      <div class="main-content">
+        <div class="intro">
+          <p><span class="warning">Warning:</span> These actions will be applied to all selected strings and cannot be undone.</p>
+        </div>
+
+        <div class="review">
+          <h2>Review translations</h2>
+          
+<button id="approve-all">
+    <span class="title">Approve all</span>
+    <span class="message"></span>
+    <span class="fa fa-2x fa-refresh fa-spin"></span>
+</button>
+
+          
+<button id="delete-all">
+    <span class="title">Delete all</span>
+    <span class="message"></span>
+    <span class="fa fa-2x fa-refresh fa-spin"></span>
+</button>
+
+        </div>
+
+        <div class="find-replace">
+          <h2>Replace in translations</h2>
+          <input class="find" autocomplete="off" placeholder="Find" type="search">
+          <input class="replace" autocomplete="off" placeholder="Replace with" type="search">
+          
+          <button id="replace-all">
+              <span class="title">Replace all</span>
+              <span class="message"></span>
+              <span class="fa fa-2x fa-refresh fa-spin"></span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Element for dragging sidebar -->
+  <div id="drag" draggable="true" class="hidden" style="display: none;"></div>
+</aside>
+
+<!-- Website placeholder + iframe fix: prevent iframes from capturing the mousemove events during a drag -->
+<div id="iframe-cover" class="hidden" style="display: none;"></div>
+
+<form id="download-file" method="POST" action="/download/">
+    <input value="CIwHlM3sYsyYUpbat2RlZjU1AHpQy29W" name="csrfmiddlewaretoken" type="hidden">
+    <input id="id_slug" name="slug" tabindex="-1" type="text">
+    <input id="id_code" name="code" tabindex="-1" type="text">
+    <input id="id_part" name="part" tabindex="-1" type="text">
+</form>
+
+<form id="upload-file" method="POST" action="/upload/" enctype="multipart/form-data">
+    <input value="CIwHlM3sYsyYUpbat2RlZjU1AHpQy29W" name="csrfmiddlewaretoken" type="hidden">
+    <input id="id_slug" name="slug" tabindex="-1" type="text">
+    <input id="id_code" name="code" tabindex="-1" type="text">
+    <input id="id_part" name="part" tabindex="-1" type="text">
+    <input id="id_uploadfile" name="uploadfile" tabindex="-1" type="file">
+</form>
+
+<!-- Javascript at the bottom for fast page loading -->    
+<script type="text/javascript" src="static/jquery-1.js" charset="utf-8"></script>
+<script type="text/javascript" src="static/main.js" charset="utf-8"></script>
+<script type="text/javascript" src="static/jquery.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="static/jquery-ui.js" charset="utf-8"></script>
+<script type="text/javascript" src="static/jquery-ui-timepicker-addon.js" charset="utf-8"></script>
+<script type="text/javascript" src="static/highstock.js" charset="utf-8"></script>
+<script type="text/javascript" src="static/translate.js" charset="utf-8"></script>
+<script type="text/javascript" src="static/request_projects.js" charset="utf-8"></script>
+<script type="text/javascript" src="static/jquery_002.js" charset="utf-8"></script>
+
+</body>
+</html>
