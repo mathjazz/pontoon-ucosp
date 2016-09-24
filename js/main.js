@@ -443,9 +443,8 @@ $(function() {
       $('.wrapper').toggleClass('hide');
   };
 
-  $('#hamburger-btn').on('click', hideSidebar);
-
-  $('#sidebar-overlay').on('click', hideSidebar);
+  $('#hamburger-btn').click(hideSidebar);
+  $('#sidebar-overlay').click(hideSidebar);
 
 
   // Menu hover
