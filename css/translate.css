@@ -568,12 +568,14 @@ body > header aside p {
 }
 
 #sidebar #drag,
-#sidebar.advanced #drag-1 {
+#sidebar.advanced #drag-1,
+#sidebar.advanced #drag-2 {
   display: block;
   right: 0;
 }
 
-#sidebar.advanced #drag-1 {
+#sidebar.advanced #drag-1,
+#sidebar.advanced #drag-2 {
   left: -4px;
   z-index: 5;
 }
@@ -589,7 +591,8 @@ body > header aside p {
   border-right: 1px solid #5E6475;
 }
 
-#sidebar.no #editor {
+#sidebar.no #editor,
+#sidebar.no #editor-2 {
   display: none;
 }
 
@@ -601,8 +604,9 @@ body > header aside p {
 }
 
 .advanced #entitylist,
-.advanced #editor {
-  width: 50%;
+.advanced #editor,
+.advanced #editor-2 {
+  width: 33%;
 }
 
 #entitylist .search-wrapper {
@@ -1076,7 +1080,6 @@ body > header aside p {
   background: #3F4752;
   bottom: 0;
   color: #FFFFFF;
-  left: 350px;
   line-height: 22px;
   padding: 0;
   position: absolute;
@@ -1084,12 +1087,34 @@ body > header aside p {
   width: 100%;
 }
 
-.advanced #editor {
+#editor-2 {
+  background: #3F4752;
+  bottom: 0;
+  color: #FFFFFF;
+  line-height: 22px;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.advanced #editor,
+.advanced #editor-2 {
   border-left: 1px solid #5E6475;
-  left: 50%;
+  border-right: 1px solid #5E6475;
 
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+.advanced #editor {
+  left: 33%;
+  right: 66%;
+}
+
+.advanced #editor-2 {
+  left: 66%;
+  right: 33%;
 }
 
 #editor > section {
@@ -1108,7 +1133,8 @@ body > header aside p {
   display: block;
 }
 
-#editor p {
+#editor p,
+#editor-2 p {
   text-align: left;
 }
 
@@ -1233,13 +1259,15 @@ body > header aside p {
   color: #7BC876;
 }
 
-#editor nav ul {
+#editor nav ul,
+#editor-2 nav ul {
   display: table;
   table-layout: fixed;
   width: 100%;
 }
 
-#editor nav li {
+#editor nav li,
+#editor-2 nav li {
   background: #4D5967;
   border-bottom: 1px solid #5E6475;
   border-right: 1px solid #5E6475;
@@ -1247,20 +1275,24 @@ body > header aside p {
   float: none;
 }
 
-#editor nav li:last-child {
+#editor nav li:last-child,
+#editor-2 nav li:last-child {
   border-right: none;
 }
 
-#editor nav li.active {
+#editor nav li.active,
+#editor-2 nav li.active {
   background: #3F4752;
   border-bottom: none;
 }
 
-#editor nav li:hover {
+#editor nav li:hover,
+#editor-2 nav li:hover {
   background: #3F4752;
 }
 
-#editor nav li a {
+#editor nav li a,
+#editor-2 nav li a {
   color: #CCCCCC;
 }
 

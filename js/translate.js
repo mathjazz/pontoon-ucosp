@@ -1191,6 +1191,29 @@ var Pontoon = (function (my) {
           .bind('mousemove', { initial: data }, mouseMoveHandler)
           .bind('mouseup', { initial: data }, mouseUpHandler);
       });
+
+      $('#drag-2').bind('mousedown', function (e) {
+        e.preventDefault();
+
+        var left = $('#editor'),
+            right = $('#editor-2'),
+            data = {
+              left: left,
+              right: right,
+              leftWidth: left.outerWidth(),
+              rightWidth: right.outerWidth(),
+              leftMin: 250,
+              rightMin: 350,
+              position: e.pageX
+            };
+
+        left.css('transition-property', 'none');
+        right.css('transition-property', 'none');
+
+        $(document)
+            .bind('mousemove', { initial: data }, mouseMoveHandler)
+            .bind('mouseup', { initial: data }, mouseUpHandler);
+      });
     },
 
 
