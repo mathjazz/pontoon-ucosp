@@ -568,14 +568,12 @@ body > header aside p {
 }
 
 #sidebar #drag,
-#sidebar.advanced #drag-1,
-#sidebar.advanced #drag-2 {
+#sidebar.advanced #drag-1 {
   display: block;
   right: 0;
 }
 
-#sidebar.advanced #drag-1,
-#sidebar.advanced #drag-2 {
+#sidebar.advanced #drag-1 {
   left: -4px;
   z-index: 5;
 }
