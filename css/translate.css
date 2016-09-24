@@ -1308,9 +1308,9 @@ body > header aside p {
   background: #FFFFFF;
   display: block;
   font-size: 13px;
-  height: 20%;
+  height: 10%;/*20%;*/
   line-height: 22px;
-  min-height: 100px;
+  min-height: 50px;/*100px;*/
   overflow: auto;
   padding: 10px;
   width: 100%;
@@ -1388,6 +1388,15 @@ body > header aside p {
 }
 
 #translation-length {
+  color: #AAAAAA;
+  display: none;
+  float: left;
+  line-height: 22px;
+  padding: 9px 5px;
+}
+
+/*Leora*/
+#comment-length {
   color: #AAAAAA;
   display: none;
   float: left;

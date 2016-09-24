@@ -411,6 +411,13 @@ var Pontoon = (function (my) {
     updateCurrentTranslationLength: function () {
       $('#translation-length .current-length').html($('#translation').val().length);
     },
+	
+	/*TESTING LEORA */
+     /* Update current translation length
+     */
+    updateCurrentCommentLength: function () {
+      $('#comment-length .current-length').html($('#comment').val().length);
+    },
 
 
     /*
