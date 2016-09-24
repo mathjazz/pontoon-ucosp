@@ -436,6 +436,18 @@ $(function() {
     }
   });
 
+  var hideSidebar = function() {
+      $('#entitylist').toggleClass('hide-hamburger-menu-overlay');
+      $('#sidebar-overlay').toggleClass('show-overlay');
+      $('.search-wrapper').toggleClass('hide');
+      $('.wrapper').toggleClass('hide');
+  };
+
+  $('#hamburger-btn').on('click', hideSidebar);
+
+  $('#sidebar-overlay').on('click', hideSidebar);
+
+
   // Menu hover
   $('.menu').on('mouseenter', 'li, .static-links div', function () {
     // Ignore on nested menus and static links on dashborads

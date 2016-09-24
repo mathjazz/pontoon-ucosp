@@ -2,6 +2,10 @@ body {
   overflow: hidden;
 }
 
+.show-overlay {
+    display: block !important;
+}
+
 #overlay {
   display: none;
   background: rgba(0, 0, 0, 0.5);
@@ -582,7 +586,6 @@ body > header aside p {
   left: 0;
   height: 100%;
   position: absolute;
-  width: 100%;
 }
 
 #sidebar.no #entitylist {
@@ -600,14 +603,14 @@ body > header aside p {
   padding: 40px 0 10px;
 }
 
-.advanced #entitylist,
+/*.advanced #entitylist,
 .advanced #editor {
   width: 50%;
-}
+}*/
 
 #entitylist .search-wrapper {
   margin-bottom: 0;
-  position: static;
+  position: relative;
 }
 
 #sidebar .search-wrapper .icon {
@@ -945,8 +948,7 @@ body > header aside p {
 #entitylist > .wrapper {
   bottom: 0;
   overflow-y: auto;
-  position: absolute;
-  top: 44px;
+  position: relative;
   width: 100%;
 }
 
@@ -1081,12 +1083,12 @@ body > header aside p {
   padding: 0;
   position: absolute;
   top: 0;
-  width: 100%;
+  right: 0;
 }
 
 .advanced #editor {
   border-left: 1px solid #5E6475;
-  left: 50%;
+  left: 40px;
 
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1775,4 +1777,54 @@ p#sign-in-required > a#sidebar-signin {
   float: none;
   margin-bottom: 10px;
   padding: 15px 0 5px;
+}
+
+
+
+
+
+
+/* OVERRIDES */
+
+#entitylist {
+    z-index: 101;
+    border-right: 1px solid #5E6475;
+    width: 400px;
+    text-align: left;
+    transition: 0.2s;
+background: #383b42;
+}
+
+
+.hide-hamburger-menu-overlay {
+    left: -360px !important;
+    text-align: right !important;
+    transition: 0.2s;
+
+}
+
+.show-hamburger-menu-overlay {
+
+}
+
+#hamburger-btn {
+    padding: 10px 15px;
+    cursor: pointer;
+    background: #383b42;
+}
+
+#sidebar-overlay {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+.hide {
+    opacity: 0;
+    transition: 0.2s;
 }
