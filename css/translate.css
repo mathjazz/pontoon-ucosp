@@ -1163,15 +1163,7 @@ body > header aside p {
 }
 
 #source-pane {
-  background: #3F4752;
-  border-bottom: 1px solid #5E6475;
-  /*height: 20%;*/
-  min-height: 100px;
-  overflow: auto;
-  padding: 10px;
 
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 #source-pane.screenshots {
@@ -1212,6 +1204,21 @@ body > header aside p {
 
 #screenshots img:hover {
   opacity: 0.5;
+}
+
+.pane {
+    width: 100%;
+    background: #3F4752;
+    border: 1px solid #5E6475;
+    border-collapse: collapse;
+    /*height: 20%;*/
+    min-height: 100px;
+    overflow: auto;
+    padding: 10px;
+
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
 }
 
 #source-pane h2 {
@@ -1310,9 +1317,9 @@ body > header aside p {
   background: #FFFFFF;
   display: block;
   font-size: 13px;
-  height: 20%;
+  height: 10%;
   line-height: 22px;
-  min-height: 100px;
+  /*min-height: 100px;*/
   overflow: auto;
   padding: 10px;
   width: 100%;
@@ -1791,7 +1798,7 @@ p#sign-in-required > a#sidebar-signin {
     border-right: 1px solid #5E6475;
     width: 400px;
     text-align: left;
-    transition: 0.2s;
+    transition: 0.2s ease-out;
 background: #383b42;
 }
 
@@ -1799,7 +1806,7 @@ background: #383b42;
 .hide-hamburger-menu-overlay {
     left: -360px !important;
     text-align: right !important;
-    transition: 0.2s;
+    transition: 0.2s ease-out;
 
 }
 
@@ -1810,7 +1817,12 @@ background: #383b42;
 #hamburger-btn {
     padding: 10px 15px;
     cursor: pointer;
-    background: #383b42;
+    background: #2c2f38;
+}
+
+#hamburger-btn:hover {
+    color: #7BC876;
+    background: #24262d;
 }
 
 #sidebar-overlay {
@@ -1826,5 +1838,26 @@ background: #383b42;
 
 .hide {
     opacity: 0;
-    transition: 0.2s;
+    display: none;
+    transition: 0.2s ease-out;
+}
+
+#issues {
+    border-bottom: 1px solid #5E6475;
+    text-align: left;
+    padding: 15px;
+}
+
+.issue-bubbles {
+    border: 1px solid #ffa10f;
+    border-radius: 3px;
+    font-size: 1em;
+    color: #ffa10f;
+    padding: 3px 5px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.suggestion p {
+    font-size: 1.5em;
 }
