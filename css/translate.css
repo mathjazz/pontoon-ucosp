@@ -1188,12 +1188,12 @@ body > header aside p {
   background: #3F4752;
   border-bottom: 1px solid #5E6475;
   height: 20%;
-  min-height: 100px;
+  min-height: 70px;
   overflow: auto;
-  padding: 10px;
 
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  position: relative;
 }
 
 .trans-info-pane.screenshots {
@@ -1367,10 +1367,13 @@ body > header aside p {
 }
 
 #editor-2 #menu-bar > menu {
-  background: #272A2F;
   border-bottom: 1px solid #5E6475;
   padding: 10px;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /*width: 100%;*/
   text-align: right;
 }
 
@@ -1810,3 +1813,8 @@ p#sign-in-required > a#sidebar-signin {
 #translation {
   width: 100%;
 }
+
+.translation-frame {
+  padding: 10px;
+}
+
