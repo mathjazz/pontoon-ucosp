@@ -1234,6 +1234,10 @@ body > header aside p {
   text-align: left;
 }
 
+#source-pane #original {
+    font-size: 1.5em;
+}
+
 #source-pane #original mark.placeable {
   cursor: pointer;
 }
@@ -1314,9 +1318,9 @@ body > header aside p {
 }
 
 #editor textarea {
-  background: #FFFFFF;
+  background: #d0d9e0;
   display: block;
-  font-size: 13px;
+  font-size: 1.5em;
   height: 10%;
   line-height: 22px;
   /*min-height: 100px;*/
@@ -1346,7 +1350,7 @@ body > header aside p {
 }
 
 #editor #single > menu {
-  background: #272A2F;
+  background: #d0d9e0;
   border-bottom: 1px solid #5E6475;
   padding: 10px;
   position: relative;
@@ -1410,7 +1414,7 @@ body > header aside p {
 }
 
 #editor #single > menu > .select .selector {
-  color: #AAAAAA;
+  color: #4f6271;
   font-size: 22px;
   padding: 9px 5px;
 }
@@ -1467,7 +1471,7 @@ body > header aside p {
 #editor #single > menu button {
   background: transparent;
   border: none;
-  color: #EBEBEB;
+  color: #4f6271;
   height: 40px;
   padding: 10px 5px;
   text-transform: uppercase;
@@ -1860,4 +1864,55 @@ background: #383b42;
 
 .suggestion p {
     font-size: 1.5em;
+}
+
+.info {
+        width: 400px;
+        text-align: left;
+}
+
+.info .review-btns {
+    font-size: 1em;
+    margin-left: 15px;
+    color: #eee;
+}
+
+.review-btns .header-btn {
+    background-color: #ff3a8a;
+    border-radius: 3px;
+    font-size: 1em;
+    color: #fff;
+    padding: 3px 5px;
+    margin: 5px;
+}
+
+.review-btns .header-btn:hover {
+    background-color: #ea347f;
+}
+
+.info .count {
+    font-weight: bold;
+}
+
+
+/* MQM */
+
+#mqm-panel {
+  background: #3F4752;
+  height: calc(60% - 104px);
+  position: relative;
+}
+
+#source-pane.pluralized ~ #mqm-panel {
+  height: calc(60% - 147px);
+}
+
+#mqm-panel > section {
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  padding-top: 25px;
+  position: absolute;
+  right: 0;
+  top: 43px;
 }
