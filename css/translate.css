@@ -1366,7 +1366,7 @@ body > header aside p {
   padding-left: 1px;
 }
 
-#editor #single > menu {
+#editor-2 #menu-bar > menu {
   background: #272A2F;
   border-bottom: 1px solid #5E6475;
   padding: 10px;
@@ -1425,22 +1425,22 @@ body > header aside p {
   padding: 9px 5px;
 }
 
-#editor-2 #single > menu > .select {
+#editor-2 #menu-bar > menu > .select {
   cursor: pointer;
   position: static; /* Avoid overlapping warning box */
 }
 
-#editor-2 #single > menu > .select .selector {
+#editor-2 #menu-bar > menu > .select .selector {
   color: #AAAAAA;
   font-size: 22px;
   padding: 9px 5px;
 }
 
-#editor-2 #single > menu > #settings.select .selector {
+#editor-2 #menu-bar > menu > #settings.select .selector {
   padding-left: 0;
 }
 
-#editor-2 #single > menu > .select .selector:hover {
+#editor-2 #menu-bar > menu > .select .selector:hover {
   color: #7BC876;
 }
 
@@ -1494,8 +1494,8 @@ body > header aside p {
   text-transform: uppercase;
 }
 
-#editor-2 #single > menu button[id^="save"],
-#editor-2 #single > menu button#leave-anyway {
+#editor-2 #menu-bar > menu button[id^="save"],
+#editor-2 #menu-bar > menu button#leave-anyway {
   background: #7BC876;
   border-radius: 3px;
   color: #272A2F;
@@ -1504,7 +1504,7 @@ body > header aside p {
   padding: 10px 15px;
 }
 
-#editor-2 #single > menu button[id^="save"].suggest {
+#editor-2 #menu-bar > menu button[id^="save"].suggest {
   background: #4FC4F6;
 }
 
@@ -1532,20 +1532,20 @@ p#sign-in-required > a#sidebar-signin {
   color: #7BC876;
 }
 
-#editor-2 #single > menu button#leave-anyway {
+#editor-2 #menu-bar > menu button#leave-anyway {
   background: #FF0A43;
   color: #EBEBEB;
 }
 
-#editor-2 #single > menu button:hover {
+#editor-2 #menu-bar > menu button:hover {
   color: #7BC876;
 }
 
-#editor-2 #single > menu button[id^="save"]:hover {
+#editor-2 #menu-bar > menu button[id^="save"]:hover {
   color: #EBEBEB;
 }
 
-#editor-2 #single > menu button#leave-anyway:hover {
+#editor-2 #menu-bar > menu button#leave-anyway:hover {
   color: #272A2F;
 }
 

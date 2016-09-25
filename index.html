@@ -3513,206 +3513,208 @@
 			<p id="translation" contentEditable="true" dir="auto" placeholder="Type translation and press Enter to save" lang="sl">Bizgec-dd</p>
 		</div>
 
-		<menu>
-			<div id="unsaved" class="warning-overlay">
-				<a href="#" class="cancel">×</a>
-				<h2>You have unsaved changes</h2>
-				<p>Sure you want to leave?</p>
-				<button id="leave-anyway">Leave anyway</button>
-			</div>
-			<div id="quality" class="warning-overlay">
-				<a href="#" class="cancel">×</a>
-				<h2>The following checks have failed</h2>
-				<ul></ul>
-				<button id="save-anyway"></button>
-			</div>
-
-			<!-- Settings -->
-			<div id="settings" class="select">
-				<div class="selector fa fa-cog" title="Settings"></div>
-				<div class="menu" style="display: none;">
-					<ul>
-
-						<li class="check-box quality-checks enabled" data-attribute="quality_checks"><i
-								class="fa fa-fw"></i>Quality Checks
-						</li>
-
-
-						<li class="check-box force-suggestions" data-attribute="force_suggestions"><i
-								class="fa fa-fw"></i>Make Suggestions
-						</li>
-
-
-						<li class="horizontal-separator"></li>
-						<li><a href="http://localhost:8000/settings/">Change All Settings</a></li>
-					</ul>
+		<section id="menu-bar">
+			<menu>
+				<div id="unsaved" class="warning-overlay">
+					<a href="#" class="cancel">×</a>
+					<h2>You have unsaved changes</h2>
+					<p>Sure you want to leave?</p>
+					<button id="leave-anyway">Leave anyway</button>
 				</div>
-			</div>
+				<div id="quality" class="warning-overlay">
+					<a href="#" class="cancel">×</a>
+					<h2>The following checks have failed</h2>
+					<ul></ul>
+					<button id="save-anyway"></button>
+				</div>
 
-			<!-- Keyboard shortcuts -->
-			<div id="hotkeys" class="select">
-				<div class="selector fa fa-keyboard-o" title="Keyboard Shortcuts"></div>
-				<aside class="menu" style="display: none;">
-					<h2>Keyboard shortcuts</h2>
-					<table>
-						<tbody>
+				<!-- Settings -->
+				<div id="settings" class="select">
+					<div class="selector fa fa-cog" title="Settings"></div>
+					<div class="menu" style="display: none;">
+						<ul>
 
-						<tr>
-							<td>Save Translation</td>
-							<td>
+							<li class="check-box quality-checks enabled" data-attribute="quality_checks"><i
+									class="fa fa-fw"></i>Quality Checks
+							</li>
 
-								<span>Enter</span>
 
+							<li class="check-box force-suggestions" data-attribute="force_suggestions"><i
+									class="fa fa-fw"></i>Make Suggestions
+							</li>
 
-							</td>
-						</tr>
 
+							<li class="horizontal-separator"></li>
+							<li><a href="http://localhost:8000/settings/">Change All Settings</a></li>
+						</ul>
+					</div>
+				</div>
 
-						<tr>
-							<td>Cancel Translation</td>
-							<td>
+				<!-- Keyboard shortcuts -->
+				<div id="hotkeys" class="select">
+					<div class="selector fa fa-keyboard-o" title="Keyboard Shortcuts"></div>
+					<aside class="menu" style="display: none;">
+						<h2>Keyboard shortcuts</h2>
+						<table>
+							<tbody>
 
-								<span>Esc</span>
+							<tr>
+								<td>Save Translation</td>
+								<td>
 
+									<span>Enter</span>
 
-							</td>
-						</tr>
 
+								</td>
+							</tr>
 
-						<tr>
-							<td>Insert A New Line</td>
-							<td>
 
-								<span>Shift</span>
-								+
+							<tr>
+								<td>Cancel Translation</td>
+								<td>
 
-								<span>Enter</span>
+									<span>Esc</span>
 
 
-							</td>
-						</tr>
+								</td>
+							</tr>
 
 
-						<tr>
-							<td>Go To Next String</td>
-							<td>
+							<tr>
+								<td>Insert A New Line</td>
+								<td>
 
-								<span>Alt</span>
-								+
+									<span>Shift</span>
+									+
 
-								<span>Down</span>
+									<span>Enter</span>
 
 
-							</td>
-						</tr>
+								</td>
+							</tr>
 
 
-						<tr>
-							<td>Go To Previous String</td>
-							<td>
+							<tr>
+								<td>Go To Next String</td>
+								<td>
 
-								<span>Alt</span>
-								+
+									<span>Alt</span>
+									+
 
-								<span>Up</span>
+									<span>Down</span>
 
 
-							</td>
-						</tr>
+								</td>
+							</tr>
 
 
-						<tr>
-							<td>Copy From Source</td>
-							<td>
+							<tr>
+								<td>Go To Previous String</td>
+								<td>
 
-								<span>Ctrl</span>
-								+
+									<span>Alt</span>
+									+
 
-								<span>Shift</span>
-								+
+									<span>Up</span>
 
-								<span>C</span>
 
+								</td>
+							</tr>
 
-							</td>
-						</tr>
 
+							<tr>
+								<td>Copy From Source</td>
+								<td>
 
-						<tr>
-							<td>Clear Translation</td>
-							<td>
+									<span>Ctrl</span>
+									+
 
-								<span>Ctrl</span>
-								+
+									<span>Shift</span>
+									+
 
-								<span>Shift</span>
-								+
+									<span>C</span>
 
-								<span>Backspace</span>
 
+								</td>
+							</tr>
 
-							</td>
-						</tr>
 
+							<tr>
+								<td>Clear Translation</td>
+								<td>
 
-						<tr>
-							<td>Search Strings</td>
-							<td>
+									<span>Ctrl</span>
+									+
 
-								<span>Ctrl</span>
-								+
+									<span>Shift</span>
+									+
 
-								<span>Shift</span>
-								+
+									<span>Backspace</span>
 
-								<span>F</span>
 
+								</td>
+							</tr>
 
-							</td>
-						</tr>
 
+							<tr>
+								<td>Search Strings</td>
+								<td>
 
-						<tr>
-							<td>Select All Strings</td>
-							<td>
+									<span>Ctrl</span>
+									+
 
-								<span>Ctrl</span>
-								+
+									<span>Shift</span>
+									+
 
-								<span>Shift</span>
-								+
+									<span>F</span>
 
-								<span>A</span>
 
+								</td>
+							</tr>
 
-							</td>
-						</tr>
 
+							<tr>
+								<td>Select All Strings</td>
+								<td>
 
-						<tr>
-							<td>Copy From Helpers</td>
-							<td>
+									<span>Ctrl</span>
+									+
 
-								<span>Tab</span>
+									<span>Shift</span>
+									+
 
+									<span>A</span>
 
-							</td>
-						</tr>
 
-						</tbody>
-					</table>
-				</aside>
-			</div>
+								</td>
+							</tr>
 
-			<div id="translation-length" style="display: block;">
-				<span class="current-length">9</span>|<span class="original-length">4</span>
-			</div>
 
-			<button id="copy" title="Copy From Source (Ctrl + Shift + C)">Copy</button>
-			<button id="clear" title="Clear Translation (Ctrl + Shift + Backspace)">Clear</button>
-			<button id="save" title="Save Translation (Enter)"></button>
+							<tr>
+								<td>Copy From Helpers</td>
+								<td>
 
-		</menu>
+									<span>Tab</span>
+
+
+								</td>
+							</tr>
+
+							</tbody>
+						</table>
+					</aside>
+				</div>
+
+				<div id="translation-length" style="display: block;">
+					<span class="current-length">9</span>|<span class="original-length">4</span>
+				</div>
+
+				<button id="copy" title="Copy From Source (Ctrl + Shift + C)">Copy</button>
+				<button id="clear" title="Clear Translation (Ctrl + Shift + Backspace)">Clear</button>
+				<button id="save" title="Save Translation (Enter)"></button>
+
+			</menu>
+		</section>
 	</div>
 
 	<!-- Element for dragging sidebar -->
