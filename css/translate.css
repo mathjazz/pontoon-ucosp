@@ -1138,7 +1138,7 @@ body > header aside p {
 
 #editor p#original,
 #editor p.original,
-#editor p.translation {
+#editor-2 p.translation {
   white-space: pre-wrap;
 }
 
@@ -1184,7 +1184,7 @@ body > header aside p {
   padding: 0 0 0 5px;
 }
 
-#source-pane {
+.trans-info-pane {
   background: #3F4752;
   border-bottom: 1px solid #5E6475;
   height: 20%;
@@ -1196,7 +1196,7 @@ body > header aside p {
   box-sizing: border-box;
 }
 
-#source-pane.screenshots {
+.trans-info-pane.screenshots {
   padding-right: 170px;
   position: relative;
 }
@@ -1236,7 +1236,7 @@ body > header aside p {
   opacity: 0.5;
 }
 
-#source-pane h2 {
+.trans-info-pane h2 {
   color: #AAAAAA;
   display: none;
   font-size: 11px;
@@ -1244,16 +1244,16 @@ body > header aside p {
   margin-top: 6px;
 }
 
-#source-pane.pluralized h2 {
+.trans-info-pane.pluralized h2 {
   display: block;
   text-align: left;
 }
 
-#source-pane #original mark.placeable {
+.trans-info-pane #original mark.placeable {
   cursor: pointer;
 }
 
-#source-pane #original mark.placeable:hover {
+.trans-info-pane #original mark.placeable:hover {
   color: #7BC876;
 }
 
@@ -1425,22 +1425,22 @@ body > header aside p {
   padding: 9px 5px;
 }
 
-#editor #single > menu > .select {
+#editor-2 #single > menu > .select {
   cursor: pointer;
   position: static; /* Avoid overlapping warning box */
 }
 
-#editor #single > menu > .select .selector {
+#editor-2 #single > menu > .select .selector {
   color: #AAAAAA;
   font-size: 22px;
   padding: 9px 5px;
 }
 
-#editor #single > menu > #settings.select .selector {
+#editor-2 #single > menu > #settings.select .selector {
   padding-left: 0;
 }
 
-#editor #single > menu > .select .selector:hover {
+#editor-2 #single > menu > .select .selector:hover {
   color: #7BC876;
 }
 
@@ -1485,7 +1485,7 @@ body > header aside p {
   padding: 0 4px;
 }
 
-#editor #single > menu button {
+#editor-2 #single > menu button {
   background: transparent;
   border: none;
   color: #EBEBEB;
@@ -1494,8 +1494,8 @@ body > header aside p {
   text-transform: uppercase;
 }
 
-#editor #single > menu button[id^="save"],
-#editor #single > menu button#leave-anyway {
+#editor-2 #single > menu button[id^="save"],
+#editor-2 #single > menu button#leave-anyway {
   background: #7BC876;
   border-radius: 3px;
   color: #272A2F;
@@ -1504,7 +1504,7 @@ body > header aside p {
   padding: 10px 15px;
 }
 
-#editor #single > menu button[id^="save"].suggest {
+#editor-2 #single > menu button[id^="save"].suggest {
   background: #4FC4F6;
 }
 
@@ -1532,20 +1532,20 @@ p#sign-in-required > a#sidebar-signin {
   color: #7BC876;
 }
 
-#editor #single > menu button#leave-anyway {
+#editor-2 #single > menu button#leave-anyway {
   background: #FF0A43;
   color: #EBEBEB;
 }
 
-#editor #single > menu button:hover {
+#editor-2 #single > menu button:hover {
   color: #7BC876;
 }
 
-#editor #single > menu button[id^="save"]:hover {
+#editor-2 #single > menu button[id^="save"]:hover {
   color: #EBEBEB;
 }
 
-#editor #single > menu button#leave-anyway:hover {
+#editor-2 #single > menu button#leave-anyway:hover {
   color: #272A2F;
 }
 
@@ -1555,7 +1555,7 @@ p#sign-in-required > a#sidebar-signin {
   position: relative;
 }
 
-#source-pane.pluralized ~ #helpers {
+.trans-info-pane.pluralized ~ #helpers {
   height: calc(60% - 147px);
 }
 
@@ -1805,4 +1805,8 @@ p#sign-in-required > a#sidebar-signin {
   float: none;
   margin-bottom: 10px;
   padding: 15px 0 5px;
+}
+
+#translation {
+  width: 100%;
 }
