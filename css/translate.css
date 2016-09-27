@@ -1818,3 +1818,10 @@ p#sign-in-required > a#sidebar-signin {
   padding: 10px;
 }
 
+#trans-col {
+  background-color: whitesmoke;
+}
+
+#trans-col p {
+  color: #444
+}
