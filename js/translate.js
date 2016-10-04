@@ -1616,8 +1616,10 @@ var Pontoon = (function (my) {
 
       $('#helpers .history').on('click', 'menu .delete', function (e) {
         var button = $(this);
+		document.getElementById("helpers").style.display = "none";
+		document.getElementById("helpers2").style.display = "block";
         // Delete
-        $.ajax({
+        /*$.ajax({
           url: '/delete-translation/',
           type: 'POST',
           data: {
@@ -1698,7 +1700,7 @@ var Pontoon = (function (my) {
           error: function() {
             self.endLoader('Oops, something went wrong.', 'error');
           }
-        });
+        });*/
       });
     },
 

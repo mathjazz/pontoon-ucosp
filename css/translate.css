@@ -1645,15 +1645,132 @@ p#sign-in-required > a#sidebar-signin {
 }
 
 #helpers > section ul li > header button.delete:before {
-  content: "";
+  content: "";
   margin-left: 5px;
 }
 
 #helpers > section ul li > header button.delete:hover:before {
+  content: "";
   color: #FD5F60;
 }
 
+/*Helpers2 */
+#helpers2 > section {
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  padding-top: 25px;
+  position: absolute;
+  right: 0;
+  top: 43px;
+}
 
+#helpers2 > section.review .search-wrapper {
+  margin: 0 10px 10px;
+}
+
+#helpers2 > section.review .icon {
+  left: 2px;
+  right: auto;
+}
+
+#helpers2 > section.review input[type=search] {
+  background: transparent;
+  padding: 10px 10px 5px 25px;
+}
+
+#helpers2 > section ul li {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: all 0.1s ease-out;
+}
+
+#helpers2 > section ul li.delete {
+  -webkit-transform: scale(0); /* MANDATORY! Or transitionend in main.js triggered too late */
+  transform: scale(0);
+}
+
+#helpers2 > section ul li:not(.disabled):hover,
+#helpers2 > section ul li:not(.disabled).hover {
+  background: #4D5967;
+  border-color: #5E6475;
+}
+
+#helpers2 > section ul li.disabled {
+  cursor: default;
+}
+
+#helpers2 > section ul li.preferred {
+  border-bottom-color: #7BC876;
+}
+
+#helpers2 > section ul li > header .info {
+  float: left;
+}
+
+#helpers2 > section ul li > header .toolbar {
+  float: right;
+}
+
+#helpers2 > section.comment ul li > header .stress,
+#helpers2 > section.other-locales ul li > header .stress {
+  padding-right: 0;
+}
+
+#helpers2 > section ul li > header button {
+  background: no-repeat transparent;
+  border: none;
+  color: #AAAAAA;
+  display: none;
+  font-size: 1.8em;
+  height: 22px;
+  padding: 0;
+  vertical-align: bottom;
+  width: 22px;
+}
+
+#helpers2 > section ul li > header.translator button,
+#helpers2 > section ul li > header.own button.delete,
+#helpers2 > section ul li.translated > header button.approve {
+  display: inline-block;
+}
+
+#helpers2 > section ul li > header button.approve:before {
+  content: "";
+}
+
+#helpers2 > section ul li.fuzzy > header button.approve:before {
+  color: #FED271;
+}
+
+#helpers2 > section ul li.suggested > header button.approve:before {
+  color: #4FC4F6;
+}
+
+#helpers2 > section ul li > header button.approve:hover:before,
+#helpers2 > section ul li.translated > header button.approve:before,
+#helpers2 > section ul li.translated > header button.unapprove:before {
+  color: #7BC876;
+  content: "";
+}
+
+#helpers2 > section ul li > header button.approve:before,
+#helpers2 > section ul li > header button.unapprove:hover:before {
+   content: "";
+   color: #4FC4F6;
+}
+
+#helpers2 > section ul li > header button.delete:before {
+  content: "";
+  margin-left: 5px;
+}
+
+#helpers2 > section ul li > header button.delete:hover:before {
+  content: "";
+  color: #FD5F60;
+}
+/* */
 
 
 

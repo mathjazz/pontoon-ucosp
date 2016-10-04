@@ -1189,6 +1189,79 @@ body > .container {
   color: #AAAAAA;
 }
 
+/* Helpers2 */
+#helpers2 > section ul {
+  list-style: none;
+  margin: 0;
+}
+
+#helpers2 > section ul li {
+  border-bottom: 1px solid #5E6475;
+  padding-bottom: 20px;
+  padding-top: 5px;
+  text-align: right;
+}
+
+#helpers2 > section ul li > header {
+  color: #AAAAAA;
+  display: block;
+  font-size: 11px;
+  font-weight: 300;
+  padding: 1px 0 5px;
+  text-transform: uppercase;
+}
+
+#helpers2 > section ul li > header .stress {
+  color: #7BC876;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+#helpers2 > section.review ul li > header .stress {
+  padding-right: 0;
+}
+
+#helpers2 > section.review ul li > header sup {
+  color: #7BC876;
+}
+
+#helpers2 > section.review ul li > header .sources  {
+  display: inline-block;
+}
+
+#helpers2 > section.review ul li > header .sources li:before {
+  content: "•";
+  padding-right: 3px;
+}
+
+#helpers2 > section.review ul li > header .sources li[data-source='Machine Translation']:before {
+  content: "";
+  padding-right: 0;
+}
+
+#helpers2 > section.review ul li > header .sources li {
+  border: none;
+  display: inline-block;
+  list-style-type: disc;
+  list-style-position: inside;
+  padding: 0 0 0 3px;
+}
+
+#helpers2 > section ul li > p {
+  min-height: 22px;
+  text-align: left;
+}
+
+#helpers2 > section ul li.disabled p {
+  color: #AAAAAA;
+  font-style: italic;
+}
+
+#helpers2 > section ul li p.original {
+  color: #AAAAAA;
+}
+/*end */
+
 .tabs nav ul li {
   float: left;
   padding: 0;
