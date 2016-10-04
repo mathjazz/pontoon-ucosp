@@ -1850,4 +1850,39 @@ p#sign-in-required > a#sidebar-signin {
   -webkit-appearance: textfield;
 }
 
+#comment-view .info {
+  float: left;
+}
 
+#comment-view > .comment-left > p > .message{
+  margin-right:90px;
+  margin-left:0;
+  display: inline-block;
+}
+
+#comment-view > .comment-right > p > .message{
+  float: right;
+  display: inline-block;
+}
+
+#properties > section {
+  padding-top: 25px;
+}
+
+#comment-view > li {
+  padding-bottom: 10px;
+}
+
+#comment-view > li > header .stress {
+  padding-right: 0;
+}
+
+#comment-view > li > p.comment-left {
+  white-space: pre-wrap;
+}
+
+#comment-view > li > p.comment-right {
+  white-space: pre-wrap;
+  text-align: right;
+  margin-right: 10%;
+}
