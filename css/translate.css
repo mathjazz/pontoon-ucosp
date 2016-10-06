@@ -1112,7 +1112,7 @@ body > header aside p {
 
 .advanced #editor-2 {
   left: 66%;
-  right: 33%;
+  width: 34%;
 }
 
 #editor > section {
@@ -1883,6 +1883,4 @@ p#sign-in-required > a#sidebar-signin {
 
 #comment-view > li > p.comment-right {
   white-space: pre-wrap;
-  text-align: right;
-  margin-right: 10%;
 }
