@@ -1307,14 +1307,17 @@ body > header aside p {
   visibility: visible;
 }
 
-#editor nav li a > span > .count {
+#editor nav li a > span > .count.
+#editor-2 nav li a > span > .count {
   background: #3F4752;
   border-radius: 3px;
   padding: 0 5px;
 }
 
 #editor nav li.active a > span > .count,
-#editor nav li:hover a > span > .count {
+#editor nav li:hover a > span > .count ,
+#editor-2 nav li:active a > span > .count,
+#editor-2 nav li:hover a > span > .count {
   background: #4D5967;
 }
 
@@ -1854,14 +1857,9 @@ p#sign-in-required > a#sidebar-signin {
   float: left;
 }
 
-#comment-view > .comment-left > p > .message{
+#comment-view > .comment > p > .message{
   margin-right:90px;
   margin-left:0;
-  display: inline-block;
-}
-
-#comment-view > .comment-right > p > .message{
-  float: right;
   display: inline-block;
 }
 
@@ -1877,10 +1875,6 @@ p#sign-in-required > a#sidebar-signin {
   padding-right: 0;
 }
 
-#comment-view > li > p.comment-left {
-  white-space: pre-wrap;
-}
-
-#comment-view > li > p.comment-right {
+#comment-view > li > p.comment {
   white-space: pre-wrap;
 }
