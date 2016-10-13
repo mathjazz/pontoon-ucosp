@@ -1660,7 +1660,7 @@ p#sign-in-required > a#sidebar-signin {
   left: 0;
   overflow-y: auto;
   padding-top: 25px;
-  position: absolute;
+  /*position: absolute;*/
   right: 0;
   top: 43px;
 }
@@ -1716,6 +1716,16 @@ p#sign-in-required > a#sidebar-signin {
 #helpers2 > section.comment ul li > header .stress,
 #helpers2 > section.other-locales ul li > header .stress {
   padding-right: 0;
+}
+
+/* comment buttons */
+#helpers2 > section.comment #Add{
+	background: #7BC876;
+  border-radius: 3px;
+  color: #272A2F;
+  font-weight: 600;
+  margin-left: 10px;
+  padding: 10px 15px;
 }
 
 #helpers2 > section ul li > header button {
