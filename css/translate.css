@@ -1557,8 +1557,9 @@ p#sign-in-required > a#sidebar-signin {
 
 #helpers {
   background: #3F4752;
-  height: calc(60% - 104px);
+  height: 100%;
   position: relative;
+  overflow-y: auto;
 }
 
 .trans-info-pane.pluralized ~ #helpers {
@@ -1882,7 +1883,7 @@ p#sign-in-required > a#sidebar-signin {
 #issues {
   text-align: left;
   font-style: italic;
-  padding: 10px;
+  padding: 10px 10px;
   color: #b20712;
   font-size: 11px;
 }
