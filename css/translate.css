@@ -1307,7 +1307,7 @@ body > header aside p {
   visibility: visible;
 }
 
-#editor nav li a > span > .count.
+#editor nav li a > span > .count,
 #editor-2 nav li a > span > .count {
   background: #3F4752;
   border-radius: 3px;
@@ -1491,10 +1491,10 @@ body > header aside p {
   padding: 0 4px;
 }
 
-#editor-2 #single > menu button {
+#editor-2 #menu-bar > menu button {
   background: transparent;
   border: none;
-  color: #EBEBEB;
+  color: #444;
   height: 40px;
   padding: 10px 5px;
   text-transform: uppercase;
