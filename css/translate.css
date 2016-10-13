@@ -1906,3 +1906,17 @@ p#sign-in-required > a#sidebar-signin {
   background-color: #b20712;
   color: whitesmoke;
 }
+
+#properties > section.issues .search-wrapper {
+  margin: 0 10px 10px;
+}
+
+#properties > section.issues .icon {
+  left: 2px;
+  right: auto;
+}
+
+#properties > section.issues input[type=search] {
+  background: transparent;
+  padding: 10px 10px 5px 25px;
+}
