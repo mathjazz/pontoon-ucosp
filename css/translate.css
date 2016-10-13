@@ -1838,10 +1838,11 @@ p#sign-in-required > a#sidebar-signin {
   position: absolute;
   bottom: 0;
   left: 0;
-  display: flex
+  display: flex;
+  box-sizing: border-box;
 }
 
-#add-comment input {
+#add-comment > input {
   background: #4D5967;
   color: #FFFFFF;
   font-size: 16px;
@@ -1852,6 +1853,22 @@ p#sign-in-required > a#sidebar-signin {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-appearance: textfield;
+  flex: 1;
+}
+
+#add-comment > button {
+  background: transparent;
+  color: #ffffff;
+  border-radius: 3px;
+  border: none;
+  flex: 0;
+  margin-left: 10px;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+
+#add-comment > button:hover {
+  background: #3F4752;
 }
 
 #comment-view .info {
