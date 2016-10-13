@@ -1937,3 +1937,10 @@ p#sign-in-required > a#sidebar-signin {
   background: transparent;
   padding: 10px 10px 5px 25px;
 }
+
+#issue-tree {
+  overflow: auto;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
