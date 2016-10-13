@@ -1878,3 +1878,30 @@ p#sign-in-required > a#sidebar-signin {
 #comment-view > li > p.comment {
   white-space: pre-wrap;
 }
+
+#issues {
+  text-align: left;
+  font-style: italic;
+  padding: 10px;
+  color: #b20712;
+  font-size: 11px;
+}
+
+#issues .title {
+  text-transform: uppercase;
+  margin-right: 5px;
+}
+
+.issue-bubbles {
+  border: 1px solid #b20712;
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.issue-bubbles:hover {
+  border: 1px solid #b20712;
+  background-color: #b20712;
+  color: whitesmoke;
+}
