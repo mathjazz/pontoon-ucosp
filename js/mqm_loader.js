@@ -18,7 +18,7 @@ function createTitle(titleName, titleIDFormat) {
 }
 
 function createSubItems(childrenList, titleIDFormat) {
-    var subNodes = document.createElement('div');
+    var subNodes = document.createElement('ul');
     subNodes.setAttribute('id', titleIDFormat + '-sub');
 
     for (var item in childrenList) {
@@ -35,7 +35,6 @@ function addToTree(parent, treeItem) {
 
     // Add a label if this isn't a leaf node, a checkbox otherwise
     if (treeItem.hasOwnProperty('children')) {
-        var list = document.createElement('ul');
 
         var titleNode = createTitle(treeItem['name'], idName);
         var subNodes = createSubItems(treeItem['children'], idName);
@@ -48,10 +47,8 @@ function addToTree(parent, treeItem) {
             }
         });
 
-        list.appendChild(titleNode);
-        list.appendChild(subNodes);
-
-        parent.appendChild(list);
+        parent.appendChild(titleNode);
+        parent.appendChild(subNodes);
     } else {
         var label = document.createElement('label');
         label.setAttribute('for', idName);
@@ -62,10 +59,19 @@ function addToTree(parent, treeItem) {
         checkbox.setAttribute('type', 'checkbox');
         checkbox.setAttribute('id', idName);
 
-        parent.setAttribute('class', 'issue-selection');
-        parent.appendChild(label);
-        parent.appendChild(checkbox);
-    }    
+        if (parent.tagName == 'LI') {
+            parent.setAttribute('class', 'issue-selection');
+            parent.appendChild(label);
+            parent.appendChild(checkbox);
+        } else {
+            var selectionDiv = document.createElement('li');
+            selectionDiv.setAttribute('class', 'issue-selection');
+            selectionDiv.appendChild(label);
+            selectionDiv.appendChild(checkbox);
+            parent.appendChild(selectionDiv);
+        }
+
+    }
 }
 
 window.addEventListener('load', function () {
@@ -78,8 +84,13 @@ window.addEventListener('load', function () {
     });
     */
 
-    var issueTreeRoot = document.getElementById('issue-tree');
-        for (var item in mqm) {
-            addToTree(issueTreeRoot, mqm[item]);
-        }
+    var issueTree = document.getElementById('issue-tree');
+    var listRoot = document.createElement('ul');
+    for (var item in mqm) {
+        var topLevelCategory = document.createElement('li');
+        addToTree(topLevelCategory, mqm[item]);
+        listRoot.appendChild(topLevelCategory);
+    }
+    issueTree.appendChild(listRoot);
+
 });

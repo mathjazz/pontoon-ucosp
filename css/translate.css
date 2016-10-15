@@ -1951,47 +1951,60 @@ p#sign-in-required > a#sidebar-signin {
   margin-left: 0;
 }
 
-#issue-tree ul > div[id$='-sub'] {
+#issue-tree li > div[id$='-sub'] {
   list-style-type: none;
   margin-left: 20px;
   display:none;
 }
 
-#issue-tree ul > div[id$='-sub'] {
-    list-style-type: none;
+#issue-tree li {
+  list-style-type: none;
+}
+
+#issue-tree li > ul[id$='-sub'] {
     margin-left: 20px;
     display: none;
 }
 
-#issue-tree ul > div[id$='-sub'].visible {
+#issue-tree li > ul[id$='-sub'].visible {
     display: block;
 }
 
-#issue-tree ul > .issue-node {
+#issue-tree li > .issue-node {
     padding: 10px 20px;
     box-sizing: border-box;
     display: flex;
     cursor: pointer;
 }
 
-#issue-tree ul > .issue-node:hover {
+#issue-tree li > .issue-node:hover {
     background-color: #4D5967;
     transition: all 0.1s ease-in-out;
 }
 
-#issue-tree ul > .issue-node > .arrow {
+#issue-tree li > .issue-node > .arrow {
     padding-right: 10px;
 }
 
-#issue-tree ul > .issue-node > .title {
+#issue-tree li > .issue-node > .title {
     font-size: 16px;
     font-weight: 300;
 }
 
-#issue-tree li > ul {
+#issue-tree ul > li {
   margin-left: 0;
 }
 
 .issue-selection {
   text-align: left;
+  margin-left: 10px
+}
+
+.issue-selection > input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.issue-selection:hover {
+  background-color: #4D5967;
+  transition: all 0.1s ease-in-out;
 }
