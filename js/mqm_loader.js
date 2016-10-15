@@ -14,7 +14,8 @@ function addToTree(parent, treeItem) {
         chevron.setAttribute('class', 'arrow fa fa-chevron-down fa-lg');
         titleNode.appendChild(chevron);
 
-        var title = document.createElement('p');
+        var title = document.createElement('span');
+        title.setAttribute('class', 'title noselect');
         title.textContent = treeItem['name'];
         titleNode.appendChild(title);
 

@@ -1951,7 +1951,7 @@ p#sign-in-required > a#sidebar-signin {
   margin-left: 0;
 }
 
-#issue-tree ul > div[id$='-sub'] > li {
+#issue-tree ul > div[id$='-sub'] {
   list-style-type: none;
   margin-left: 20px;
   display:none;
@@ -1971,6 +1971,11 @@ p#sign-in-required > a#sidebar-signin {
 
 #issue-tree ul > .issue-node > .arrow {
     padding-right: 10px;
+}
+
+#issue-tree ul > .issue-node > .title {
+    font-size: 16px;
+    font-weight: 300;
 }
 
 #issue-tree li > ul {
