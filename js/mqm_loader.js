@@ -1,35 +1,56 @@
 "use strict";
 // Definition file to load the MQM selection dynamically via Javascript
 
+function createTitle(titleName, titleIDFormat) {
+    var titleNode = document.createElement('div');
+    titleNode.setAttribute('id', titleIDFormat + '-title');
+    titleNode.setAttribute('class', 'issue-node');
+
+    var chevron = document.createElement('i');
+    chevron.setAttribute('class', 'arrow fa fa-chevron-down fa-lg');
+    titleNode.appendChild(chevron);
+
+    var title = document.createElement('span');
+    title.setAttribute('class', 'title noselect');
+    title.textContent = titleName;
+    titleNode.appendChild(title);
+    return titleNode;
+}
+
+function createSubItems(childrenList, titleIDFormat) {
+    var subNodes = document.createElement('div');
+    subNodes.setAttribute('id', titleIDFormat + '-sub');
+
+    for (var item in childrenList) {
+        var child = document.createElement('li');
+        addToTree(child, childrenList[item]);
+        subNodes.appendChild(child);
+    }
+    return subNodes;
+}
+
 function addToTree(parent, treeItem) {
+    // Using the lowercase snake form of MQM categories as an identifier
     var idName = treeItem['name'].toLowerCase().replace(' ', '-');
+
     // Add a label if this isn't a leaf node, a checkbox otherwise
     if (treeItem.hasOwnProperty('children')) {
         var list = document.createElement('ul');
 
-        var titleNode = document.createElement('div');
-        titleNode.setAttribute('class', 'issue-node');
+        var titleNode = createTitle(treeItem['name'], idName);
+        var subNodes = createSubItems(treeItem['children'], idName);
 
-        var chevron = document.createElement('i');
-        chevron.setAttribute('class', 'arrow fa fa-chevron-down fa-lg');
-        titleNode.appendChild(chevron);
-
-        var title = document.createElement('span');
-        title.setAttribute('class', 'title noselect');
-        title.textContent = treeItem['name'];
-        titleNode.appendChild(title);
+        titleNode.addEventListener('click', function() {
+            if (subNodes.classList.contains('visible')) {
+                subNodes.classList.remove('visible');
+            } else {
+                subNodes.classList.add('visible');
+            }
+        });
 
         list.appendChild(titleNode);
-
-        var subNodes = document.createElement('div');
-        subNodes.setAttribute('id', idName + '-sub');
-
-        for (var item in treeItem['children']) {
-            var child = document.createElement('li');
-            addToTree(child, treeItem['children'][item]);
-            subNodes.appendChild(child);
-        }
         list.appendChild(subNodes);
+
         parent.appendChild(list);
     } else {
         var label = document.createElement('label');

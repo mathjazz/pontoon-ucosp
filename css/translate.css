@@ -1957,6 +1957,16 @@ p#sign-in-required > a#sidebar-signin {
   display:none;
 }
 
+#issue-tree ul > div[id$='-sub'] {
+    list-style-type: none;
+    margin-left: 20px;
+    display: none;
+}
+
+#issue-tree ul > div[id$='-sub'].visible {
+    display: block;
+}
+
 #issue-tree ul > .issue-node {
     padding: 10px 20px;
     box-sizing: border-box;
