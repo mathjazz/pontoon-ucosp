@@ -26,9 +26,9 @@ function addToTree(parent, treeItem) {
         var checkbox = document.createElement('input');
         checkbox.textContent = treeItem['name'];
         checkbox.setAttribute('type', 'checkbox');
-        checkbox.setAttribute('class', 'issue-selection');
         checkbox.setAttribute('id', idName);
 
+        parent.setAttribute('class', 'issue-selection');
         parent.appendChild(label);
         parent.appendChild(checkbox);
     }    

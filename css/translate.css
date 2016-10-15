@@ -1945,3 +1945,22 @@ p#sign-in-required > a#sidebar-signin {
   top: 42%;
   width: 100%;
 }
+
+#issue-tree > ul,
+#issue-tree > label {
+  margin-left: 0px;
+}
+
+#issue-tree ul > li {
+  list-style-type: none;
+  margin-left: 25px;
+}
+
+#issue-tree li > ul {
+  margin-left: 0px;
+}
+
+.issue-selection {
+  text-align: left;
+  margin-left: 10px;
+}
