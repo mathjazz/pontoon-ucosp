@@ -1948,7 +1948,7 @@ p#sign-in-required > a#sidebar-signin {
 
 #issue-tree > ul,
 #issue-tree > label {
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 #issue-tree ul > li {
@@ -1957,7 +1957,7 @@ p#sign-in-required > a#sidebar-signin {
 }
 
 #issue-tree li > ul {
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .issue-selection {
