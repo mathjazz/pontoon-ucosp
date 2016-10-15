@@ -2,23 +2,35 @@
 // Definition file to load the MQM selection dynamically via Javascript
 
 function addToTree(parent, treeItem) {
-
+    var idName = treeItem['name'].toLowerCase().replace(' ', '-');
     // Add a label if this isn't a leaf node, a checkbox otherwise
     if (treeItem.hasOwnProperty('children')) {
         var list = document.createElement('ul');
+
+        var titleNode = document.createElement('div');
+        titleNode.setAttribute('class', 'issue-node');
+
+        var chevron = document.createElement('i');
+        chevron.setAttribute('class', 'arrow fa fa-chevron-down fa-lg');
+        titleNode.appendChild(chevron);
+
         var title = document.createElement('p');
         title.textContent = treeItem['name'];
-        list.appendChild(title);
+        titleNode.appendChild(title);
+
+        list.appendChild(titleNode);
+
+        var subNodes = document.createElement('div');
+        subNodes.setAttribute('id', idName + '-sub');
 
         for (var item in treeItem['children']) {
             var child = document.createElement('li');
             addToTree(child, treeItem['children'][item]);
-            list.appendChild(child);
+            subNodes.appendChild(child);
         }
+        list.appendChild(subNodes);
         parent.appendChild(list);
     } else {
-        var idName = treeItem['name'].toLowerCase().replace(' ', '-');
-
         var label = document.createElement('label');
         label.setAttribute('for', idName);
         label.textContent = treeItem['name'];

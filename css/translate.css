@@ -1951,9 +1951,26 @@ p#sign-in-required > a#sidebar-signin {
   margin-left: 0;
 }
 
-#issue-tree ul > li {
+#issue-tree ul > div[id$='-sub'] > li {
   list-style-type: none;
-  margin-left: 25px;
+  margin-left: 20px;
+  display:none;
+}
+
+#issue-tree ul > .issue-node {
+    padding: 10px 20px;
+    box-sizing: border-box;
+    display: flex;
+    cursor: pointer;
+}
+
+#issue-tree ul > .issue-node:hover {
+    background-color: #4D5967;
+    transition: all 0.1s ease-in-out;
+}
+
+#issue-tree ul > .issue-node > .arrow {
+    padding-right: 10px;
 }
 
 #issue-tree li > ul {
@@ -1962,5 +1979,4 @@ p#sign-in-required > a#sidebar-signin {
 
 .issue-selection {
   text-align: left;
-  margin-left: 10px;
 }
