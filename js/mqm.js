@@ -1,4 +1,6 @@
-[{
+// this file should be a json, but for local testing purposes, 
+// the file will be imported via HTML and the data will live in global scope
+var mqm = [{
   "definition": "The target text does not accurately reflect the source text, allowing for any differences authorized by specifications.",
   "notes": ["Most cases of //accuracy// are addressed by one of the more specific subtypes listed below.", "In Machine Translation literature, this category is typically referred to as \u201cAdequacy\u201d."],
   "children": [{

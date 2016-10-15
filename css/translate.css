@@ -1570,7 +1570,7 @@ p#sign-in-required > a#sidebar-signin {
   bottom: 0;
   left: 0;
   overflow-y: auto;
-  padding-top: 25px;
+  padding-top: 5px;
   position: absolute;
   right: 0;
   top: 43px;
@@ -1882,7 +1882,7 @@ p#sign-in-required > a#sidebar-signin {
 }
 
 #properties > section {
-  padding-top: 25px;
+  padding-top: 5px;
 }
 
 #comment-view > li {
