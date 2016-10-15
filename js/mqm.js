@@ -967,12 +967,6 @@ var mqm = [{
     "id": "ui-internationalization"
   }]
 }, {
-  "examples": ["A quality process checks for errors generated from speech-to-text generated during conference interpretation. Because this error type is highly specific to the specific situation, it is not included in any predefined issue type elsewhere."],
-  "definition": "Used for any issues not adequately covered by the MQM core or extensions. This category should be used only if it is impossible to assign an issue to an existing category with sufficient granularity.",
-  "notes": ["This category should be used only for any issue type that cannot be mapped to one of the issue types listed above. If an issue type can be considered a more granular example of an existing type, it should be categorized as that type, possibly with a custom extension if the additional granularity is needed."],
-  "name": "Other",
-  "id": "other"
-}, {
   "core": 1,
   "name": "Style",
   "definition": "The text has stylistic problems.",
@@ -1109,4 +1103,10 @@ var mqm = [{
   }],
   "examples": ["The text states that a feature is present on a certain model of automobile when in fact it is not available."],
   "id": "verity"
-}]
+}, {
+  "examples": ["A quality process checks for errors generated from speech-to-text generated during conference interpretation. Because this error type is highly specific to the specific situation, it is not included in any predefined issue type elsewhere."],
+  "definition": "Used for any issues not adequately covered by the MQM core or extensions. This category should be used only if it is impossible to assign an issue to an existing category with sufficient granularity.",
+  "notes": ["This category should be used only for any issue type that cannot be mapped to one of the issue types listed above. If an issue type can be considered a more granular example of an existing type, it should be categorized as that type, possibly with a custom extension if the additional granularity is needed."],
+  "name": "Other",
+  "id": "other"
+}];
