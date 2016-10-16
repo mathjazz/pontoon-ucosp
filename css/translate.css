@@ -1971,7 +1971,7 @@ p#sign-in-required > a#sidebar-signin {
 }
 
 #issue-tree li > .issue-node {
-    padding: 10px 20px;
+    padding: 10px 0px;
     box-sizing: border-box;
     display: flex;
     cursor: pointer;
@@ -1983,16 +1983,14 @@ p#sign-in-required > a#sidebar-signin {
 }
 
 #issue-tree li > .issue-node > .arrow {
+    padding-top: 5px;
     padding-right: 10px;
+    margin-left: 10px;
 }
 
 #issue-tree li > .issue-node > .title {
     font-size: 16px;
     font-weight: 300;
-}
-
-#issue-tree ul > li {
-  margin-left: 0;
 }
 
 .issue-selection {
