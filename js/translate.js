@@ -1703,10 +1703,10 @@ var Pontoon = (function (my) {
         });*/
       });
 	  
-	  $('#helpers2').on('click', 'menu .backTo', function (e) {
+	  $('#helpers2').on('click', '#backTo', function (e) {
         var button = $(this);
-		document.getElementById("helpers").style.display = "none";
-		document.getElementById("helpers2").style.display = "block";
+		document.getElementById("helpers2").style.display = "none";
+		document.getElementById("helpers").style.display = "block";
 	  });
     },
 	
