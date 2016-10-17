@@ -1718,14 +1718,32 @@ p#sign-in-required > a#sidebar-signin {
   padding-right: 0;
 }
 
-/* comment buttons */
-#helpers2 > section.comment #Add{
-	background: #7BC876;
+/* comment section style */
+#helpers2 > section.comment #add{
+  background: #7BC876;
   border-radius: 3px;
   color: #272A2F;
   font-weight: 600;
   margin-left: 10px;
   padding: 10px 15px;
+  height: 40px;
+}
+
+#helpers2 > section.comment #clear {
+    background: transparent;
+    border: none;
+    color: #EBEBEB;
+    height: 40px;
+    padding: 10px 5px;
+    text-transform: uppercase;
+}
+
+#helpers2 > section.comment menu {
+  background: #272A2F;
+  border-bottom: 1px solid #5E6475;
+  padding: 10px;
+  position: relative;
+  text-align: right;
 }
 
 #helpers2 > section ul li > header button {
@@ -1780,6 +1798,7 @@ p#sign-in-required > a#sidebar-signin {
   content: "";
   color: #FD5F60;
 }
+
 /* */
 
 

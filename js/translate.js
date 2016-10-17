@@ -413,7 +413,7 @@ var Pontoon = (function (my) {
     },
 	
 	/*TESTING LEORA */
-     /* Update current translation length
+     /* Update current comment length
      */
     updateCurrentCommentLength: function () {
       $('#comment-length .current-length').html($('#comment').val().length);
@@ -1702,9 +1702,14 @@ var Pontoon = (function (my) {
           }
         });*/
       });
+	  
+	  $('#helpers2').on('click', 'menu .backTo', function (e) {
+        var button = $(this);
+		document.getElementById("helpers").style.display = "none";
+		document.getElementById("helpers2").style.display = "block";
+	  });
     },
-
-
+	
     /*
      * Select all strings
      */
