@@ -1,4 +1,4 @@
-mqm = [{
+[{
     "definition": "The target text does not accurately reflect the source text, allowing for any differences authorized by specifications.",
     "notes": ["Most cases of //accuracy// are addressed by one of the more specific subtypes listed below.", "In Machine Translation literature, this category is typically referred to as \u201cAdequacy\u201d."],
     "children": [{
@@ -1107,4 +1107,4 @@ mqm = [{
     }],
     "examples": ["The text states that a feature is present on a certain model of automobile when in fact it is not available."],
     "id": "verity"
-}];
+}]
