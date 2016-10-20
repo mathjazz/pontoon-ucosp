@@ -1881,7 +1881,13 @@ p#sign-in-required > a#sidebar-signin {
   display: inline-block;
 }
 
+#properties {
+  height: calc(80% - 44px);
+}
+
 #properties > section {
+  height: calc(100% - 43px);
+  position: relative;
   padding-top: 5px;
 }
 
@@ -1939,10 +1945,11 @@ p#sign-in-required > a#sidebar-signin {
 }
 
 #issue-tree {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: absolute;
   bottom: 0;
-  top: 42%;
+  top: 50px;
   width: 100%;
 }
 
