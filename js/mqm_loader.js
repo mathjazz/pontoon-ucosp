@@ -61,13 +61,13 @@ function addToTree(parent, treeItem) {
 
         if (parent.tagName == 'LI') {
             parent.setAttribute('class', 'issue-selection');
-            parent.appendChild(label);
             parent.appendChild(checkbox);
+            parent.appendChild(label);
         } else {
             var selectionDiv = document.createElement('li');
             selectionDiv.setAttribute('class', 'issue-selection');
-            selectionDiv.appendChild(label);
             selectionDiv.appendChild(checkbox);
+            selectionDiv.appendChild(label);
             parent.appendChild(selectionDiv);
         }
 
