@@ -14,18 +14,6 @@ sprintf = function() {
   return oStr;
 }
 
-// Adds an emelent to the list of active issues
-toggle_bubble = function(item) {
-	var bubble_id = sprintf("#mqm_bubble_{0}", $(item).attr('id').split('_')[1]);
-	// Check if the bubble is already active for this tag
-	if ($(document.getElementById(bubble_id)).length) {
-		$(document.getElementById(bubble_id)).remove();
-		return;
-	}
-	var new_bubble = $(sprintf("<span id='{0}' class='issue-bubbles' title='{1}'>{2}</span>", bubble_id, $(item).attr('title'), $(item).html()));
-	$("#issues").children(":first").append(new_bubble);
-}	
-
 // Pulls the json data from the file and creates the table from the specified data
 create_table = function(selector) {
 	$.getJSON('./data/mqm.json', function(data) {
@@ -83,12 +71,34 @@ expand_mqm_element = function (element) {
 	}
 }
 
+// Sets the currently active issues to the specified list of issues
+// This would be called when a new translation is selected, and it already has issues tagged
+set_active = function(items) {
+	for (var item_iterator = 0; item_iterator < items.length; item_iterator++) {
+		select_item($(sprintf("mqm_{0}", item)));
+	}
+}
+
+// Adds an emelent to the list of active issues
+toggle_bubble = function(item) {
+	var bubble_id = sprintf("#mqm_bubble_{0}", $(item).attr('id').split('_')[1]);
+	// Check if the bubble is already active for this tag
+	if ($(document.getElementById(bubble_id)).length) {
+		$(document.getElementById(bubble_id)).remove();
+		return;
+	}
+	var new_bubble = $(sprintf("<span id='{0}' class='issue-bubbles' title='{1}'>{2}</span>", bubble_id, $(item).attr('title'), $(item).html()));
+	$("#issues").children(":first").append(new_bubble);
+}	
+
+
 // Recoubts and changes the current number of active issues
 recount_active = function() {
 	// Re-count the current number of issues
 	var num_issues = document.getElementsByClassName("issue-bubbles").length;
 	// Find all elements that count the issues for the current translation
 	var issue_counters = document.getElementsByClassName('current_issue_count');
+	// Change the number for each counter location to the current number of issues
 	for (var element_iterator = 0; element_iterator < issue_counters.length; element_iterator++) {
 		$(issue_counters[element_iterator]).html(num_issues);
 	}
