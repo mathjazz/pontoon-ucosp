@@ -1,16 +1,30 @@
 
+var mqm_parents = {}
+
 // Formatted string function
 // Pulled from some yahoo utility library
-sprintf = function() { 
-  var num = arguments.length; 
-  var oStr = arguments[0];   
-  for (var i = 1; i < num; i++) { 
-    var pattern = "\\{" + (i-1) + "\\}"; 
-    var re = new RegExp(pattern, "g"); 
-    oStr = oStr.replace(re, arguments[i]); 
-  } 
-  return oStr; 
-} 
+sprintf = function() {
+  var num = arguments.length;
+  var oStr = arguments[0];
+  for (var i = 1; i < num; i++) {
+    var pattern = "\\{" + (i-1) + "\\}";
+    var re = new RegExp(pattern, "g");
+    oStr = oStr.replace(re, arguments[i]);
+  }
+  return oStr;
+}
+
+// Adds an emelent to the list of active issues
+toggle_bubble = function(item) {
+	var bubble_id = sprintf("#mqm_bubble_{0}", $(item).attr('id').split('_')[1]);
+	// Check if the bubble is already active for this tag
+	if ($(document.getElementById(bubble_id)).length) {
+		$(document.getElementById(bubble_id)).remove();
+		return;
+	}
+	var new_bubble = $(sprintf("<span id='{0}' class='issue-bubbles' title='{1}'>{2}</span>", bubble_id, $(item).attr('title'), $(item).html()));
+	$("#issues").children(":first").append(new_bubble);
+}	
 
 // Pulls the json data from the file and creates the table from the specified data
 create_table = function(selector) {
@@ -25,7 +39,7 @@ set_bindings = function(selector) {
 	// Event: User selects top-level mqm item
 	$(selector).on("click", ".mqm_item.l1", function () {
 		clean_levels(1,2,3);
-		clear_levels(2,3,4);;
+		clear_levels(2,3,4);
 		select_item($(this));
 	});
 	// Event: User selects second-level mqm item
@@ -43,7 +57,41 @@ set_bindings = function(selector) {
 	// Event: User selects fourth-level mqm item
 	$(selector).on("click", ".mqm_item.l4", function () {
 		select_item($(this));
-	})
+	});
+}
+
+// Event: User selects a tag for an active issue
+$(document).on("click", ".issue-bubbles", function() {
+	expand_mqm_element($(this).attr('id').split('_')[2]);
+});
+
+// Expand the tree to reveil a specific element
+expand_mqm_element = function (element) {
+	// Find the path in the tree to the specified element
+	var mqm_path = [];
+	current_parent = mqm_parents[element];
+	while (current_parent != null) {
+		mqm_path.unshift(current_parent);
+		current_parent = mqm_parents[current_parent];
+	}
+	// Clear the current tree
+	clean_levels(1,2,3);
+	clear_levels(2,3,4);
+	for (var element_iterator = 0; element_iterator < mqm_path.length; element_iterator++) {
+		// Expand the tree based on the specified element
+		select_item($(sprintf("#mqm_{0}", mqm_path[element_iterator])));
+	}
+}
+
+// Recoubts and changes the current number of active issues
+recount_active = function() {
+	// Re-count the current number of issues
+	var num_issues = document.getElementsByClassName("issue-bubbles").length;
+	// Find all elements that count the issues for the current translation
+	var issue_counters = document.getElementsByClassName('current_issue_count');
+	for (var element_iterator = 0; element_iterator < issue_counters.length; element_iterator++) {
+		$(issue_counters[element_iterator]).html(num_issues);
+	}
 }
 
 // Remove sub-menu selections from the specified levels
@@ -70,6 +118,8 @@ select_item = function(item) {
 	// If the item has no children select it as a tag
 	if ($(childs_name).length < 1) {
 		$(item).toggleClass("mqm_selected");
+		toggle_bubble(item);
+		recount_active();
 	} else {
 		// Show the sub menu for the selected item
 		$(item).addClass("mqm_active_sub");
@@ -88,12 +138,14 @@ table_helper = function(data, selector) {
 	// Hit the top level items
 	for (l1_iterator = 0; l1_iterator < data.length; l1_iterator++) {
 		var l1_item = data[l1_iterator];
-		$(sprintf('<li class="mqm_item l1" id="mqm_{0}" title="{1}">{2}</li>', 
+		$(sprintf('<li class="mqm_item l1" id="mqm_{0}" title="{1}">{2}</li>',
 			l1_item["id"], l1_item["definition"],
 			l1_item["name"])).appendTo($level_1);
+		// Keep track of this item's parent
+		mqm_parents[l1_item["id"]] = null;
 		// If the item has no children move on
 		if (!l1_item.hasOwnProperty("children")) {continue;}
-		// Create a sub menu for the children of this top level item 
+		// Create a sub menu for the children of this top level item
 		var $l2_list = $(sprintf('<ul id="mqm_{0}_childs" class="mqm_l2_list mqm_hidden">', l1_item["id"]));
 		for (l2_iterator = 0; l2_iterator < l1_item["children"].length; l2_iterator++) {
 			var l2_item = l1_item["children"][l2_iterator];
@@ -101,6 +153,8 @@ table_helper = function(data, selector) {
 			$(sprintf('<li class="mqm_item l2" id="mqm_{0}" title="{1}">{2}</li>',
 				l2_item["id"], l2_item["definition"],
 				l2_item["name"])).appendTo($l2_list);
+			// Keep track of this item's parent
+			mqm_parents[l2_item["id"]] = l1_item["id"];
 			// If this item has no children move on
 			if (!l2_item.hasOwnProperty("children")) {continue;}
 			// Create a sub menu for the children of this second level item
@@ -111,6 +165,8 @@ table_helper = function(data, selector) {
 				$(sprintf('<li class="mqm_item l3" id="mqm_{0}" title="{1}">{2}</li>',
 					l3_item["id"], l3_item["definition"],
 					l3_item["name"])).appendTo($l3_list);
+				// Keep track of this item's parent
+				mqm_parents[l3_item["id"]] = l2_item["id"];
 				// If this item has no children move on
 				if (!l3_item.hasOwnProperty("children")) {continue;}
 				// Create a sub menu for children of this fourth level item
@@ -121,6 +177,8 @@ table_helper = function(data, selector) {
 					$(sprintf('<li class="mqm_item l4" id="mqm_{0}" title="{1}">{2}</li>',
 						l4_item["id"], l4_item["definition"],
 						l4_item["name"])).appendTo($l4_list);
+					// Keep track of this item's parent
+					mqm_parents[l4_item["id"]] = l3_item["id"];
 				}
 				$l4_list.appendTo($level_4);
 			}

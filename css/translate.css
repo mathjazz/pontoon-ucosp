@@ -2,6 +2,10 @@ body {
   overflow: hidden;
 }
 
+.show-overlay {
+    display: block !important;
+}
+
 #overlay {
   display: none;
   background: rgba(0, 0, 0, 0.5);
@@ -582,7 +586,6 @@ body > header aside p {
   left: 0;
   height: 100%;
   position: absolute;
-  width: 100%;
 }
 
 #sidebar.no #entitylist {
@@ -600,14 +603,14 @@ body > header aside p {
   padding: 40px 0 10px;
 }
 
-.advanced #entitylist,
+/*.advanced #entitylist,
 .advanced #editor {
   width: 50%;
-}
+}*/
 
 #entitylist .search-wrapper {
   margin-bottom: 0;
-  position: static;
+  position: relative;
 }
 
 #sidebar .search-wrapper .icon {
@@ -945,8 +948,7 @@ body > header aside p {
 #entitylist > .wrapper {
   bottom: 0;
   overflow-y: auto;
-  position: absolute;
-  top: 44px;
+  position: relative;
   width: 100%;
 }
 
@@ -1081,12 +1083,12 @@ body > header aside p {
   padding: 0;
   position: absolute;
   top: 0;
-  width: 100%;
+  right: 0;
 }
 
 .advanced #editor {
   border-left: 1px solid #5E6475;
-  left: 50%;
+  left: 40px;
 
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1161,15 +1163,7 @@ body > header aside p {
 }
 
 #source-pane {
-  background: #3F4752;
-  border-bottom: 1px solid #5E6475;
-  height: 20%;
-  min-height: 100px;
-  overflow: auto;
-  padding: 10px;
 
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 #source-pane.screenshots {
@@ -1212,6 +1206,21 @@ body > header aside p {
   opacity: 0.5;
 }
 
+.pane {
+    width: 100%;
+    background: #3F4752;
+    border: 1px solid #5E6475;
+    border-collapse: collapse;
+    /*height: 20%;*/
+    min-height: 100px;
+    overflow: auto;
+    padding: 10px;
+
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+}
+
 #source-pane h2 {
   color: #AAAAAA;
   display: none;
@@ -1223,6 +1232,10 @@ body > header aside p {
 #source-pane.pluralized h2 {
   display: block;
   text-align: left;
+}
+
+#source-pane #original {
+    font-size: 1.5em;
 }
 
 #source-pane #original mark.placeable {
@@ -1305,12 +1318,12 @@ body > header aside p {
 }
 
 #editor textarea {
-  background: #FFFFFF;
+  background: #d0d9e0;
   display: block;
-  font-size: 13px;
-  height: 20%;
+  font-size: 1.5em;
+  height: 10%;
   line-height: 22px;
-  min-height: 100px;
+  /*min-height: 100px;*/
   overflow: auto;
   padding: 10px;
   width: 100%;
@@ -1337,7 +1350,7 @@ body > header aside p {
 }
 
 #editor #single > menu {
-  background: #272A2F;
+  background: #d0d9e0;
   border-bottom: 1px solid #5E6475;
   padding: 10px;
   position: relative;
@@ -1401,7 +1414,7 @@ body > header aside p {
 }
 
 #editor #single > menu > .select .selector {
-  color: #AAAAAA;
+  color: #4f6271;
   font-size: 22px;
   padding: 9px 5px;
 }
@@ -1458,7 +1471,7 @@ body > header aside p {
 #editor #single > menu button {
   background: transparent;
   border: none;
-  color: #EBEBEB;
+  color: #4f6271;
   height: 40px;
   padding: 10px 5px;
   text-transform: uppercase;
@@ -1775,4 +1788,131 @@ p#sign-in-required > a#sidebar-signin {
   float: none;
   margin-bottom: 10px;
   padding: 15px 0 5px;
+}
+
+
+
+
+
+
+/* OVERRIDES */
+
+#entitylist {
+    z-index: 101;
+    border-right: 1px solid #5E6475;
+    width: 400px;
+    text-align: left;
+    transition: 0.2s ease-out;
+background: #383b42;
+}
+
+
+.hide-hamburger-menu-overlay {
+    left: -360px !important;
+    text-align: right !important;
+    transition: 0.2s ease-out;
+
+}
+
+.show-hamburger-menu-overlay {
+
+}
+
+#hamburger-btn {
+    padding: 10px 15px;
+    cursor: pointer;
+    background: #2c2f38;
+}
+
+#hamburger-btn:hover {
+    color: #7BC876;
+    background: #24262d;
+}
+
+#sidebar-overlay {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+}
+
+.hide {
+    opacity: 0;
+    display: none;
+    transition: 0.2s ease-out;
+}
+
+#issues {
+    border-bottom: 1px solid #5E6475;
+    text-align: left;
+    padding: 15px;
+}
+
+.issue-bubbles {
+    border: 1px solid #ffa10f;
+    border-radius: 3px;
+    font-size: 1em;
+    color: #ffa10f;
+    padding: 3px 5px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.suggestion p {
+    font-size: 1.5em;
+}
+
+.info {
+        width: 400px;
+        text-align: left;
+}
+
+.info .review-btns {
+    font-size: 1em;
+    margin-left: 15px;
+    color: #eee;
+}
+
+.review-btns .header-btn {
+    background-color: #ff3a8a;
+    border-radius: 3px;
+    font-size: 1em;
+    color: #fff;
+    padding: 3px 5px;
+    margin: 5px;
+}
+
+.review-btns .header-btn:hover {
+    background-color: #ea347f;
+}
+
+.info .count {
+    font-weight: bold;
+}
+
+
+/* MQM */
+
+#mqm-panel {
+  background: #3F4752;
+  height: calc(60% - 104px);
+  position: relative;
+}
+
+#source-pane.pluralized ~ #mqm-panel {
+  height: calc(60% - 147px);
+}
+
+#mqm-panel > section {
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  padding-top: 25px;
+  position: absolute;
+  right: 0;
+  top: 43px;
 }
