@@ -1556,7 +1556,6 @@ var Pontoon = (function (my) {
       // Approve and delete translations
       $('#helpers .history').on('click', 'menu .approve', function (e) {
         $(this).parents('li').click();
-
         var entity = self.getEditorEntity(),
             translation = $('#translation').val();
 
@@ -1567,45 +1566,63 @@ var Pontoon = (function (my) {
 
       $('#helpers .history').on('click', 'menu .unapprove', function (e) {
          var button = $(this),
-             translationId = parseInt($(this).parents('li').data('id'));
+             translationId = $(this).parents('li').children('p.translation')[0].innerText;
+             console.log("hjererere; ", translationId)
 
-         $.post('/unapprove-translation/', {
-            csrfmiddlewaretoken: $('#server').data('csrf'),
-            translation: translationId,
-            paths: self.getPartPaths(self.currentPart)
-         }).then(function(data) {
-           var entity = self.getEditorEntity(),
-               pf = self.getPluralForm(true);
 
-           self.stats = data.stats;
-           self.updateProgress(entity);
+             $('section .history').hide();
+             $('#mqm_review').show();
+        });
 
-           self.updateTranslation(entity, pf, data.translation);
+        $(".close_mqm_btn").on('click', function() {
+            $('section .history').show();
+            $('#mqm_review').hide();
+        })
 
-           $('#translation').val(data.translation.string).focus();
-           self.updateCachedTranslation();
-           self.updateCurrentTranslationLength();
 
-           if (entity.body && pf === 0) {
-             self.postMessage("SAVE", {
-               translation: data.translation.string,
-               id: entity.id
-             });
-           }
 
-           button.removeClass('unapprove').addClass('approve');
-           button.prop('title', 'Approve');
-           button.parents('li.translated').removeClass('translated').addClass('suggested');
-           button.parents('li').find('.info a').prop('title', self.getApproveButtonTitle({
-             approved: false,
-             unapproved_user: self.user.display_name
-           }));
-
-           self.endLoader('Translation has been unapproved.');
-         }, function() {
-           self.endLoader("Couldn't unapprove this translation.");
-         });
-      });
+    //   $('#helpers .history').on('click', 'menu .unapprove', function (e) {
+    //      var button = $(this),
+    //          translationId = parseInt($(this).parents('li').data('id'));
+    //          console.log("hjererere")
+      //
+    //      $.post('/unapprove-translation/', {
+    //         csrfmiddlewaretoken: $('#server').data('csrf'),
+    //         translation: translationId,
+    //         paths: self.getPartPaths(self.currentPart)
+    //      }).then(function(data) {
+    //        var entity = self.getEditorEntity(),
+    //            pf = self.getPluralForm(true);
+      //
+    //        self.stats = data.stats;
+    //        self.updateProgress(entity);
+      //
+    //        self.updateTranslation(entity, pf, data.translation);
+      //
+    //        $('#translation').val(data.translation.string).focus();
+    //        self.updateCachedTranslation();
+    //        self.updateCurrentTranslationLength();
+      //
+    //        if (entity.body && pf === 0) {
+    //          self.postMessage("SAVE", {
+    //            translation: data.translation.string,
+    //            id: entity.id
+    //          });
+    //        }
+      //
+    //        button.removeClass('unapprove').addClass('approve');
+    //        button.prop('title', 'Approve');
+    //        button.parents('li.translated').removeClass('translated').addClass('suggested');
+    //        button.parents('li').find('.info a').prop('title', self.getApproveButtonTitle({
+    //          approved: false,
+    //          unapproved_user: self.user.display_name
+    //        }));
+      //
+    //        self.endLoader('Translation has been unapproved.');
+    //      }, function() {
+    //        self.endLoader("Couldn't unapprove this translation.");
+    //      });
+    //   });
 
       $('#helpers .history').on('click', 'menu .delete', function (e) {
         var button = $(this);
