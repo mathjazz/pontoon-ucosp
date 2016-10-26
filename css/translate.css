@@ -1395,7 +1395,22 @@ body > header aside p {
   padding: 9px 5px;
 }
 
-/*Leora*/
+/*Leora test*/
+#helpers > section.history li .link{
+	padding: 0 5px;
+}
+
+#helpers > section.history .count {
+  background: #4D5967;
+  border-radius: 3px;
+  padding: 0 5px;
+}
+
+#helpers > section.history li.active .count,
+#helpers > section.history li:hover .count {
+  background: #3F4752;
+}
+
 #comment-length {
   color: #AAAAAA;
   display: none;
@@ -1403,6 +1418,7 @@ body > header aside p {
   line-height: 22px;
   padding: 9px 5px;
 }
+/*end Leora*/
 
 #editor #single > menu > .select {
   cursor: pointer;
@@ -1721,12 +1737,14 @@ p#sign-in-required > a#sidebar-signin {
 /* comment section style */
 #helpers2 > section.comment #add{
   background: #7BC876;
-  border-radius: 3px;
+   border: none; 
+   border-radius: 3px;
   color: #272A2F;
   font-weight: 600;
   margin-left: 10px;
   padding: 10px 15px;
   height: 40px;
+  text-transform: uppercase;
 }
 
 #helpers2 > section.comment #clear {
@@ -1930,4 +1948,44 @@ p#sign-in-required > a#sidebar-signin {
   float: none;
   margin-bottom: 10px;
   padding: 15px 0 5px;
+}
+
+*::-moz-selection {
+    background: #FF5E99;
+    color: #fff;
+    text-shadow: none;
+}
+element {
+}
+
+#issues {
+    text-align: left;
+}
+
+.issue-bubbles {
+    border: 1px solid #7BC876;
+    border-radius: 3px;
+    font-size: 1em;
+    color: #7BC876;
+    padding: 3px 5px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+#issues button.delete:before {
+  content: "";
+}
+
+#issues button.delete:hover:before {
+  content: "";
+  color: #7BC876;
 }

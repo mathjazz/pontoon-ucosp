@@ -3144,6 +3144,19 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
             <button id="save-anyway"></button>
           </div>
 
+		  		  <!-- Code segment pulled from Josh -->
+		  <div id="issues">
+              <span class="issue-bubbles">
+                  Grammar<button class="delete fa" title="Delete"></button>
+              </span>
+              <span class="issue-bubbles">
+                  Completeness<button class="delete fa" title="Delete"></button>
+              </span>
+              <span class="issue-bubbles">
+                  Plum<button class="delete fa" title="Delete"></button>
+              </span>
+		  </div>
+		  
           <!-- Settings -->
           <div id="settings" class="select">
             <div class="selector fa fa-cog" title="Settings"></div>
@@ -3357,7 +3370,24 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
         </nav>
 
         <section class="history" style="display: block;">
-          <ul><li data-id="401371" class="suggestion translated" title="Copy Into Translation (Tab)"><header class="clearfix translator"><div class="info"><a href="http://localhost:8000/contributors/dvgiVCmoeidF2xcqSnBHtpzLTFU" title="Approved by Winnie the Pooh">Winnie the Pooh</a><time class="stress" datetime="2016-08-17T18:18:18.948113+00:00+0000" title="Aug 17, 2016 18:18 UTC">about a month ago</time></div><menu class="toolbar"><button class="unapprove fa" title="Unapprove"></button><button class="delete fa" title="Delete"></button></menu></header><p class="translation" dir="auto" lang="sl">Bizgec-dd</p></li></ul>
+          <ul>
+		  <!-- reformated for easy reading -->
+			<li data-id="401371" class="suggestion translated" title="Copy Into Translation (Tab)">
+			<header class="clearfix translator">
+				<div class="info">
+					<a href="http://localhost:8000/contributors/dvgiVCmoeidF2xcqSnBHtpzLTFU" title="Approved by Winnie the Pooh">Winnie the Pooh</a>
+					<time class="stress" datetime="2016-08-17T18:18:18.948113+00:00+0000" title="Aug 17, 2016 18:18 UTC">about a month ago</time>
+					<a href="#issues" class="link"> Issues<span class="count">1</span></a>
+					<a href="#comments" class="link"> Comments<span class="count">3</span></a>
+				</div>
+				<menu class="toolbar">
+					<button class="unapprove fa" title="Unapprove"></button>
+					<button class="delete fa" title="Delete"></button>
+				</menu>
+			</header>
+			<p class="translation" dir="auto" lang="sl">Bizgec-dd</p>
+			</li>
+		  </ul>
         </section>
 
         <section class="machinery">
