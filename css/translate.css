@@ -1550,6 +1550,7 @@ p#sign-in-required > a#sidebar-signin {
   position: absolute;
   right: 0;
   top: 43px;
+  height: 100%;
 }
 
 #helpers > section.machinery .search-wrapper {

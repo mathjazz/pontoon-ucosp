@@ -1569,7 +1569,7 @@ var Pontoon = (function (my) {
              translationId = $(this).parents('li').children('p.translation')[0].innerText;
              console.log("hjererere; ", translationId)
 
-
+             $('#translation_suggestion').innerText = translationId;
              $('section .history').hide();
              $('#mqm_review').show();
         });
