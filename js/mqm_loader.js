@@ -38,6 +38,7 @@ function toggleIssueTag(issueName) {
 
     if (issueSpan) {
         issueSpan.remove();
+        // No point of displaying the issue title when there's no issues, removing it
         if (issueTags.children.length == 0) {
             issueParent.style.visibility = 'hidden';
         }
@@ -83,6 +84,7 @@ function addToTree(parent, treeItem) {
         checkbox.setAttribute('type', 'checkbox');
         checkbox.setAttribute('id', idName);
 
+        // Show/hide the issue-tag when the checkbox is selected
         checkbox.addEventListener('change', function () {
             toggleIssueTag(treeItem['name']);
         }, treeItem['name']);
@@ -121,4 +123,9 @@ window.addEventListener('load', function () {
     }
     issueTree.appendChild(listRoot);
 
+    //Add functionality to issue search box
+    var issueSearch = document.getElementById('issue-search');
+    issueSearch.addEventListener("input", function() {
+        console.log(issueSearch.value);
+    });
 });
