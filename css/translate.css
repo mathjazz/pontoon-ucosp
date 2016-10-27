@@ -1904,6 +1904,7 @@ p#sign-in-required > a#sidebar-signin {
 }
 
 #issues {
+  display: none;
   text-align: left;
   font-style: italic;
   padding: 10px 10px;

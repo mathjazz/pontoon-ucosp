@@ -29,6 +29,29 @@ function createSubItems(childrenList, titleIDFormat) {
     return subNodes;
 }
 
+function toggleIssueTag(issueName) {
+    var issueTags = document.getElementById('issue-tag-list');
+    var issueParent = issueTags.parentNode;
+    var issueID = issueName.toLowerCase().replace(' ', '-') + '-tag';
+
+    var issueSpan = document.getElementById(issueID);
+
+    if (issueSpan) {
+        issueSpan.remove();
+        if (issueTags.children.length == 0) {
+            issueParent.style.display = 'none';
+        }
+    } else {
+        var issue = document.createElement('span');
+        issue.setAttribute('class', 'issue-bubbles');
+        issue.setAttribute('id', issueID);
+        issue.textContent = issueName;
+        issueTags.appendChild(issue);
+        issueParent.style.display = 'block';
+    }
+
+}
+
 function addToTree(parent, treeItem) {
     // Using the lowercase snake form of MQM categories as an identifier
     var idName = treeItem['name'].toLowerCase().replace(' ', '-');
@@ -59,6 +82,10 @@ function addToTree(parent, treeItem) {
         checkbox.textContent = treeItem['name'];
         checkbox.setAttribute('type', 'checkbox');
         checkbox.setAttribute('id', idName);
+
+        checkbox.addEventListener('change', function () {
+            toggleIssueTag(treeItem['name']);
+        }, treeItem['name']);
 
         if (parent.tagName == 'LI') {
             parent.setAttribute('class', 'issue-selection');
