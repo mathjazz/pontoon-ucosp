@@ -39,7 +39,7 @@ function toggleIssueTag(issueName) {
     if (issueSpan) {
         issueSpan.remove();
         if (issueTags.children.length == 0) {
-            issueParent.style.display = 'none';
+            issueParent.style.visibility = 'hidden';
         }
     } else {
         var issue = document.createElement('span');
@@ -47,7 +47,7 @@ function toggleIssueTag(issueName) {
         issue.setAttribute('id', issueID);
         issue.textContent = issueName;
         issueTags.appendChild(issue);
-        issueParent.style.display = 'block';
+        issueParent.style.visibility = 'visible';
     }
 
 }
