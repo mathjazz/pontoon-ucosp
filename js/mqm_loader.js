@@ -104,6 +104,16 @@ function addToTree(parent, treeItem) {
     }
 }
 
+function searchStringInTree(tree, queryString, results) {
+    for (var item in tree) {
+        var name = tree[item].name.toLowerCase();
+        if (name.indexOf(queryString.toLowerCase()) != -1) {
+            results.push(tree[item]);
+        }
+        searchStringInTree(tree[item].children, queryString, results);
+    }
+}
+
 window.addEventListener('load', function () {
     /* Instead of fetching, will use the mqm variable living in global scope
     $.getJSON('data/mqm.json', function (data) {
@@ -127,5 +137,31 @@ window.addEventListener('load', function () {
     var issueSearch = document.getElementById('issue-search');
     issueSearch.addEventListener("input", function() {
         console.log(issueSearch.value);
+        var mqmResult = [];
+        searchStringInTree(mqm, issueSearch.value, mqmResult);
+
+        if (mqmResult.length != 0) {
+            var fc = listRoot.firstChild;
+            while(fc) {
+                listRoot.removeChild( fc );
+                fc = listRoot.firstChild;
+            }
+            for (var item in mqmResult) {
+                var topLevelCategory = document.createElement('li');
+                addToTree(topLevelCategory, mqmResult[item]);
+                listRoot.appendChild(topLevelCategory);
+            }
+        } else if (issueSearch.value.length == 0) {
+            var fc = listRoot.firstChild;
+            while(fc) {
+                listRoot.removeChild( fc );
+                fc = listRoot.firstChild;
+            }
+            for (var item in mqm) {
+                var topLevelCategory = document.createElement('li');
+                addToTree(topLevelCategory, mqm[item]);
+                listRoot.appendChild(topLevelCategory);
+            }
+        }
     });
 });
