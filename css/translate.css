@@ -1544,9 +1544,9 @@ p#sign-in-required > a#sidebar-signin {
   color: #272A2F;
 }
 
-#helpers {
+#helpers, #helpers2 {
   background: #3F4752;
-  height: calc(60% - 104px);
+  height: calc(70% - 145px);
   position: relative;
 }
 
@@ -1676,7 +1676,7 @@ p#sign-in-required > a#sidebar-signin {
   left: 0;
   overflow-y: auto;
   padding-top: 25px;
-  /*position: absolute;*/
+  position: absolute;
   right: 0;
   top: 43px;
 }
@@ -1958,7 +1958,7 @@ p#sign-in-required > a#sidebar-signin {
 element {
 }
 
-#issues {
+#issues-pop {
     text-align: left;
 }
 
@@ -1981,11 +1981,11 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
     background: transparent;
 }
 
-#issues button.delete:before {
+#issues-pop button.delete:before {
   content: "";
 }
 
-#issues button.delete:hover:before {
+#issues-pop button.delete:hover:before {
   content: "";
   color: #7BC876;
 }

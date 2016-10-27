@@ -1556,6 +1556,7 @@ var Pontoon = (function (my) {
         self.moveCursorToBeginning();
         self.updateCurrentTranslationLength();
         self.updateInPlaceTranslation();
+		//LeoraWIP
 
         $('.warning-overlay:visible .cancel').click();
       });
@@ -1618,6 +1619,11 @@ var Pontoon = (function (my) {
         var button = $(this);
 		document.getElementById("helpers").style.display = "none";
 		document.getElementById("helpers2").style.display = "block";
+		//Ensures review tab is the default tab everytime this is clicked
+		$('li').removeClass('active');
+		$('#review').parent().addClass('active'); 
+		$('#review').parents(".tabs").find('section').hide().end()
+        $('section .review').show();
         // Delete
         /*$.ajax({
           url: '/delete-translation/',
@@ -1707,6 +1713,16 @@ var Pontoon = (function (my) {
         var button = $(this);
 		document.getElementById("helpers2").style.display = "none";
 		document.getElementById("helpers").style.display = "block";
+	  });
+	  
+	  //FIX THIS GARBAGE: open up comments tab by clicking 'comments' on history item
+	  $('#helpers .history').on('click', 'div #comments', function (e) {
+        var button = $(this);
+		document.getElementById("helpers").style.display = "none";
+		document.getElementById("helpers2").style.display = "block";
+		//$('li').removeClass('active');
+		//$('#comment').parents("li").addClass('active');
+
 	  });
     },
 	
