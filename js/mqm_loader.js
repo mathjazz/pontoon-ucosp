@@ -52,6 +52,7 @@ function addToTree(parent, treeItem) {
     } else {
         var label = document.createElement('label');
         label.setAttribute('for', idName);
+        label.setAttribute('class', 'noselect');
         label.textContent = treeItem['name'];
 
         var checkbox = document.createElement('input');
