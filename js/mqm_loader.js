@@ -114,6 +114,16 @@ function searchStringInTree(tree, queryString, results) {
     }
 }
 
+function generateListTree(tree) {
+    var listRoot = document.createElement('ul');
+    for (var item in tree) {
+        var topLevelCategory = document.createElement('li');
+        addToTree(topLevelCategory, tree[item]);
+        listRoot.appendChild(topLevelCategory);
+    }
+    return listRoot;
+}
+
 window.addEventListener('load', function () {
     /* Instead of fetching, will use the mqm variable living in global scope
     $.getJSON('data/mqm.json', function (data) {
@@ -125,12 +135,7 @@ window.addEventListener('load', function () {
     */
 
     var issueTree = document.getElementById('issue-tree');
-    var listRoot = document.createElement('ul');
-    for (var item in mqm) {
-        var topLevelCategory = document.createElement('li');
-        addToTree(topLevelCategory, mqm[item]);
-        listRoot.appendChild(topLevelCategory);
-    }
+    var listRoot = generateListTree(mqm);
     issueTree.appendChild(listRoot);
 
     //Add functionality to issue search box
@@ -140,28 +145,14 @@ window.addEventListener('load', function () {
         var mqmResult = [];
         searchStringInTree(mqm, issueSearch.value, mqmResult);
 
-        if (mqmResult.length != 0) {
-            var fc = listRoot.firstChild;
-            while(fc) {
-                listRoot.removeChild( fc );
-                fc = listRoot.firstChild;
-            }
-            for (var item in mqmResult) {
-                var topLevelCategory = document.createElement('li');
-                addToTree(topLevelCategory, mqmResult[item]);
-                listRoot.appendChild(topLevelCategory);
-            }
-        } else if (issueSearch.value.length == 0) {
-            var fc = listRoot.firstChild;
-            while(fc) {
-                listRoot.removeChild( fc );
-                fc = listRoot.firstChild;
-            }
-            for (var item in mqm) {
-                var topLevelCategory = document.createElement('li');
-                addToTree(topLevelCategory, mqm[item]);
-                listRoot.appendChild(topLevelCategory);
-            }
+        if (issueSearch.value.length == 0) {
+            listRoot.remove();
+            listRoot = generateListTree(mqm);
+            issueTree.appendChild(listRoot);
+        } else if (mqmResult.length != 0) {
+            listRoot.remove();
+            listRoot = generateListTree(mqmResult);
+            issueTree.appendChild(listRoot);
         }
     });
 });
