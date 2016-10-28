@@ -1235,7 +1235,7 @@ body > header aside p {
 }
 
 #source-pane #original {
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 #source-pane #original mark.placeable {
@@ -1320,7 +1320,7 @@ body > header aside p {
 #editor textarea {
   background: #d0d9e0;
   display: block;
-  font-size: 1.5em;
+  font-size: 1.2em;
   height: 10%;
   line-height: 22px;
   /*min-height: 100px;*/
@@ -1352,7 +1352,7 @@ body > header aside p {
 #editor #single > menu {
   background: #d0d9e0;
   border-bottom: 1px solid #5E6475;
-  padding: 10px;
+  padding: 0px 10px 10px 10px;
   position: relative;
   text-align: right;
 }
@@ -1472,7 +1472,7 @@ body > header aside p {
   background: transparent;
   border: none;
   color: #4f6271;
-  height: 40px;
+  height: 30px;
   padding: 10px 5px;
   text-transform: uppercase;
 }
@@ -1484,7 +1484,7 @@ body > header aside p {
   color: #272A2F;
   font-weight: 600;
   margin-left: 10px;
-  padding: 10px 15px;
+  padding: 5px 15px;
 }
 
 #editor #single > menu button[id^="save"].suggest {
@@ -1546,10 +1546,11 @@ p#sign-in-required > a#sidebar-signin {
   bottom: 0;
   left: 0;
   overflow-y: auto;
-  padding-top: 25px;
+  padding-top: 10px;
   position: absolute;
   right: 0;
   top: 43px;
+  height: 100%;
 }
 
 #helpers > section.machinery .search-wrapper {
@@ -1855,9 +1856,9 @@ background: #383b42;
 .issue-bubbles {
     border: 1px solid #ffa10f;
     border-radius: 3px;
-    font-size: 1em;
+    font-size: 0.8em;
     color: #ffa10f;
-    padding: 3px 5px;
+    padding: 1px 5px;
     margin-right: 5px;
     font-weight: bold;
 }
@@ -1915,4 +1916,8 @@ background: #383b42;
   position: absolute;
   right: 0;
   top: 43px;
+}
+
+.history-list {
+
 }

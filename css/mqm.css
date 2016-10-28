@@ -5,14 +5,28 @@
 	display: none;
 }
 .mqm_selected {
-	background-color: #006400;
+	background-color: #777;
+	color: #555;
 }
 .mqm_active_sub {
 	background-color: #D3D3D3;
 }
 .mqm_column {
-	width: 20%;
+	width: 33%;
 	float: left;
+	/*overflow-y: scroll;
+position: absolute;
+top: 0;
+bottom: 0;*/
+}
+
+#mqm_review {
+	text-align: left;
+}
+
+
+#mqm_review li:hover {
+	background: red;
 }
 .issue-bubbles{
 	cursor: pointer;
