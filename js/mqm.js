@@ -1,4 +1,6 @@
 
+var mqm_parents = {}
+
 // Formatted string function
 // Pulled from some yahoo utility library
 sprintf = function() {
@@ -25,7 +27,7 @@ set_bindings = function(selector) {
 	// Event: User selects top-level mqm item
 	$(selector).on("click", ".mqm_item.l1", function () {
 		clean_levels(1,2,3);
-		clear_levels(2,3,4);;
+		clear_levels(2,3,4);
 		select_item($(this));
 	});
 	// Event: User selects second-level mqm item
@@ -43,7 +45,63 @@ set_bindings = function(selector) {
 	// Event: User selects fourth-level mqm item
 	$(selector).on("click", ".mqm_item.l4", function () {
 		select_item($(this));
-	})
+	});
+}
+
+// Event: User selects a tag for an active issue
+$(document).on("click", ".issue-bubbles", function() {
+	expand_mqm_element($(this).attr('id').split('_')[2]);
+});
+
+// Expand the tree to reveil a specific element
+expand_mqm_element = function (element) {
+	// Find the path in the tree to the specified element
+	var mqm_path = [];
+	current_parent = mqm_parents[element];
+	while (current_parent != null) {
+		mqm_path.unshift(current_parent);
+		current_parent = mqm_parents[current_parent];
+	}
+	// Clear the current tree
+	clean_levels(1,2,3);
+	clear_levels(2,3,4);
+	for (var element_iterator = 0; element_iterator < mqm_path.length; element_iterator++) {
+		// Expand the tree based on the specified element
+		select_item($(sprintf("#mqm_{0}", mqm_path[element_iterator])));
+	}
+}
+
+// Sets the currently active issues to the specified list of issues
+// This would be called when a new translation is selected, and it already has issues tagged
+set_active = function(items) {
+	for (var item_iterator = 0; item_iterator < items.length; item_iterator++) {
+		select_item($(sprintf("mqm_{0}", item)));
+	}
+}
+
+// Adds an emelent to the list of active issues
+toggle_bubble = function(item) {
+	var bubble_id = sprintf("#mqm_bubble_{0}", $(item).attr('id').split('_')[1]);
+	// Check if the bubble is already active for this tag
+	if ($(document.getElementById(bubble_id)).length) {
+		$(document.getElementById(bubble_id)).remove();
+		return;
+	}
+	var new_bubble = $(sprintf("<span id='{0}' class='issue-bubbles' title='{1}'>{2}</span>", bubble_id, $(item).attr('title'), $(item).html()));
+	$("#issues").children(":first").append(new_bubble);
+}	
+
+
+// Recoubts and changes the current number of active issues
+recount_active = function() {
+	// Re-count the current number of issues
+	var num_issues = document.getElementsByClassName("issue-bubbles").length;
+	// Find all elements that count the issues for the current translation
+	var issue_counters = document.getElementsByClassName('current_issue_count');
+	// Change the number for each counter location to the current number of issues
+	for (var element_iterator = 0; element_iterator < issue_counters.length; element_iterator++) {
+		$(issue_counters[element_iterator]).html(num_issues);
+	}
 }
 
 // Remove sub-menu selections from the specified levels
@@ -70,6 +128,8 @@ select_item = function(item) {
 	// If the item has no children select it as a tag
 	if ($(childs_name).length < 1) {
 		$(item).toggleClass("mqm_selected");
+		toggle_bubble(item);
+		recount_active();
 	} else {
 		// Show the sub menu for the selected item
 		$(item).addClass("mqm_active_sub");
@@ -91,6 +151,8 @@ table_helper = function(data, selector) {
 		$(sprintf('<li class="mqm_item l1" id="mqm_{0}" title="{1}">{2}</li>',
 			l1_item["id"], l1_item["definition"],
 			l1_item["name"])).appendTo($level_1);
+		// Keep track of this item's parent
+		mqm_parents[l1_item["id"]] = null;
 		// If the item has no children move on
 		if (!l1_item.hasOwnProperty("children")) {continue;}
 		// Create a sub menu for the children of this top level item
@@ -101,6 +163,8 @@ table_helper = function(data, selector) {
 			$(sprintf('<li class="mqm_item l2" id="mqm_{0}" title="{1}">{2}</li>',
 				l2_item["id"], l2_item["definition"],
 				l2_item["name"])).appendTo($l2_list);
+			// Keep track of this item's parent
+			mqm_parents[l2_item["id"]] = l1_item["id"];
 			// If this item has no children move on
 			if (!l2_item.hasOwnProperty("children")) {continue;}
 			// Create a sub menu for the children of this second level item
@@ -111,6 +175,8 @@ table_helper = function(data, selector) {
 				$(sprintf('<li class="mqm_item l3" id="mqm_{0}" title="{1}">{2}</li>',
 					l3_item["id"], l3_item["definition"],
 					l3_item["name"])).appendTo($l3_list);
+				// Keep track of this item's parent
+				mqm_parents[l3_item["id"]] = l2_item["id"];
 				// If this item has no children move on
 				if (!l3_item.hasOwnProperty("children")) {continue;}
 				// Create a sub menu for children of this fourth level item
@@ -121,6 +187,8 @@ table_helper = function(data, selector) {
 					$(sprintf('<li class="mqm_item l4" id="mqm_{0}" title="{1}">{2}</li>',
 						l4_item["id"], l4_item["definition"],
 						l4_item["name"])).appendTo($l4_list);
+					// Keep track of this item's parent
+					mqm_parents[l4_item["id"]] = l3_item["id"];
 				}
 				$l4_list.appendTo($level_4);
 			}

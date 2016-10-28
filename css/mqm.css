@@ -5,7 +5,7 @@
 	display: none;
 }
 .mqm_selected {
-	background-color: #FFFF00;
+	background-color: #006400;
 }
 .mqm_active_sub {
 	background-color: #D3D3D3;
@@ -13,4 +13,7 @@
 .mqm_column {
 	width: 20%;
 	float: left;
+}
+.issue-bubbles{
+	cursor: pointer;
 }
