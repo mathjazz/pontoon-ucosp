@@ -63,12 +63,43 @@ clear_levels = function() {
 	}
 }
 
+//Based on Gordon's code
+//Create or remove issue tags when selected from MQM table
+toggle_issue_tag = function(item) {
+		var issueTags = document.getElementById('issue-tag-list');
+		var issueParent = issueTags.parentNode;
+		var issueName = $(item).text();
+		var issueID = issueName.toLowerCase().replace(' ', '-') + '-tag';
+
+		var issueSpan = document.getElementById(issueID);
+
+		if (issueSpan) { 
+			issueSpan.remove();
+			//Remove issue label if no issues
+			if (issueTags.children.length == 0) {
+				issueParent.style.visibility = 'hidden';
+			}
+		} 
+		else {
+			var issue = document.createElement('span');
+			issue.setAttribute('class', 'issue-bubbles');
+			issue.setAttribute('id', issueID);
+			issue.setAttribute('title', item.attr('title'));
+			issue.textContent = issueName;
+			
+			issueTags.appendChild(issue);
+			issueParent.style.visibility = 'visible';
+		}
+}
+
 // Select a specific menu item from the mqm tree
 select_item = function(item) {
 	var childs_name = sprintf("#mqm_{0}_childs", $(item).attr('id').split('_')[1]);
 	// If the item has no children select it as a tag
 	if ($(childs_name).length < 1) {
 		$(item).toggleClass("mqm_selected");
+		//Add associated issue tag
+		toggle_issue_tag($(item));
 	} else {
 		// Show the sub menu for the selected item
 		$(item).addClass("mqm_active_sub");
@@ -131,3 +162,5 @@ table_helper = function(data, selector) {
 	// Append the different levels to the DOM
 	$(selector).append($level_1, $level_2, $level_3, $level_4);
 }
+
+

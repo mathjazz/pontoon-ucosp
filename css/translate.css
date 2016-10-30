@@ -1395,7 +1395,7 @@ body > header aside p {
   padding: 9px 5px;
 }
 
-/*Leora test*/
+/*Count box style for comments and issues for each history item*/
 #helpers > section.history li .link{
 	padding: 0 5px;
 }
@@ -1418,7 +1418,7 @@ body > header aside p {
   line-height: 22px;
   padding: 9px 5px;
 }
-/*end Leora*/
+/*end countbox style*/
 
 #editor #single > menu > .select {
   cursor: pointer;
@@ -1546,7 +1546,7 @@ p#sign-in-required > a#sidebar-signin {
 
 #helpers, #helpers2 {
   background: #3F4752;
-  height: calc(70% - 145px);
+  height: calc(70% - 105px);/*155px);*/
   position: relative;
 }
 
@@ -1959,8 +1959,17 @@ element {
 }
 
 #issues-pop {
-    text-align: left;
+    visibility: hidden;
+	text-align: left;
+	padding: 10px 10px;
+	color: #7BC876;
 }
+
+#issues-pop .title{
+    text-transform: uppercase;
+	margin-right: 5px;
+}
+
 
 .issue-bubbles {
     border: 1px solid #7BC876;

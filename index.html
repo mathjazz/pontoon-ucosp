@@ -3114,6 +3114,11 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
           <p id="original">Novo</p>
           <div id="metadata"><p><span class="title">Comment</span> <span class="content">Navigation</span></p><p><span class="title">Context</span> <span class="content">novo</span></p><p><span class="title">Resource path</span> <span class="content">messages.properties</span></p></div>
           <div id="screenshots"></div>
+		  <!--ISSUE TAGS LEORA-->
+		  <div id="issues-pop">
+			<span class="title"> Issues: </span>
+			<span id="issue-tag-list">
+		  </div>
       </div>
 
       <nav id="plural-tabs">
@@ -3143,19 +3148,6 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
             <ul></ul>
             <button id="save-anyway"></button>
           </div>
-
-		  		  <!-- Code segment pulled from Josh -->
-		  <div id="issues-pop" ><!--style="display: none;>-->
-              <span class="issue-bubbles">
-                  Grammar<button class="delete fa" title="Delete"></button>
-              </span>
-              <span class="issue-bubbles">
-                  Completeness<button class="delete fa" title="Delete"></button>
-              </span>
-              <span class="issue-bubbles">
-                  Plum<button class="delete fa" title="Delete"></button>
-              </span>
-		  </div>
 		  
           <!-- Settings -->
           <div id="settings" class="select">
@@ -3429,10 +3421,10 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
         </nav>
 
         <section class="review" style="display: block;">
-		  <div class="search-wrapper clearfix">
-            <div class="icon fa fa-search"></div>
-            <input autocomplete="on" placeholder="Type to Search MQM Issue types" type="search">
-          </div>
+		   <div class="search-wrapper clearfix">
+				<div class="icon fa fa-search"></div>
+				<input id="issue-search" autocomplete="off" placeholder="Type to search for issue types" type="search">
+		  </div>
 		  <!-- MQM Solution from Nick-->
 		  <div id="mqm_wrapper"></div>
           </section>

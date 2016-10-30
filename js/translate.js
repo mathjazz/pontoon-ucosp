@@ -1557,6 +1557,7 @@ var Pontoon = (function (my) {
         self.updateCurrentTranslationLength();
         self.updateInPlaceTranslation();
 		//LeoraWIP
+		//document.getElementById("issues-pop").style.display = "block";
 
         $('.warning-overlay:visible .cancel').click();
       });
@@ -1620,7 +1621,7 @@ var Pontoon = (function (my) {
 		document.getElementById("helpers").style.display = "none";
 		document.getElementById("helpers2").style.display = "block";
 		//Ensures review tab is the default tab everytime this is clicked
-		$('li').removeClass('active');
+		$('#helpers2 li').removeClass('active'); 
 		$('#review').parent().addClass('active'); 
 		$('#review').parents(".tabs").find('section').hide().end()
         $('section .review').show();
