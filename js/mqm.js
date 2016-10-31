@@ -163,4 +163,26 @@ table_helper = function(data, selector) {
 	$(selector).append($level_1, $level_2, $level_3, $level_4);
 }
 
+window.addEventListener('load', function () {
+	//MQM Searchbar functionality
+    var options = {
+	url: "./data/mqm.json",
 
+	getValue: function(element) {
+			return element.name;
+		},
+
+	list: {
+		match: {
+			enabled: true
+		},
+		
+		onClickEvent: function() {
+			var value = $("#issue-search").getSelectedItemData().id;
+			document.getElementById('mqm_' + value).click();
+		}	
+	}
+};
+
+	$("#issue-search").easyAutocomplete(options);
+});
