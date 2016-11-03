@@ -1716,13 +1716,28 @@ var Pontoon = (function (my) {
 		document.getElementById("helpers").style.display = "block";
 	  });
 	  
-	  //FIX THIS GARBAGE: open up comments tab by clicking 'comments' on history item
-	  $('#helpers .history').on('click', 'div #comments', function (e) {
+	  //open up comments tab by clicking 'comments' on history item
+	  $('#helpers .history').on('click', '.info #toComments', function (e) {
         var button = $(this);
 		document.getElementById("helpers").style.display = "none";
 		document.getElementById("helpers2").style.display = "block";
-		//$('li').removeClass('active');
-		//$('#comment').parents("li").addClass('active');
+		$('#helpers2 li').removeClass('active'); 
+		$('#comment').parent().addClass('active'); 
+		$('#comment').parents(".tabs").find('section').hide().end()
+        $('section .comment').show();
+
+	  });
+	  
+	  //show/hide issues by clicking 'issues' on history item
+	  $('#helpers .history').on('click', '.info #togIssues', function (e) {
+        var button = $(this);
+		var issues = document.getElementById("issues-pop");
+		if (issues.style.visibility == "hidden"){
+			issues.style.visibility = "visible";
+		}
+		else{
+			issues.style.visibility = "hidden";
+		}
 
 	  });
     },

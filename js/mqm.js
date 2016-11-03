@@ -167,7 +167,7 @@ window.addEventListener('load', function () {
 	//MQM Searchbar functionality
     var options = {
 	url: "./data/mqm.json",
-
+	
 	getValue: function(element) {
 			return element.name;
 		},
