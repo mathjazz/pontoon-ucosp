@@ -1,6 +1,8 @@
 "use strict";
 // Definition file to load the MQM selection dynamically via Javascript
 
+var selectedMQMItems = [];
+
 function createTitle(titleName, titleIDFormat) {
     var titleNode = document.createElement('div');
     titleNode.setAttribute('id', titleIDFormat + '-title');
@@ -42,6 +44,7 @@ function toggleIssueTag(issueName) {
         if (issueTags.children.length == 0) {
             issueParent.style.visibility = 'hidden';
         }
+        selectedMQMItems.pop(issueName);
     } else {
         var issue = document.createElement('span');
         issue.setAttribute('class', 'issue-bubbles');
@@ -49,6 +52,7 @@ function toggleIssueTag(issueName) {
         issue.textContent = issueName;
         issueTags.appendChild(issue);
         issueParent.style.visibility = 'visible';
+        selectedMQMItems.push(issueName);
     }
 
 }
@@ -73,6 +77,7 @@ function addToTree(parent, treeItem) {
 
         parent.appendChild(titleNode);
         parent.appendChild(subNodes);
+
     } else {
         var label = document.createElement('label');
         label.setAttribute('for', idName);
@@ -83,6 +88,12 @@ function addToTree(parent, treeItem) {
         checkbox.textContent = treeItem['name'];
         checkbox.setAttribute('type', 'checkbox');
         checkbox.setAttribute('id', idName);
+
+        // Check if the MQM issue is already selected when redrawing the tree
+        // Mark the checkbox as checked if it has been previously selected
+        if (selectedMQMItems.indexOf(treeItem['name']) >= 0) {
+            checkbox.setAttribute('checked', 'true');
+        }
 
         // Show/hide the issue-tag when the checkbox is selected
         checkbox.addEventListener('change', function () {
