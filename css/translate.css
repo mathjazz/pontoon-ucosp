@@ -1847,20 +1847,25 @@ background: #383b42;
     transition: 0.2s ease-out;
 }
 
-#issues {
+#issues_container {
     border-bottom: 1px solid #5E6475;
     text-align: left;
     padding: 15px;
 }
 
+#issues {
+
+}
+
 .issue-bubbles {
     border: 1px solid #ffa10f;
     border-radius: 3px;
-    font-size: 0.8em;
+    font-size: 1em;
     color: #ffa10f;
     padding: 1px 5px;
     margin-right: 5px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .suggestion p {

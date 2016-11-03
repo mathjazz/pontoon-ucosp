@@ -1,4 +1,34 @@
 
+var issues = [];
+
+var addIssuesToDom = function(issue) {
+    issues.push(issue);
+    renderIssues();
+}
+
+var removeIssueFromDomById = function(id) {
+    console.log("id: ", id)
+    for (var i = 0; i < issues.length ; i++) {
+        if (issues[i][0].id = id) {
+            console.log("ID: ",issues[i][0].id,  id)
+            issues.splice(i,1);
+        }
+    }
+    renderIssues();
+
+}
+
+var renderIssues = function() {
+    var issuesDiv = document.getElementById("issues");
+    var newInnerHTML = '';
+    for(var i = 0; i < issues.length ; i++) {
+         newInnerHTML += "<span id='"+ issues[i][0].id +"' class='issue-bubbles' title='" +
+         issues[i][0].title + "' onclick='removeIssueFromDomById("+ issues[i][0] +")'>" + issues[i][0].textContent + "</span>";
+    }
+    issuesDiv.innerHTML = newInnerHTML;
+}
+
+
 // Formatted string function
 // Pulled from some yahoo utility library
 sprintf = function() {
@@ -69,7 +99,15 @@ select_item = function(item) {
 	var childs_name = sprintf("#mqm_{0}_childs", $(item).attr('id').split('_')[1]);
 	// If the item has no children select it as a tag
 	if ($(childs_name).length < 1) {
-		$(item).toggleClass("mqm_selected");
+
+        if ($(item).hasClass("mqm_selected")) {
+            $(item).removeClass("mqm_selected");
+            console.log("ITEM: ", item)
+            removeIssueFromDomById(item[0].id);
+        } else {
+            addIssuesToDom(item);
+            $(item).addClass("mqm_selected");
+        }
 	} else {
 		// Show the sub menu for the selected item
 		$(item).addClass("mqm_active_sub");
@@ -88,27 +126,48 @@ table_helper = function(data, selector) {
 	// Hit the top level items
 	for (l1_iterator = 0; l1_iterator < data.length; l1_iterator++) {
 		var l1_item = data[l1_iterator];
-		$(sprintf('<li class="mqm_item l1" id="mqm_{0}" title="{1}">{2}</li>',
+
+        // If the item has no children move on
+        var l1_HTML_string = l1_item.hasOwnProperty("children") ?
+            '<li class="mqm_item l1 has_children" id="mqm_{0}" title="{1}">{2}<span class="fa fa-chevron-right "/></li>' :
+            '<li class="mqm_item l1" id="mqm_{0}" title="{1}">{2}</li>';
+		$(sprintf(l1_HTML_string,
 			l1_item["id"], l1_item["definition"],
 			l1_item["name"])).appendTo($level_1);
-		// If the item has no children move on
-		if (!l1_item.hasOwnProperty("children")) {continue;}
+            if (!l1_item.hasOwnProperty("children")) {continue;}
+
+
+
 		// Create a sub menu for the children of this top level item
 		var $l2_list = $(sprintf('<ul id="mqm_{0}_childs" class="mqm_l2_list mqm_hidden">', l1_item["id"]));
 		for (l2_iterator = 0; l2_iterator < l1_item["children"].length; l2_iterator++) {
 			var l2_item = l1_item["children"][l2_iterator];
 			// Create a list item for this mqm rule
-			$(sprintf('<li class="mqm_item l2" id="mqm_{0}" title="{1}">{2}</li>',
+
+            var l2_HTML_string = l2_item.hasOwnProperty("children") ?
+                '<li class="mqm_item l2 has_children" id="mqm_{0}" title="{1}">{2}<span class="fa fa-chevron-right "/></li>' :
+                '<li class="mqm_item l2" id="mqm_{0}" title="{1}">{2}</li>';
+
+			$(sprintf(l2_HTML_string,
 				l2_item["id"], l2_item["definition"],
 				l2_item["name"])).appendTo($l2_list);
+
 			// If this item has no children move on
 			if (!l2_item.hasOwnProperty("children")) {continue;}
+
+
+
 			// Create a sub menu for the children of this second level item
 			var $l3_list = $(sprintf('<ul id="mqm_{0}_childs" class="mqm_l3_list mqm_hidden"></ul>', l2_item["id"]));
 			for (l3_iterator = 0; l3_iterator < l2_item["children"].length; l3_iterator++) {
 				var l3_item = l2_item["children"][l3_iterator];
 				// Create list item for this mqm rule
-				$(sprintf('<li class="mqm_item l3" id="mqm_{0}" title="{1}">{2}</li>',
+
+                var l3_HTML_string = l3_item.hasOwnProperty("children") ?
+                    '<li class="mqm_item l3 has_children" id="mqm_{0}" title="{1}">{2}<span class="fa fa-chevron-right "/></li>' :
+                    '<li class="mqm_item l3" id="mqm_{0}" title="{1}">{2}</li>';
+
+    			$(sprintf(l3_HTML_string,
 					l3_item["id"], l3_item["definition"],
 					l3_item["name"])).appendTo($l3_list);
 				// If this item has no children move on

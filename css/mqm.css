@@ -5,14 +5,30 @@
 	display: none;
 }
 .mqm_selected {
-	background-color: #777;
-	color: #555;
+	background-color: #566678;
+	color: #ffa10f;
 }
 .mqm_active_sub {
-	background-color: #D3D3D3;
+	background-color: #4D5967;
 }
+
+/*.mqm_active_sub:before {
+	content: "\f0c4";
+}*/
+
+
+
+.has_children {
+	color: lightblue;
+}
+
+.has_children .fa {
+	margin-left: 0.7em;
+}
+
+
 .mqm_column {
-	width: 33%;
+	width: 25%;
 	float: left;
 	/*overflow-y: scroll;
 position: absolute;
