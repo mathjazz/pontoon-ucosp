@@ -2019,13 +2019,13 @@ p#sign-in-required > a#sidebar-signin {
 .issue-selection > label {
   align-items: stretch;
   flex: 1;
+  min-width: 50%; /*Hack to prevent shrinking when mqm-tooltip has short text*/
 }
 
 .issue-selection:hover {
   background-color: #4D5967;
   transition: all 0.1s ease-in-out;
 }
-
 
 .issue-selection:hover .hover-area {
   display: block;
