@@ -44,3 +44,6 @@ bottom: 0;*/
 #mqm_review li:hover {
 	background: red;
 }
+.issue-bubbles{
+	cursor: pointer;
+}
