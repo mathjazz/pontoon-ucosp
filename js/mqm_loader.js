@@ -44,7 +44,7 @@ function toggleIssueTag(issueName) {
         if (issueTags.children.length == 0) {
             issueParent.style.visibility = 'hidden';
         }
-        selectedMQMItems.pop(issueName);
+        selectedMQMItems.remove(selectedMQMItems.indexOf(issueName));
     } else {
         var issue = document.createElement('span');
         issue.setAttribute('class', 'issue-bubbles');
