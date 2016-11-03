@@ -114,13 +114,17 @@ function addToTree(parent, treeItem) {
 
         var info = document.createElement('div');
         info.setAttribute('id', treeItem['name'] + '-info');
-        info.setAttribute('class', 'fa fa-info fa-lg mqm-info');
-        info.addEventListener('mouseenter', function() {
+        info.setAttribute('class', 'hover-area');
+        var icon = document.createElement('div');
+        icon.setAttribute('class', 'fa fa-info fa-lg');
+        icon.addEventListener('mouseenter', function() {
         });
+        info.appendChild(icon);
         parent.appendChild(info);
 
+
         var tooltip = document.createElement('aside');
-        tooltip.setAttribute('class', 'menu');
+        tooltip.setAttribute('class', 'mqm-tooltip');
         tooltip.setAttribute('style', '');
         tooltip.textContent = treeItem['definition'];
         parent.appendChild(tooltip);

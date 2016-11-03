@@ -2002,21 +2002,23 @@ p#sign-in-required > a#sidebar-signin {
 }
 
 .issue-selection {
-  /*margin: 0 10px;*/
   padding: 10px;
   text-align: left;
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  align-items: center;
 }
 
 .issue-selection > input[type="checkbox"] {
   margin-right: 10px;
-  display: inline-block;
   vertical-align: middle;
   cursor: pointer;
 }
 
 .issue-selection > label {
-  /*position: absolute;*/
-  /*width: 95%;*/
+  align-items: stretch;
+  flex: 1;
 }
 
 .issue-selection:hover {
@@ -2024,24 +2026,29 @@ p#sign-in-required > a#sidebar-signin {
   transition: all 0.1s ease-in-out;
 }
 
-.issue-selection .mqm-info ~ aside.menu {
-  position: absolute;
-  display: none;
-}
 
-.issue-selection:hover .mqm-info {
+.issue-selection:hover .hover-area {
   display: block;
   transition: all 0.1s ease-in-out;
 }
 
-.issue-selection .mqm-info {
-  float: right;
-  margin: 5px 0 5px 5px;
+.issue-selection .hover-area {
+  margin-left: auto;
+  width: 20px;
+  text-align: right;
+  display: none;
+  transition: all 0.1s ease-in-out;
+}
+
+.issue-selection .hover-area + aside.mqm-tooltip {
+  padding-top: 5px;
   display: none;
 }
 
-.issue-selection .mqm-info:hover ~ aside.menu {
-  left: 50%;
-  top: 50%;
+.issue-selection .hover-area:hover + aside.mqm-tooltip {
+  display: block;
+}
+
+.issue-selection aside.mqm-tooltip:hover {
   display: block;
 }
