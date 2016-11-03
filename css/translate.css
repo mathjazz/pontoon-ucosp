@@ -2015,13 +2015,18 @@ p#sign-in-required > a#sidebar-signin {
 }
 
 .issue-selection > label {
-  position: absolute;
-  width: 100%;
+  /*position: absolute;*/
+  /*width: 95%;*/
 }
 
 .issue-selection:hover {
   background-color: #4D5967;
   transition: all 0.1s ease-in-out;
+}
+
+.issue-selection .mqm-info ~ aside.menu {
+  position: absolute;
+  display: none;
 }
 
 .issue-selection:hover .mqm-info {
@@ -2031,6 +2036,12 @@ p#sign-in-required > a#sidebar-signin {
 
 .issue-selection .mqm-info {
   float: right;
-  margin-top: 5px;
+  margin: 5px 0 5px 5px;
   display: none;
+}
+
+.issue-selection .mqm-info:hover ~ aside.menu {
+  left: 50%;
+  top: 50%;
+  display: block;
 }

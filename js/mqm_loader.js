@@ -113,8 +113,17 @@ function addToTree(parent, treeItem) {
         }
 
         var info = document.createElement('div');
+        info.setAttribute('id', treeItem['name'] + '-info');
         info.setAttribute('class', 'fa fa-info fa-lg mqm-info');
+        info.addEventListener('mouseenter', function() {
+        });
         parent.appendChild(info);
+
+        var tooltip = document.createElement('aside');
+        tooltip.setAttribute('class', 'menu');
+        tooltip.setAttribute('style', '');
+        tooltip.textContent = treeItem['definition'];
+        parent.appendChild(tooltip);
 
     }
 }
