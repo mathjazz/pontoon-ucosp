@@ -2023,3 +2023,14 @@ p#sign-in-required > a#sidebar-signin {
   background-color: #4D5967;
   transition: all 0.1s ease-in-out;
 }
+
+.issue-selection:hover .mqm-info {
+  display: block;
+  transition: all 0.1s ease-in-out;
+}
+
+.issue-selection .mqm-info {
+  float: right;
+  margin-top: 5px;
+  display: none;
+}

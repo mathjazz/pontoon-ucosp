@@ -112,6 +112,10 @@ function addToTree(parent, treeItem) {
             parent.appendChild(selectionDiv);
         }
 
+        var info = document.createElement('div');
+        info.setAttribute('class', 'fa fa-info fa-lg mqm-info');
+        parent.appendChild(info);
+
     }
 }
 
