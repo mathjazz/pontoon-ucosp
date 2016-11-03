@@ -184,3 +184,9 @@ window.addEventListener('load', function () {
         }
     });
 });
+
+window.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && e.key =='i') {
+        $('#issue-search').focus();
+    }
+});
