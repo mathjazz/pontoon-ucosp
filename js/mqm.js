@@ -79,6 +79,7 @@ toggle_issue_tag = function(item) {
 			if (issueTags.children.length == 0) {
 				issueParent.style.visibility = 'hidden';
 			}
+			$("span[title='issue-count']").text(document.getElementById("issue-tag-list").childElementCount);
 		} 
 		else {
 			var issue = document.createElement('span');
@@ -89,6 +90,7 @@ toggle_issue_tag = function(item) {
 			
 			issueTags.appendChild(issue);
 			issueParent.style.visibility = 'visible';
+			$("span[title='issue-count']").text(document.getElementById("issue-tag-list").childElementCount);
 		}
 }
 
@@ -180,9 +182,10 @@ window.addEventListener('load', function () {
 		onClickEvent: function() {
 			var value = $("#issue-search").getSelectedItemData().id;
 			document.getElementById('mqm_' + value).click();
-		}	
-	}
-};
+			}	
+		}
+	};
 
 	$("#issue-search").easyAutocomplete(options);
+	
 });
