@@ -1740,6 +1740,46 @@ var Pontoon = (function (my) {
 		}
 
 	  });
+	  
+	  //Add a new comment
+	  $('#helpers2 .comment').on('click', '#add', function (e) {
+        var button = $(this);
+		
+		var commentA = document.createElement('ul');
+		var commentB = document.createElement('li');
+		commentB.setAttribute('class', 'suggestion translated');
+		commentB.setAttribute('title', 'Copy Into Translation (Tab)');
+		var commentC = document.createElement('header');
+		commentC.setAttribute('class', 'clearfix translator');
+		var commentD = document.createElement('div');
+		commentD.setAttribute('class', 'info');
+		var commentE = document.createElement('a');
+		commentE.setAttribute('href', 'http://localhost:8000/contributors/dvgiVCmoeidF2xcqSnBHtpzLTFU');
+		commentE.setAttribute('title', 'Approved by You!');
+		commentE.textContent = 'You Posted this! ';
+		var commentF = document.createElement('time');
+		commentF.setAttribute('class', 'stress');
+		//commentF.setAttribute('title', '');
+		//commentF.setAttribute('datetime', '');
+		commentF.textContent = 'just now';
+		var commentG = document.createElement('p');
+		commentG.setAttribute('class', 'translation');
+		commentG.setAttribute('dir', 'auto');
+		commentG.setAttribute('lang', 'sl');
+		commentG.textContent = document.getElementById("comment-text").value;;
+		
+		commentD.appendChild(commentE);
+		commentD.appendChild(commentF);
+		commentC.appendChild(commentD);
+		commentB.appendChild(commentC);
+		commentB.appendChild(commentG);
+		commentA.appendChild(commentB);
+		$("#all-comments").prepend(commentA);
+		
+		//Update comments count
+		$("span[title='comments-count']").text(document.getElementById("all-comments").childElementCount);
+
+	  });
     },
 	
     /*

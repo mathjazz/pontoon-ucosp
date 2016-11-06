@@ -79,7 +79,6 @@ toggle_issue_tag = function(item) {
 			if (issueTags.children.length == 0) {
 				issueParent.style.visibility = 'hidden';
 			}
-			$("span[title='issue-count']").text(document.getElementById("issue-tag-list").childElementCount);
 		} 
 		else {
 			var issue = document.createElement('span');
@@ -90,8 +89,9 @@ toggle_issue_tag = function(item) {
 			
 			issueTags.appendChild(issue);
 			issueParent.style.visibility = 'visible';
-			$("span[title='issue-count']").text(document.getElementById("issue-tag-list").childElementCount);
 		}
+		//update issues count
+		$("span[title='issue-count']").text(document.getElementById("issue-tag-list").childElementCount);
 }
 
 // Select a specific menu item from the mqm tree
