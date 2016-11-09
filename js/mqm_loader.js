@@ -137,8 +137,9 @@ function searchStringInTree(tree, queryString, results) {
         var name = tree[item].name.toLowerCase();
         if (name.indexOf(queryString.toLowerCase()) != -1) {
             results.push(tree[item]);
+        } else {
+            searchStringInTree(tree[item].children, queryString, results);
         }
-        searchStringInTree(tree[item].children, queryString, results);
     }
 }
 
