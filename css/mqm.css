@@ -1,5 +1,9 @@
 .mqm_item {
 	cursor: pointer;
+	list-style: none;
+	padding: 10px;
+	margin: 0;
+	text-align: right;
 }
 .mqm_hidden {
 	display: none;
@@ -30,20 +34,40 @@
 .mqm_column {
 	width: 25%;
 	float: left;
+	margin: 0px;
 	/*overflow-y: scroll;
 position: absolute;
 top: 0;
 bottom: 0;*/
 }
 
+.mqm_column ul {
+	margin: 0px;
+}
+
 #mqm_review {
 	text-align: left;
+	display: none;
 }
 
 
 #mqm_review li:hover {
-	background: red;
+	background: #5E6475;
 }
 .issue-bubbles{
 	cursor: pointer;
+}
+
+#mqm_tabs li.active {
+	border-top: 1px solid #5E6475;
+}
+
+#mqm_comments_list {
+	margin: 0px;
+}
+
+#mqm_comments_list li {
+	list-style: none;
+	padding: 10px 15px;
+	margin: 0px;
 }

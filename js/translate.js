@@ -1564,18 +1564,38 @@ var Pontoon = (function (my) {
         self.updateOnServer(entity, translation, true);
       });
 
+
+
+
+
+
+
+
+
+
+
+      // HERE
+
+
+
+
       $('#helpers .history').on('click', 'menu .unapprove', function (e) {
          var button = $(this),
              translationId = $(this).parents('li').children('p.translation')[0].innerText;
-             console.log("hjererere; ", translationId)
 
              $('#translation_suggestion').innerText = translationId;
-             $('section .history').hide();
+             $('#helpers').hide();
              $('#mqm_review').show();
+             console.log("hjererere; ", translationId)
+
+             $('#translation_suggestion').text(translationId);
+
+            // SHOW MQM_REVIEW Tabs with MQM and comments tabs
+
         });
 
         $(".close_mqm_btn").on('click', function() {
-            $('section .history').show();
+            $('#helpers').show();
             $('#mqm_review').hide();
         })
 

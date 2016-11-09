@@ -1848,9 +1848,19 @@ background: #383b42;
 }
 
 #issues_container {
+    display: block;
     border-bottom: 1px solid #5E6475;
     text-align: left;
-    padding: 15px;
+    padding: 5px 15px;
+}
+
+#translation_suggestion {
+    display: block;
+    border-bottom: 1px solid #5E6475;
+    text-align: left;
+    padding: 5px 15px;
+    font-size: 22px;
+color: #7BC876;
 }
 
 #issues {

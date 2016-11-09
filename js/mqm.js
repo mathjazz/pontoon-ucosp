@@ -1,5 +1,5 @@
 
-<<<<<<< HEAD
+
 var issues = [];
 
 var addIssuesToDom = function(issue) {
