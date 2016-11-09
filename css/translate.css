@@ -1849,22 +1849,29 @@ background: #383b42;
 
 #issues_container {
     display: block;
-    border-bottom: 1px solid #5E6475;
+    /*border-bottom: 1px solid #5E6475;*/
     text-align: left;
-    padding: 5px 15px;
+    padding: 0px 15px 10px;
+}
+
+#translation_suggestion_box {
+    display: block;
+    text-align: left;
+    padding: 10px 15px;
 }
 
 #translation_suggestion {
-    display: block;
-    border-bottom: 1px solid #5E6475;
-    text-align: left;
-    padding: 5px 15px;
+
     font-size: 22px;
 color: #7BC876;
 }
 
 #issues {
 
+}
+
+.comments {
+    padding: 1em;
 }
 
 .issue-bubbles {
@@ -1876,6 +1883,7 @@ color: #7BC876;
     margin-right: 5px;
     font-weight: bold;
     cursor: pointer;
+    margin-bottom: 3px;
 }
 
 .suggestion p {

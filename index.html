@@ -3332,15 +3332,6 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
 
       </menu>
 
-
-      <div id="issues_container">
-          <span style="margin-right: 10px;">Issues: </span>
-          <span id="issues">
-
-          </span>
-      </div>
-
-
       <div id="helpers" class="tabs">
         <nav>
           <ul>
@@ -3351,18 +3342,6 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
                   <span class="count">1</span>
                 </span>
               </a>
-
-
-            <!-- </li><li>
-              <a href="#tag-issues" title="Tag new issues with this translation" class="">
-                <span>Issues
-                    <span class="fa fa-cog fa-lg fa-spin"></span>
-                    <span class="count current_issue_count" style="display: inline;">0</span>
-                </span>
-              </a> -->
-
-
-
             </li><li>
               <a href="#machinery" title="Translation memory, machine translation &amp; terminology" class="">
                 <span>Machinery
@@ -3436,10 +3415,31 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
       </div>
 
       <div id="mqm_review">
-          <span id="translation_suggestion">TRANSLATION</span>
-          <button class="close_mqm_btn">
-              Close
-          </button>
+
+          <div id="translation_suggestion_box">
+              <div id="translation_box_header">
+                  <div class="close_mqm_btn">
+                      <span class="fa fa-chevron-left"></span>
+                      BACK
+                  </div>
+                  <div>
+                      MQM Review for translation:
+
+                  </div>
+              </div>
+
+
+              <span id="translation_suggestion">TRANSLATION</span>
+          </div>
+
+          <div id="issues_container">
+              <span style="margin-right: 10px;">Issues: </span>
+              <span id="issues">
+
+              </span>
+          </div>
+
+
 
           <div id="mqm_tabs" class="tabs">
             <nav>
@@ -3464,12 +3464,12 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
       </nav>
 
 
-          <section class="tag-issues">
+          <section class="tag-issues"  style="display: block;">
             <div id="mqm_wrapper"></div>
           </section>
 
           <section class="comments">
-              <input type="text">
+              <textarea dir="auto" id="comment" placeholder="Leave a comment." lang="sl"></textarea>
               <button>Comment</button>
 
               <ul id="mqm_comments_list">

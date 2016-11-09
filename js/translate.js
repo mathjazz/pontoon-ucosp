@@ -1584,8 +1584,9 @@ var Pontoon = (function (my) {
              translationId = $(this).parents('li').children('p.translation')[0].innerText;
 
              $('#translation_suggestion').innerText = translationId;
-             $('#helpers').hide();
              $('#mqm_review').show();
+             $(' #translation, menu, #helpers').hide();
+
              console.log("hjererere; ", translationId)
 
              $('#translation_suggestion').text(translationId);
@@ -1595,7 +1596,7 @@ var Pontoon = (function (my) {
         });
 
         $(".close_mqm_btn").on('click', function() {
-            $('#helpers').show();
+            $(' #translation, menu, #helpers').show();
             $('#mqm_review').hide();
         })
 

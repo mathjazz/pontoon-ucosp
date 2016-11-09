@@ -1,3 +1,7 @@
+#mqm_wrapper {
+	padding: 1em;
+}
+
 .mqm_item {
 	cursor: pointer;
 	list-style: none;
@@ -50,12 +54,32 @@ bottom: 0;*/
 	display: none;
 }
 
-
 #mqm_review li:hover {
 	background: #5E6475;
 }
+
+
 .issue-bubbles{
 	cursor: pointer;
+}
+
+
+#mqm_tabs {
+
+	/*height: calc(100% - 104px);*/
+	height: 350px;
+position: relative;
+}
+
+#mqm_tabs section {
+	bottom: 0;
+	left: 0;
+	overflow-y: auto;
+	padding-top: 10px;
+	position: absolute;
+	right: 0;
+	top: 43px;
+	height: 100%;
 }
 
 #mqm_tabs li.active {
@@ -70,4 +94,17 @@ bottom: 0;*/
 	list-style: none;
 	padding: 10px 15px;
 	margin: 0px;
+	border-bottom: 1px solid #4d6266;
+}
+
+.close_mqm_btn {
+	font-size: 14px;
+	margin-right: 10px;
+	cursor: pointer;
+	color: lightblue;
+	margin-bottom: 8px;
+}
+
+.close_mqm_btn .fa {
+	margin-right: 4px;
 }
