@@ -15,8 +15,8 @@ var removeIssueFromDomById = function(id) {
             issues.splice(i,1);
         }
     }
-    renderIssues();
-
+    $('#issues #' + id).remove();
+    // renderIssues();
 }
 
 var renderIssues = function() {
@@ -24,10 +24,30 @@ var renderIssues = function() {
     var newInnerHTML = '';
     for(var i = 0; i < issues.length ; i++) {
          newInnerHTML += "<span id='"+ issues[i][0].id +"' class='issue-bubbles' title='" +
-         issues[i][0].title + "' onclick='removeIssueFromDomById("+ issues[i][0] +")'>" + issues[i][0].textContent + "</span>";
+         issues[i][0].title + "' onclick='removeIssueFromDomById("+ issues[i][0] +")'>" +
+         issues[i][0].textContent + "</span>";
+         $('#issue .issue-bubbles').click(function() {
+          $(this).remove();
+        });
     }
     issuesDiv.innerHTML = newInnerHTML;
 }
+
+
+
+$('.mqm_item').click(function() {
+  var id = $(this).attr('id');
+
+  if ($('#issue #' + id).length) {
+    $('#issues #' + id).remove();
+
+  } else {
+      var new_bubble = $(sprintf("<span id='{0}' class='issue-bubbles' title='{1}'>{2}</span>", id, $(this).attr('title'), $(this).html()));
+    $('#issues').append(new_bubble);
+  }
+});
+
+
 
 var mqm_parents = {}
 
@@ -117,7 +137,8 @@ toggle_bubble = function(item) {
 		$(document.getElementById(bubble_id)).remove();
 		return;
 	}
-	var new_bubble = $(sprintf("<span id='{0}' class='issue-bubbles' title='{1}'>{2}</span>", bubble_id, $(item).attr('title'), $(item).html()));
+	var new_bubble = $(sprintf("<span id='{0}' class='issue-bubbles' title='{1}'>{2}</span>",
+        bubble_id, $(item).attr('title'), $(item).html()));
 	$("#issues").children(":first").append(new_bubble);
 }
 
@@ -158,17 +179,17 @@ select_item = function(item) {
 	// If the item has no children select it as a tag
 	if ($(childs_name).length < 1) {
 
-        if ($(item).hasClass("mqm_selected")) {
-            $(item).removeClass("mqm_selected");
-            console.log("ITEM: ", item)
-            removeIssueFromDomById(item[0].id);
-        } else {
-            addIssuesToDom(item);
-            $(item).addClass("mqm_selected");
-        }
-		// $(item).toggleClass("mqm_selected");
-		// toggle_bubble(item);
-		// recount_active();
+        // if ($(item).hasClass("mqm_selected")) {
+        //     $(item).removeClass("mqm_selected");
+        //     // console.log("ITEM: ", item)
+        //     // removeIssueFromDomById(item[0].id);
+        // } else {
+        //     // addIssuesToDom(item);
+        //     $(item).addClass("mqm_selected");
+        // }
+		$(item).toggleClass("mqm_selected");
+		toggle_bubble(item);
+		recount_active();
 	} else {
 		// Show the sub menu for the selected item
 		$(item).addClass("mqm_active_sub");

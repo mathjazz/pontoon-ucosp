@@ -52,6 +52,10 @@ bottom: 0;*/
 #mqm_review {
 	text-align: left;
 	display: none;
+	position: absolute;
+ 	top: 160px;
+ 	bottom: 0;
+ 	width: 100%;
 }
 
 #mqm_review li:hover {
@@ -65,9 +69,7 @@ bottom: 0;*/
 
 
 #mqm_tabs {
-
-	/*height: calc(100% - 104px);*/
-	height: 350px;
+	height: calc(100% - 195px);
 position: relative;
 }
 
@@ -75,11 +77,14 @@ position: relative;
 	bottom: 0;
 	left: 0;
 	overflow-y: auto;
-	padding-top: 10px;
 	position: absolute;
 	right: 0;
-	top: 43px;
+	top: 54px;
 	height: 100%;
+}
+
+#mqm_tabs section.comments {
+	overflow-y: hidden;
 }
 
 #mqm_tabs li.active {
@@ -88,6 +93,8 @@ position: relative;
 
 #mqm_comments_list {
 	margin: 0px;
+	height: calc(100% - 110px);
+ 	overflow-y: auto;
 }
 
 #mqm_comments_list li {
@@ -96,6 +103,11 @@ position: relative;
 	margin: 0px;
 	border-bottom: 1px solid #4d6266;
 }
+
+.comment_metadata {
+	color: #9eb1bc;
+}
+
 
 .close_mqm_btn {
 	font-size: 14px;

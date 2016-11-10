@@ -1534,7 +1534,7 @@ p#sign-in-required > a#sidebar-signin {
 
 #helpers {
   background: #3F4752;
-  height: calc(60% - 104px);
+  height: calc(90% - 206px);
   position: relative;
 }
 
@@ -1849,19 +1849,21 @@ background: #383b42;
 
 #issues_container {
     display: block;
-    /*border-bottom: 1px solid #5E6475;*/
+    background: #5C6978;
     text-align: left;
-    padding: 0px 15px 10px;
+    padding: 10px 15px;
+    border-top: 1px solid #7E8B9B;
 }
 
 #translation_suggestion_box {
     display: block;
     text-align: left;
     padding: 10px 15px;
+    background: #5C6978;
 }
 
 #translation_suggestion {
-
+background: #5C6978;
     font-size: 22px;
 color: #7BC876;
 }
@@ -1870,14 +1872,11 @@ color: #7BC876;
 
 }
 
-.comments {
-    padding: 1em;
-}
-
 .issue-bubbles {
+    display: inline-block;
     border: 1px solid #ffa10f;
     border-radius: 3px;
-    font-size: 1em;
+    font-size: 0.9em;
     color: #ffa10f;
     padding: 1px 5px;
     margin-right: 5px;
@@ -1943,4 +1942,11 @@ color: #7BC876;
 
 .history-list {
 
+}
+
+#comment {
+    height: 70px !important;
+}
+.comments {
+    padding: 1em;
 }
