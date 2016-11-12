@@ -409,7 +409,7 @@ var Pontoon = (function (my) {
      * Update current translation length
      */
     updateCurrentTranslationLength: function () {
-      $('#translation-length .current-length').html($('#translation').val().length);
+      $('#translation-length .current-length').html($('#translation').text().length);
     },
 
 
@@ -417,7 +417,7 @@ var Pontoon = (function (my) {
      * Update cached translation, needed for unsaved changes check
      */
     updateCachedTranslation: function () {
-      this.cachedTranslation = $('#translation').val();
+      this.cachedTranslation = $('#translation').text();
     },
 
 
@@ -485,7 +485,7 @@ var Pontoon = (function (my) {
 
       // Translation area (must be set before unsaved changes check)
       $('#translation')
-        .val(entity.translation[0].string)
+        .text(entity.translation[0].string)
         .focus();
       $('.warning-overlay:visible .cancel').click();
 
@@ -609,7 +609,7 @@ var Pontoon = (function (my) {
       }
 
       var before = this.cachedTranslation,
-          after = $('#translation').val();
+          after = $('#translation').text();
 
       if ((before !== null) && (before !== after)) {
         $('#unsaved').show();
@@ -1245,7 +1245,7 @@ var Pontoon = (function (my) {
       e.preventDefault();
       var self = Pontoon,
           entity = self.getEditorEntity(),
-          source = $('#translation').val();
+          source = $('#translation').text();
 
       // Prevent double translation submissions
       $(this).off('click.save');
@@ -1280,7 +1280,7 @@ var Pontoon = (function (my) {
     updateInPlaceTranslation: function (translation) {
       var entity = this.getEditorEntity(),
           pluralForm = this.getPluralForm(true),
-          translation = translation || $('#translation').val();
+          translation = translation || $('#translation').text();
 
       if (entity.body && pluralForm === 0 && (this.user.isTranslator || !entity.translation[pluralForm].approved)) {
         this.postMessage("SAVE", {
@@ -1350,7 +1350,7 @@ var Pontoon = (function (my) {
             selectionEnd = textarea.prop('selectionEnd'),
             placeable = $(this).text(),
             cursorPos = selectionStart + placeable.length,
-            before = textarea.val(),
+            before = textarea.text(),
             after = before.substring(0, selectionStart) + placeable + before.substring(selectionEnd);
 
         textarea.val(after).focus();
@@ -1373,7 +1373,7 @@ var Pontoon = (function (my) {
         $('#source-pane h2').html(title).show();
         $('#original').html(marked);
 
-        $('#translation').val(source).focus();
+        $('#translation').text(source).focus();
         $('#translation-length .original-length').html(original.length);
         self.moveCursorToBeginning();
         self.updateCurrentTranslationLength();
@@ -1503,7 +1503,7 @@ var Pontoon = (function (my) {
           self.restoreInPlaceTranslation(); // Before callback, so that entity is available!
           callback();
           $('#unsaved').hide();
-          $('#translation').val(self.cachedTranslation);
+          $('#translation').text(self.cachedTranslation);
         }
       });
 
@@ -1515,7 +1515,7 @@ var Pontoon = (function (my) {
             original = entity['original' + self.isPluralized()],
             source = original;
 
-        $('#translation').val(source).focus();
+        $('#translation').text(source).focus();
         self.moveCursorToBeginning();
         self.updateCurrentTranslationLength();
         self.updateInPlaceTranslation();
@@ -1525,7 +1525,7 @@ var Pontoon = (function (my) {
       $('#clear').click(function (e) {
         e.preventDefault();
 
-        $('#translation').val('').focus();
+        $('#translation').text('').focus();
         self.moveCursorToBeginning();
         self.updateCurrentTranslationLength();
         self.updateInPlaceTranslation();
@@ -1568,7 +1568,7 @@ var Pontoon = (function (my) {
         var translation = $(this).find('.translation').text(),
             source = translation;
 
-        $('#translation').val(source).focus();
+        $('#translation').text(source).focus();
         self.moveCursorToBeginning();
         self.updateCurrentTranslationLength();
         self.updateInPlaceTranslation();
@@ -1581,7 +1581,7 @@ var Pontoon = (function (my) {
         $(this).parents('li').click();
 
         var entity = self.getEditorEntity(),
-            translation = $('#translation').val();
+            translation = $('#translation').text();
 
         // Mark that user approved translation instead of submitting it
         self.approvedNotSubmitted = true;
@@ -1605,7 +1605,7 @@ var Pontoon = (function (my) {
 
            self.updateTranslation(entity, pf, data.translation);
 
-           $('#translation').val(data.translation.string).focus();
+           $('#translation').text(data.translation.string).focus();
            self.updateCachedTranslation();
            self.updateCurrentTranslationLength();
 
@@ -1664,7 +1664,7 @@ var Pontoon = (function (my) {
                   // Make newest alternative translation active
                   if (next.length) {
                     next.click();
-                    var newTranslation = $('#translation').val();
+                    var newTranslation = $('#translation').text();
 
                     if (entity.body && pluralForm === 0) {
                       self.postMessage("SAVE", {
@@ -1682,7 +1682,7 @@ var Pontoon = (function (my) {
 
                   // Last translation deleted, no alternative available
                   } else {
-                    $('#translation').val('').focus();
+                    $('#translation').text('').focus();
 
                     if (entity.body && pluralForm === 0) {
                       self.postMessage("DELETE", {
