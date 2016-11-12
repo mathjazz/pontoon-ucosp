@@ -221,8 +221,12 @@ body > header .locale.select {
 }
 
 .select .menu {
-  bottom: auto;
-  top: 60px;
+  bottom: 450px;
+  position: fixed;
+  left: 250px;
+  right: 0;
+  margin: auto;
+  height: auto;
 }
 
 .project.select .menu,
