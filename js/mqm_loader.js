@@ -44,7 +44,9 @@ function toggleIssueTag(issueName) {
         if (issueTags.children.length == 0) {
             issueParent.style.visibility = 'hidden';
         }
-        selectedMQMItems.remove(selectedMQMItems.indexOf(issueName));
+        var indexOfIssue = selectedMQMItems.indexOf(issueName);
+        // Hacky way to remove from array
+        selectedMQMItems.splice(indexOfIssue, indexOfIssue);
     } else {
         var issue = document.createElement('span');
         issue.setAttribute('class', 'issue-bubbles');
