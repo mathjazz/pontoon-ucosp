@@ -21,6 +21,7 @@
 	<script src="js/translate.js"></script>
 	<script src="js/mqm.js"></script>
 	<script src="js/mqm_loader.js"></script>
+	<script src="js/comments.js"></script>
 
 
 </head>
@@ -3745,7 +3746,7 @@
 						   class="">
 								<span>Comments
 									<span class=""></span>
-									<span class="count">2</span>
+									<span id="comment-count" class="count">2</span>
 								</span>
 						</a>
 					</li>
@@ -3792,8 +3793,8 @@
 					</li>
 				</ul>
 				<div id="add-comment">
-					<input type="text" placeholder="Add Comment"/>
-					<button>Send</button>
+					<input id="add-comment-text" type="text" placeholder="Add Comment"/>
+					<button id="add-comment-button">Send</button>
 				</div>
             </section>
 

@@ -5,7 +5,7 @@
 - Use the search feature to search for issues
 - Press `CTRL+I` to make the search box active (using arrow keys to navigate would be a great future-feature)
 - Open comments
-- Add a comment (currently not implemented)
+- Add a comment
 
 ### Feedback:
 - Is it clear that the MQM navigation and issues are for the currently selected translation?
