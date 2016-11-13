@@ -1880,6 +1880,8 @@ p#sign-in-required > a#sidebar-signin {
   margin-top: 10px;
   margin-left: 0;
   padding-left: 1.2em;
+  overflow-y: auto;
+  height: calc(100% - 62px);
 }
 
 #comment-view .info {
