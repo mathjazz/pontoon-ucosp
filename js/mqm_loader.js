@@ -43,10 +43,12 @@ function toggleIssueTag(issueName) {
         // No point of displaying the issue title when there's no issues, removing it
         if (issueTags.children.length == 0) {
             issueParent.style.visibility = 'hidden';
+            $('#issue-count').hide();
         }
         var indexOfIssue = selectedMQMItems.indexOf(issueName);
         // Hacky way to remove from array
-        selectedMQMItems.splice(indexOfIssue, indexOfIssue);
+        selectedMQMItems.splice(indexOfIssue, indexOfIssue + 1);
+        $('#issue-count').text(selectedMQMItems.length);
     } else {
         var issue = document.createElement('span');
         issue.setAttribute('class', 'issue-bubbles');
@@ -55,6 +57,8 @@ function toggleIssueTag(issueName) {
         issueTags.appendChild(issue);
         issueParent.style.visibility = 'visible';
         selectedMQMItems.push(issueName);
+        $('#issue-count').show();
+        $('#issue-count').text(selectedMQMItems.length);
     }
 
 }
