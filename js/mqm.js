@@ -186,7 +186,25 @@ window.addEventListener('load', function () {
 		
 		onClickEvent: function() {
 			var value = $("#issue-search").getSelectedItemData().id;
-			document.getElementById('mqm_' + value).click();
+			//Simulate path click
+			var item = document.getElementById('mqm_' + value);
+			if(item.parentNode.id != "mqm_level1"){
+				var par = item.parentNode.id.replace('_childs', '');
+				var parItem = document.getElementById(par);
+				if(parItem.parentNode.id != "mqm_level1"){
+					var par2 = parItem.parentNode.id.replace('_childs', '');
+					var parItem2 = document.getElementById(par2);
+					if(parItem2.parentNode.id != "mqm_level1"){
+						var par3 = parItem2.parentNode.id.replace('_childs', '');
+						var parItem3 = document.getElementById(par3);
+						parItem3.click();
+					}
+					parItem2.click();
+				}
+				parItem.click();
+			}
+			item.click();
+			///document.getElementById('mqm_' + value).click();
 			}	
 		}
 		
