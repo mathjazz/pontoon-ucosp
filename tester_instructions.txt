@@ -1,0 +1,35 @@
+Pontoon Prototype by Nick Delben and Joshua Nguyen
+
+Testing Instructions:
+1. Word Selection Menu:
+    - Click the hamburger menu icon to expand the menu.
+        - Expected behavior: the menu should slide out from the left and reveal a
+            list of words to choose from
+    - Click the hamburger menu again to close it
+        - Expected behavior: the menu should slide back to the left, hiding itself.
+
+2. Translation MQM Review Process:
+    - Review the translation:
+        - Click the review button for the translation
+            - Expected behavior: a new interface should appear with options to
+                assign MQM issues. The MQM Review tab should be pre-selected
+        - Assigning MQM issues to the current translation by clicking through
+            the MQM tree and selecting appropriate issues.
+            - Expected behavior: selected issues should appear in a list just below
+                the translation text
+                - The count of the active issues should be reflected in the 
+                    MQM Review tab heading.
+        - Deselecting active issues by clicking on an orange/selected
+            item in the MQM tree or by selecting an issue in the active issues list.
+            - Expected behavior: the selected issue should be removed from the list
+                and the style of the issue in the tree should turn to white.
+        - Navigate back to main interface by clicking the "Back" button.
+            - Expected behavior: the interface shoudl switch back to the main view
+                - The count of active issues should be reflected in the metadata
+                    area of the translation by the username and timestamp
+
+3. User interface and user experience comments?
+    - Existing unreviewed translations are considered "approved". By reviewing a
+        translation, its state would be "unapproved". Is this intuitive? Should
+        there be another button reserved for "approve" and another "review" button
+        to access the MQM Review interface?
