@@ -1566,20 +1566,7 @@ var Pontoon = (function (my) {
 
 
 
-
-
-
-
-
-
-
-
-      // HERE
-
-
-
-
-      $('#helpers .history').on('click', 'menu .unapprove', function (e) {
+      $('#helpers .history').on('click', 'menu .review_button', function (e) {
          var button = $(this),
              translationId = $(this).parents('li').children('p.translation')[0].innerText;
 

@@ -2873,7 +2873,7 @@ the menu icon in the top-left corner.</p>
       <!-- Profile -->
       <div id="profile" class="select">
         <div class="button selector">
-          <span class="title noselect">Donkey Banana</span>
+          <span class="title noselect">John Smith</span>
           <img class="rounded" src="img/3271518cbca453708741a87ddcc66eed.png">
         </div>
         <div class="menu" style="display: none;">
@@ -3389,8 +3389,8 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
 
 
                       <menu class="toolbar">
-                          <button class="unapprove fa" title="Unapprove" />
-                          <button class=" fa fa-times-circle-o" style="color: #ffa10f;" title="Delete"/>
+                          <span class="review_button" title="Unapprove">Review</span>
+                          <!-- <button class=" fa fa-times-circle-o" style="color: #ffa10f;" title="Delete"/> -->
                       </menu>
                   </header>
                   <p class="translation" dir="auto" lang="sl">Bizgec-ddasdasga223v3</p>
@@ -3418,19 +3418,25 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
 
           <div id="translation_suggestion_box">
               <div id="translation_box_header">
-                  <div class="close_mqm_btn">
-                      <span class="fa fa-chevron-left"></span>
-                      BACK
+                  <div>
+                      <span class="close_mqm_btn">
+                          <span class="fa fa-chevron-left"></span>
+                          BACK
+                      </span>
+
+                      <span>
+                          Matjaž Horvat | Nov 2, 2016
+                      </span>
+
                   </div>
+
                   <!-- <div>
                       MQM Review for translation:
 
                   </div> -->
               </div>
 
-              <div>
-                  Matjaž Horvat | Nov 2, 2016
-              </div>
+
               <span id="translation_suggestion">TRANSLATION</span>
           </div>
 
@@ -3450,7 +3456,7 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
                   <a href="#tag-issues" title="Translation history" class="">
                     <span>MQM Review
                       <span class="fa fa-cog fa-lg fa-spin"></span>
-                      <span class="count">1</span>
+                      <span class="count  current_issue_count">0</span>
                     </span>
                   </a>
                 </li>
@@ -3458,7 +3464,7 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
                   <a href="#comments" title="Tag new issues with this translation" class="">
                     <span>Comments
                         <span class="fa fa-cog fa-lg fa-spin"></span>
-                        <span class="count current_issue_count" style="display: inline;">0</span>
+                        <span class="count" style="display: inline;">0</span>
                     </span>
                   </a>
               </li>

@@ -8,6 +8,7 @@
 	padding: 10px;
 	margin: 0;
 	text-align: right;
+	border-right: 1px solid lightblue;
 }
 .mqm_hidden {
 	display: none;
@@ -17,7 +18,11 @@
 	color: #ffa10f;
 }
 .mqm_active_sub {
-	background-color: #4D5967;
+	/*background-color: #4D5967;*/
+	border: 1px solid lightblue;
+border-right: 0px;
+margin-left: 5px;
+border-radius: 5px 0px 0px 5px;
 }
 
 /*.mqm_active_sub:before {
@@ -108,9 +113,15 @@ position: relative;
 	color: #9eb1bc;
 }
 
+#translation_box_header {
+	height: 30px;
 
+}
 .close_mqm_btn {
-	font-size: 14px;
+	border: 1px solid lightblue;
+	padding: 2px 5px;
+	border-radius: 4px;
+	font-size: 12px;
 	margin-right: 10px;
 	cursor: pointer;
 	color: lightblue;
@@ -119,4 +130,23 @@ position: relative;
 
 .close_mqm_btn .fa {
 	margin-right: 4px;
+}
+
+.close_mqm_btn:hover {
+	color: white;
+	border-color: white;
+}
+
+.review_button {
+	border: 1px solid #ffa10f;
+	padding: 3px 8px;
+	font-weight: bold;
+	font-size: 1em;
+	color: #ffa10f;
+	border-radius: 5px;
+}
+
+.review_button:hover {
+	border-color: #4FC4F6;
+	color: #4FC4F6;
 }

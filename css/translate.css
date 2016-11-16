@@ -1901,17 +1901,15 @@ color: #7BC876;
 }
 
 .review-btns .header-btn {
-    background-color: #ff3a8a;
-    border-radius: 3px;
     font-size: 1em;
-    color: #fff;
-    padding: 3px 5px;
-    margin: 5px;
+    padding: 3px 8px;
+margin: 5px;
+border-left: 1px solid white;
 }
 
 .review-btns .header-btn:hover {
-    background-color: #ea347f;
 }
+
 
 .info .count {
     font-weight: bold;
