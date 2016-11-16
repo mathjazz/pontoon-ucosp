@@ -16,7 +16,7 @@ var removeIssueFromDomById = function(id) {
         }
     }
     $('#issues #' + id).remove();
-    // renderIssues();
+    renderIssues();
 }
 
 var renderIssues = function() {
@@ -100,7 +100,8 @@ set_bindings = function(selector) {
 
 // Event: User selects a tag for an active issue
 $(document).on("click", ".issue-bubbles", function() {
-	expand_mqm_element($(this).attr('id').split('_')[2]);
+	var name = $(this).attr('id').split('_')[2];
+	select_item(sprintf("#mqm_{0}", name));
 });
 
 // Expand the tree to reveil a specific element
@@ -139,7 +140,7 @@ toggle_bubble = function(item) {
 	}
 	var new_bubble = $(sprintf("<span id='{0}' class='issue-bubbles' title='{1}'>{2}</span>",
         bubble_id, $(item).attr('title'), $(item).html()));
-	$("#issues").children(":first").append(new_bubble);
+	$("#issues").append(new_bubble);
 }
 
 
