@@ -167,8 +167,13 @@ table_helper = function(data, selector) {
 
 window.addEventListener('load', function () {
 	//MQM Searchbar functionality
+	//var mqm = json.parse("./data/mqm.json");
+	//var source = [];
+	//source = findValuesHelper(mqm, source);
+	
+	
     var options = {
-	url: "./data/mqm.json",
+	url: "./data/mqmSearchCheat.json",
 	
 	getValue: function(element) {
 			return element.name;
@@ -184,6 +189,8 @@ window.addEventListener('load', function () {
 			document.getElementById('mqm_' + value).click();
 			}	
 		}
+		
+		,theme: "square"
 	};
 
 	$("#issue-search").easyAutocomplete(options);

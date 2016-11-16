@@ -1700,6 +1700,7 @@ p#sign-in-required > a#sidebar-signin {
   padding-left: 10px;
   padding-right: 10px;
   transition: all 0.1s ease-out;
+
 }
 
 #helpers2 > section ul li.delete {
@@ -1745,6 +1746,14 @@ p#sign-in-required > a#sidebar-signin {
   padding: 10px 15px;
   height: 40px;
   text-transform: uppercase;
+  float:left;
+  display: block;
+}
+
+#helpers2 > section.comment #comment-text {
+	float:left;
+	width: calc(100% - 90px);
+	display: block;
 }
 
 #helpers2 > section.comment #clear {

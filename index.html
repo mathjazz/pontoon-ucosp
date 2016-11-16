@@ -10,15 +10,16 @@
     <meta name="description" content="Live web localization tool">
     <meta name="author" content="Mozilla">
 
-    
-      <link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="lib/font-awesome.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/easy-autocomplete.min.css">
+	<link rel="stylesheet" href="css/easy-autocomplete.themes.min.css">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<link href="lib/font-awesome.css" rel="stylesheet" type="text/css">
       
   <link href="lib/jquery-ui.css" rel="stylesheet" type="text/css">
 <link href="lib/jquery-ui-timepicker-addon.css" rel="stylesheet" type="text/css">
 <link href="css/translate.css" rel="stylesheet" type="text/css">
 <link href="css/mqm.css" rel="stylesheet" type="text/css">
- <!--<link rel="stylesheet" href="css/easy-autocomplete.min.css">-->
+
 
     
   </head>
@@ -3423,7 +3424,7 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
         <section class="review" style="display: block;">
 		   <div class="search-wrapper clearfix">
 				<div class="icon fa fa-search"></div>
-				<input id="issue-search" autocomplete="on" placeholder="Type to search for issue types" type="search">
+				<input id="issue-search" placeholder="Type to search for issue types" type="search">
 		  </div>
 		  <!-- MQM Solution from Nick-->
 		  <div id="mqm_wrapper"></div>
@@ -3432,15 +3433,8 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
         <section class="comment">
 		 
 		<textarea dir="auto" id="comment-text" placeholder="Write comment here!" lang="sl"></textarea>
-		<menu>
-			<div>
-				<div id="comment-length" style="display: block;">
-					<span class="current-length">0</span>
-				</div>
-				<button id="clear" title="Clear Comment">Clear</button>
-				<button id="add" title="Add Comment">Add</button>
-		    </div>
-		</menu>
+		<button id="add" title="Add Comment">Add</button>
+		
 		<div id="all-comments">
 		 <ul><li data-id="401371" class="suggestion translated" title="Copy Into Translation (Tab)"><header class="clearfix translator"><div class="info"><a href="http://localhost:8000/contributors/dvgiVCmoeidF2xcqSnBHtpzLTFU" title="Approved by An Unhappy Cat">Unhappy Cat</a><time class="stress" datetime="2016-08-17T18:18:18.948113+00:00+0000" title="Aug 17, 2016 18:18 UTC">about a day ago</time></div></header><p class="translation" dir="auto" lang="sl">This translation is alright.</p></li></ul>
 		 <ul><li data-id="401372" class="suggestion translated" title="Copy Into Translation (Tab)"><header class="clearfix translator"><div class="info"><a href="http://localhost:8000/contributors/dvgiVCmoeidF2xcqSnBHtpzLTFU" title="Approved by Daffy Duck">Daffy Duck</a><time class="stress" datetime="2016-08-17T18:18:18.948113+00:00+0000" title="Aug 17, 2016 18:18 UTC">about a month ago</time></div></header><p class="translation" dir="auto" lang="sl">What sort of language do you think this is?</p></li></ul>
