@@ -48,7 +48,7 @@ window.addEventListener('load', function () {
 
     var button = document.getElementById('add-comment-button');
     button.addEventListener('click', function() {
-        if (commentTextbox.value.lenth > 0) {
+        if (commentTextbox.value.length > 0) {
             addComment();
             commentTextbox.value = "";
         }
