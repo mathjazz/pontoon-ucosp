@@ -1,0 +1,16 @@
+.mqm_item {
+	cursor: pointer;
+}
+.mqm_hidden {
+	display: none;
+}
+.mqm_selected {
+	background-color: #7BC876;	
+}
+.mqm_active_sub {
+	background-color: #D3D3D3;
+}
+.mqm_column {
+	width: 25%;
+	float: left;
+}

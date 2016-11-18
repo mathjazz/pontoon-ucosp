@@ -1,0 +1,152 @@
+#mqm_wrapper {
+	padding: 1em;
+}
+
+.mqm_item {
+	cursor: pointer;
+	list-style: none;
+	padding: 10px;
+	margin: 0;
+	text-align: right;
+	border-right: 1px solid lightblue;
+}
+.mqm_hidden {
+	display: none;
+}
+.mqm_selected {
+	background-color: #566678;
+	color: #ffa10f;
+}
+.mqm_active_sub {
+	/*background-color: #4D5967;*/
+	border: 1px solid lightblue;
+border-right: 0px;
+margin-left: 5px;
+border-radius: 5px 0px 0px 5px;
+}
+
+/*.mqm_active_sub:before {
+	content: "\f0c4";
+}*/
+
+
+
+.has_children {
+	color: lightblue;
+}
+
+.has_children .fa {
+	margin-left: 0.7em;
+}
+
+
+.mqm_column {
+	width: 25%;
+	float: left;
+	margin: 0px;
+	/*overflow-y: scroll;
+position: absolute;
+top: 0;
+bottom: 0;*/
+}
+
+.mqm_column ul {
+	margin: 0px;
+}
+
+#mqm_review {
+	text-align: left;
+	display: none;
+	position: absolute;
+ 	top: 160px;
+ 	bottom: 0;
+ 	width: 100%;
+}
+
+#mqm_review li:hover {
+	background: #5E6475;
+}
+
+
+.issue-bubbles{
+	cursor: pointer;
+}
+
+
+#mqm_tabs {
+	height: calc(100% - 195px);
+position: relative;
+}
+
+#mqm_tabs section {
+	bottom: 0;
+	left: 0;
+	overflow-y: auto;
+	position: absolute;
+	right: 0;
+	top: 54px;
+	height: 100%;
+}
+
+#mqm_tabs section.comments {
+	overflow-y: hidden;
+}
+
+#mqm_tabs li.active {
+	border-top: 1px solid #5E6475;
+}
+
+#mqm_comments_list {
+	margin: 0px;
+	height: calc(100% - 110px);
+ 	overflow-y: auto;
+}
+
+#mqm_comments_list li {
+	list-style: none;
+	padding: 10px 15px;
+	margin: 0px;
+	border-bottom: 1px solid #4d6266;
+}
+
+.comment_metadata {
+	color: #9eb1bc;
+}
+
+#translation_box_header {
+	height: 30px;
+
+}
+.close_mqm_btn {
+	border: 1px solid lightblue;
+	padding: 2px 5px;
+	border-radius: 4px;
+	font-size: 12px;
+	margin-right: 10px;
+	cursor: pointer;
+	color: lightblue;
+	margin-bottom: 8px;
+}
+
+.close_mqm_btn .fa {
+	margin-right: 4px;
+}
+
+.close_mqm_btn:hover {
+	color: white;
+	border-color: white;
+}
+
+.review_button {
+	border: 1px solid #ffa10f;
+	padding: 3px 8px;
+	font-weight: bold;
+	font-size: 1em;
+	color: #ffa10f;
+	border-radius: 5px;
+}
+
+.review_button:hover {
+	border-color: #4FC4F6;
+	color: #4FC4F6;
+}

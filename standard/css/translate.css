@@ -1308,9 +1308,9 @@ body > header aside p {
   background: #FFFFFF;
   display: block;
   font-size: 13px;
-  height: 20%;
+  height: 10%;/*20%;*/
   line-height: 22px;
-  min-height: 100px;
+  min-height: 50px;/*100px;*/
   overflow: auto;
   padding: 10px;
   width: 100%;
@@ -1394,6 +1394,31 @@ body > header aside p {
   line-height: 22px;
   padding: 9px 5px;
 }
+
+/*Count box style for comments and issues for each history item*/
+#helpers > section.history li .link{
+	padding: 0 5px;
+}
+
+#helpers > section.history .count {
+  background: #4D5967;
+  border-radius: 3px;
+  padding: 0 5px;
+}
+
+#helpers > section.history li.active .count,
+#helpers > section.history li:hover .count {
+  background: #3F4752;
+}
+
+#comment-length {
+  color: #AAAAAA;
+  display: none;
+  float: left;
+  line-height: 22px;
+  padding: 9px 5px;
+}
+/*end countbox style*/
 
 #editor #single > menu > .select {
   cursor: pointer;
@@ -1519,9 +1544,9 @@ p#sign-in-required > a#sidebar-signin {
   color: #272A2F;
 }
 
-#helpers {
+#helpers, #helpers2 {
   background: #3F4752;
-  height: calc(60% - 104px);
+  height: calc(70% - 105px);/*155px);*/
   position: relative;
 }
 
@@ -1636,15 +1661,172 @@ p#sign-in-required > a#sidebar-signin {
 }
 
 #helpers > section ul li > header button.delete:before {
-  content: "";
+  content: "";
   margin-left: 5px;
 }
 
 #helpers > section ul li > header button.delete:hover:before {
+  content: "";
   color: #FD5F60;
 }
 
+/*Helpers2 */
+#helpers2 > section {
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  padding-top: 25px;
+  position: absolute;
+  right: 0;
+  top: 43px;
+}
 
+#helpers2 > section.review .search-wrapper {
+  margin: 0 10px 10px;
+}
+
+#helpers2 > section.review .icon {
+  left: 2px;
+  right: auto;
+}
+
+#helpers2 > section.review input[type=search] {
+  background: transparent;
+  padding: 10px 10px 5px 25px;
+}
+
+#helpers2 > section ul li {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: all 0.1s ease-out;
+
+}
+
+#helpers2 > section ul li.delete {
+  -webkit-transform: scale(0); /* MANDATORY! Or transitionend in main.js triggered too late */
+  transform: scale(0);
+}
+
+#helpers2 > section ul li:not(.disabled):hover,
+#helpers2 > section ul li:not(.disabled).hover {
+  background: #4D5967;
+  border-color: #5E6475;
+}
+
+#helpers2 > section ul li.disabled {
+  cursor: default;
+}
+
+#helpers2 > section ul li.preferred {
+  border-bottom-color: #7BC876;
+}
+
+#helpers2 > section ul li > header .info {
+  float: left;
+}
+
+#helpers2 > section ul li > header .toolbar {
+  float: right;
+}
+
+#helpers2 > section.comment ul li > header .stress,
+#helpers2 > section.other-locales ul li > header .stress {
+  padding-right: 0;
+}
+
+/* comment section style */
+#helpers2 > section.comment #add{
+  background: #7BC876;
+   border: none; 
+   border-radius: 3px;
+  color: #272A2F;
+  font-weight: 600;
+  margin-left: 10px;
+  padding: 10px 15px;
+  height: 40px;
+  text-transform: uppercase;
+  float:left;
+  display: block;
+}
+
+#helpers2 > section.comment #comment-text {
+	float:left;
+	width: calc(100% - 90px);
+	display: block;
+}
+
+#helpers2 > section.comment #clear {
+    background: transparent;
+    border: none;
+    color: #EBEBEB;
+    height: 40px;
+    padding: 10px 5px;
+    text-transform: uppercase;
+}
+
+#helpers2 > section.comment menu {
+  background: #272A2F;
+  border-bottom: 1px solid #5E6475;
+  padding: 10px;
+  position: relative;
+  text-align: right;
+}
+
+#helpers2 > section ul li > header button {
+  background: no-repeat transparent;
+  border: none;
+  color: #AAAAAA;
+  display: none;
+  font-size: 1.8em;
+  height: 22px;
+  padding: 0;
+  vertical-align: bottom;
+  width: 22px;
+}
+
+#helpers2 > section ul li > header.translator button,
+#helpers2 > section ul li > header.own button.delete,
+#helpers2 > section ul li.translated > header button.approve {
+  display: inline-block;
+}
+
+#helpers2 > section ul li > header button.approve:before {
+  content: "";
+}
+
+#helpers2 > section ul li.fuzzy > header button.approve:before {
+  color: #FED271;
+}
+
+#helpers2 > section ul li.suggested > header button.approve:before {
+  color: #4FC4F6;
+}
+
+#helpers2 > section ul li > header button.approve:hover:before,
+#helpers2 > section ul li.translated > header button.approve:before,
+#helpers2 > section ul li.translated > header button.unapprove:before {
+  color: #7BC876;
+  content: "";
+}
+
+#helpers2 > section ul li > header button.approve:before,
+#helpers2 > section ul li > header button.unapprove:hover:before {
+   content: "";
+   color: #4FC4F6;
+}
+
+#helpers2 > section ul li > header button.delete:before {
+  content: "";
+  margin-left: 5px;
+}
+
+#helpers2 > section ul li > header button.delete:hover:before {
+  content: "";
+  color: #FD5F60;
+}
+
+/* */
 
 
 
@@ -1775,4 +1957,53 @@ p#sign-in-required > a#sidebar-signin {
   float: none;
   margin-bottom: 10px;
   padding: 15px 0 5px;
+}
+
+*::-moz-selection {
+    background: #FF5E99;
+    color: #fff;
+    text-shadow: none;
+}
+element {
+}
+
+#issues-pop {
+    visibility: hidden;
+	text-align: left;
+	padding: 10px 10px;
+	color: #7BC876;
+}
+
+#issues-pop .title{
+    text-transform: uppercase;
+	margin-right: 5px;
+}
+
+
+.issue-bubbles {
+    border: 1px solid #7BC876;
+    border-radius: 3px;
+    font-size: 1em;
+    color: #7BC876;
+    padding: 3px 5px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+#issues-pop button.delete:before {
+  content: "";
+}
+
+#issues-pop button.delete:hover:before {
+  content: "";
+  color: #7BC876;
 }
