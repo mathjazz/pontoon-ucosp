@@ -87,6 +87,14 @@ toggle_issue_tag = function(item) {
 			issue.setAttribute('title', item.attr('title'));
 			issue.textContent = issueName;
 			
+			//var del = document.createElement('menu');
+			var delButton = document.createElement('button');
+			//del.setAttribute('class', 'toolbar');
+			delButton.setAttribute('class', 'delete fa');
+			delButton.setAttribute('title', 'Delete');
+			//del.appendChild(delButton);
+			issue.appendChild(delButton);
+			
 			issueTags.appendChild(issue);
 			issueParent.style.visibility = 'visible';
 		}

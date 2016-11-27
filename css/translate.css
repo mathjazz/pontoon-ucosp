@@ -1971,7 +1971,7 @@ element {
     visibility: hidden;
 	text-align: left;
 	padding: 10px 10px;
-	color: #7BC876;
+	color: #e7744d;
 }
 
 #issues-pop .title{
@@ -1981,10 +1981,10 @@ element {
 
 
 .issue-bubbles {
-    border: 1px solid #7BC876;
+    border: 1px solid #e7744d;
     border-radius: 3px;
     font-size: 1em;
-    color: #7BC876;
+    color: #e7744d;
     padding: 3px 5px;
     margin-right: 5px;
     font-weight: bold;
@@ -1999,11 +1999,17 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
     background: transparent;
 }
 
+#issues-pop button{
+	  background: no-repeat transparent;
+	  border: none;
+}
+
 #issues-pop button.delete:before {
   content: "";
+  color:#e7744d;
 }
 
 #issues-pop button.delete:hover:before {
   content: "";
-  color: #7BC876;
+  color: #d6633c;
 }
