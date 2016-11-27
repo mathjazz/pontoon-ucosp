@@ -1785,9 +1785,15 @@ var Pontoon = (function (my) {
 		//Update comments count
 		$("span[title='comments-count']").text(document.getElementById("all-comments").childElementCount);
 
-	  }
+	  });
 	  
-	  );
+	  //Delete button for issue tags
+	  $('#issue-tag-list').on('click', '.delete', function (e) {
+		  var issue = $(this).parent();
+		  var id = "mqm_" + issue.attr('id').replace('-tag', '');
+		  //delete using mqm tree functionality to remain consistent
+		  document.getElementById(id).click();
+	  });
     },
 	
     /*

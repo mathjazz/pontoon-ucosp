@@ -69,8 +69,9 @@ toggle_issue_tag = function(item) {
 		var issueTags = document.getElementById('issue-tag-list');
 		var issueParent = issueTags.parentNode;
 		var issueName = $(item).text();
-		var issueID = issueName.toLowerCase().replace(' ', '-') + '-tag';
-
+		//var issueID = issueName.toLowerCase().replace(' ', '-') + '-tag';
+		var issueID = $(item).attr('id').toLowerCase().replace('mqm_', '') + '-tag';
+		
 		var issueSpan = document.getElementById(issueID);
 
 		if (issueSpan) { 
@@ -87,12 +88,9 @@ toggle_issue_tag = function(item) {
 			issue.setAttribute('title', item.attr('title'));
 			issue.textContent = issueName;
 			
-			//var del = document.createElement('menu');
 			var delButton = document.createElement('button');
-			//del.setAttribute('class', 'toolbar');
 			delButton.setAttribute('class', 'delete fa');
 			delButton.setAttribute('title', 'Delete');
-			//del.appendChild(delButton);
 			issue.appendChild(delButton);
 			
 			issueTags.appendChild(issue);
