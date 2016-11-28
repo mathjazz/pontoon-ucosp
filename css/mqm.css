@@ -156,6 +156,8 @@ position: relative;
 	list-style: none;
 	padding: 10px;
 	margin: 0;
+	font-size: 120%;
+	font-weight: bold;
 }
 
 .mqm_popular {
