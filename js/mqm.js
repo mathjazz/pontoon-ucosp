@@ -15,7 +15,7 @@ var create_popular = function(selector) {
         return;
     }
     // Create the wrapper for popular issues
-    var popular_div = $("<div id='mqm_popular-tags'><span class='mqm_popular_title'>Popular Issues: <span></div>");
+    var popular_div = $("<div class='popular_issues_list'><span class='mqm_popular_title'>Popular Issues: <span></div>");
     // His each popular issue
     for (var i =0; i < favourite_divs.length; i++) {
         // grab the already created mqm element corresponding to this
@@ -32,7 +32,6 @@ var create_popular = function(selector) {
 
 // Selects a specific popualr item and adds it as a tag to the current issues
 var select_popular = function(selected) {
-    selected.toggleClass("mqm_popular_selected");
     var selected_mqm_id = sprintf("mqm_{0}", selected.attr("id").split("_")[2]);
     select_item($(document.getElementById(selected_mqm_id)));
 }
@@ -75,7 +74,6 @@ $('.mqm_item').click(function() {
 
   if ($('#issue #' + id).length) {
     $('#issues #' + id).remove();
-
   } else {
       var new_bubble = $(sprintf("<span id='{0}' class='issue-bubbles' title='{1}'>{2}</span>", id, $(this).attr('title'), $(this).html()));
     $('#issues').append(new_bubble);
@@ -214,6 +212,16 @@ clear_levels = function() {
 	}
 }
 
+toggle_popular_tag = function(name) {
+    // Grab the corresponding popular tag
+    var popular_element = document.getElementById(sprintf("mqm_pop_{0}", name));
+    // If there is no popular tag stop trying to deselect it
+    if (popular_element == null) {
+        return;
+    }
+    $(popular_element).toggleClass("mqm_popular_selected");
+}
+
 // Select a specific menu item from the mqm tree
 select_item = function(item) {
 	var childs_name = sprintf("#mqm_{0}_childs", $(item).attr('id').split('_')[1]);
@@ -221,6 +229,8 @@ select_item = function(item) {
 	if ($(childs_name).length < 1) {
 		$(item).toggleClass("mqm_selected");
 		toggle_bubble(item);
+        //TODO: toggle the popular
+        toggle_popular_tag($(item).attr('id').split('_')[1]);
 		recount_active();
 	} else {
 		// Show the sub menu for the selected item
