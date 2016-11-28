@@ -150,3 +150,29 @@ position: relative;
 	border-color: #4FC4F6;
 	color: #4FC4F6;
 }
+
+.mqm_popular_title {
+	border-right: 1px solid lightblue;
+	list-style: none;
+	padding: 10px;
+	margin: 0;
+}
+
+.mqm_popular {
+	cursor: pointer;
+	list-style: none;
+	padding: 10px;
+	margin: 0;
+	text-align: right;
+	border-right: 1px solid lightblue;
+}
+
+.mqm_popular_selected {
+	background-color: #566678;
+	color: #ffa10f;
+}
+
+.mqm_popular:hover {
+	border-color: #4FC4F6;
+	color: #4FC4F6;
+}

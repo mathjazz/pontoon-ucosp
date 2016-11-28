@@ -2,6 +2,41 @@
 
 var issues = [];
 
+// This would be replaced by either a server call, or a tag in the initial mqm json
+// NOTE: just a mock-up, will actually require data from the server
+var get_popular_issues = function() {
+    return favourite_divs = ["length", "hyphenation", "missing-text", "margins"];
+}
+
+// Returns the popular issues from the server in-order
+var create_popular = function(selector) {
+    var favourite_divs = get_popular_issues();
+    if (favourite_divs.length == 0) {
+        return;
+    }
+    // Create the wrapper for popular issues
+    var popular_div = $("<div id='mqm_popular-tags'><span class='mqm_popular_title'>Popular Issues: <span></div>");
+    // His each popular issue
+    for (var i =0; i < favourite_divs.length; i++) {
+        // grab the already created mqm element corresponding to this
+        var current = $(document.getElementById(sprintf("mqm_{0}", favourite_divs[i])));
+        // Create a popular bubble element for this popular item
+        var new_element = sprintf("<span id='mqm_pop_{0}' class='mqm_popular' title='{1}'>{2}</span>",
+            favourite_divs[i], current.attr("title"), current.html());
+        popular_div.append(new_element);   
+    }
+    // Add a hr and the favourite selector data
+    $(selector).prepend($('<hr>'));
+    $(selector).prepend(popular_div);
+}
+
+// Selects a specific popualr item and adds it as a tag to the current issues
+var select_popular = function(selected) {
+    selected.toggleClass("mqm_popular_selected");
+    var selected_mqm_id = sprintf("mqm_{0}", selected.attr("id").split("_")[2]);
+    select_item($(document.getElementById(selected_mqm_id)));
+}
+
 var addIssuesToDom = function(issue) {
     issues.push(issue);
     renderIssues();
@@ -68,6 +103,7 @@ sprintf = function() {
 create_table = function(selector) {
 	$.getJSON('./data/mqm.json', function(data) {
         table_helper(data, selector);
+        create_popular(selector);
     });
 	set_bindings(selector);
 }
@@ -96,6 +132,10 @@ set_bindings = function(selector) {
 	$(selector).on("click", ".mqm_item.l4", function () {
 		select_item($(this));
 	});
+    // Event: User selects a popular tag to select
+    $(selector).on("click", ".mqm_popular", function () {
+        select_popular($(this));
+    });
 }
 
 // Event: User selects a tag for an active issue
@@ -179,15 +219,6 @@ select_item = function(item) {
 	var childs_name = sprintf("#mqm_{0}_childs", $(item).attr('id').split('_')[1]);
 	// If the item has no children select it as a tag
 	if ($(childs_name).length < 1) {
-
-        // if ($(item).hasClass("mqm_selected")) {
-        //     $(item).removeClass("mqm_selected");
-        //     // console.log("ITEM: ", item)
-        //     // removeIssueFromDomById(item[0].id);
-        // } else {
-        //     // addIssuesToDom(item);
-        //     $(item).addClass("mqm_selected");
-        // }
 		$(item).toggleClass("mqm_selected");
 		toggle_bubble(item);
 		recount_active();
