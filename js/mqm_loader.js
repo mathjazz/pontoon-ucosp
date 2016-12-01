@@ -78,6 +78,11 @@ function addToTree(parent, treeItem) {
                 subNodes.classList.remove('visible');
             } else {
                 subNodes.classList.add('visible');
+                var issue_tree = $('#issue-tree');
+                var firstChildPostition = issue_tree.children().first().position().top;
+                issue_tree.animate({
+                    scrollTop: firstChildPostition + $(titleNode).position().top
+                }, 100);
             }
         });
 
