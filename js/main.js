@@ -435,16 +435,16 @@ $(function() {
       $('body:not(".admin-project") .menu:visible input[type=search]').focus().trigger('input');
     }
   });
-
-  var hideSidebar = function() {
-      $('#entitylist').toggleClass('hide-hamburger-menu-overlay');
-      $('#sidebar-overlay').toggleClass('show-overlay');
-      $('.search-wrapper').toggleClass('hide');
-      $('.wrapper').toggleClass('hide');
-  };
-
-  $('#hamburger-btn').click(hideSidebar);
-  $('#sidebar-overlay').click(hideSidebar);
+  // 
+  // var hideSidebar = function() {
+  //     $('#entitylist').toggleClass('hide-hamburger-menu-overlay');
+  //     $('#sidebar-overlay').toggleClass('show-overlay');
+  //     $('.search-wrapper').toggleClass('hide');
+  //     $('.wrapper').toggleClass('hide');
+  // };
+  //
+  // $('#hamburger-btn').click(hideSidebar);
+  // $('#sidebar-overlay').click(hideSidebar);
 
 
   // Menu hover

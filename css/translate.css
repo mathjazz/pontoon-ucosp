@@ -603,10 +603,10 @@ body > header aside p {
   padding: 40px 0 10px;
 }
 
-/*.advanced #entitylist,
+.advanced #entitylist,
 .advanced #editor {
   width: 50%;
-}*/
+}
 
 #entitylist .search-wrapper {
   margin-bottom: 0;
@@ -1088,9 +1088,8 @@ body > header aside p {
 
 .advanced #editor {
   border-left: 1px solid #5E6475;
-  left: 40px;
-
   -moz-box-sizing: border-box;
+  left: 50%;
   box-sizing: border-box;
 }
 
@@ -1797,7 +1796,7 @@ p#sign-in-required > a#sidebar-signin {
 
 
 /* OVERRIDES */
-
+/*
 #entitylist {
     z-index: 101;
     border-right: 1px solid #5E6475;
@@ -1813,12 +1812,12 @@ background: #383b42;
     text-align: right !important;
     transition: 0.2s ease-out;
 
-}
+}*/
 
 .show-hamburger-menu-overlay {
 
 }
-
+/*
 #hamburger-btn {
     padding: 10px 15px;
     cursor: pointer;
@@ -1839,112 +1838,10 @@ background: #383b42;
   height: 100%;
   width: 100%;
   z-index: 100;
-}
-
+}*/
+/*
 .hide {
     opacity: 0;
     display: none;
     transition: 0.2s ease-out;
-}
-
-#issues_container {
-    display: block;
-    background: #5C6978;
-    text-align: left;
-    padding: 10px 15px;
-    border-top: 1px solid #7E8B9B;
-}
-
-#translation_suggestion_box {
-    display: block;
-    text-align: left;
-    padding: 10px 15px;
-    background: #5C6978;
-}
-
-#translation_suggestion {
-background: #5C6978;
-    font-size: 22px;
-color: #7BC876;
-}
-
-#issues {
-
-}
-
-.issue-bubbles {
-    display: inline-block;
-    border: 1px solid #ffa10f;
-    border-radius: 3px;
-    font-size: 0.9em;
-    color: #ffa10f;
-    padding: 1px 5px;
-    margin-right: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 3px;
-}
-
-.suggestion p {
-    font-size: 1.5em;
-}
-
-.info {
-        width: 400px;
-        text-align: left;
-}
-
-.info .review-btns {
-    font-size: 1em;
-    margin-left: 15px;
-    color: #eee;
-}
-
-.review-btns .header-btn {
-    font-size: 1em;
-    padding: 3px 8px;
-margin: 5px;
-border-left: 1px solid white;
-}
-
-.review-btns .header-btn:hover {
-}
-
-
-.info .count {
-    font-weight: bold;
-}
-
-
-/* MQM */
-
-#mqm-panel {
-  background: #3F4752;
-  height: calc(60% - 104px);
-  position: relative;
-}
-
-#source-pane.pluralized ~ #mqm-panel {
-  height: calc(60% - 147px);
-}
-
-#mqm-panel > section {
-  bottom: 0;
-  left: 0;
-  overflow-y: auto;
-  padding-top: 25px;
-  position: absolute;
-  right: 0;
-  top: 43px;
-}
-
-.history-list {
-
-}
-
-#comment {
-    height: 70px !important;
-}
-.comments {
-    padding: 1em;
-}
+}*/

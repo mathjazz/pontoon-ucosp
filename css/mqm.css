@@ -2,6 +2,108 @@
 	padding: 1em;
 }
 
+
+#issues_container {
+    display: block;
+    background: #5C6978;
+    text-align: left;
+    padding: 10px 15px;
+    border-top: 1px solid #7E8B9B;
+}
+
+#translation_suggestion_box {
+    display: block;
+    text-align: left;
+    padding: 10px 15px;
+    background: #5C6978;
+}
+
+#translation_suggestion {
+background: #5C6978;
+    font-size: 22px;
+color: #7BC876;
+}
+
+#issues {
+
+}
+
+.issue-bubbles {
+    display: inline-block;
+    border: 1px solid #ffa10f;
+    border-radius: 3px;
+    font-size: 0.9em;
+    color: #ffa10f;
+    padding: 1px 5px;
+    margin-right: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 3px;
+}
+
+.suggestion p {
+    font-size: 1.5em;
+}
+
+.info {
+        width: 400px;
+        text-align: left;
+}
+
+.info .review-btns {
+    font-size: 1em;
+    color: #ccc;
+    border: 1px solid #ccc;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+
+.info .review-btns:hover {
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+
+.info .count {
+    font-weight: bold;
+}
+
+
+/* MQM */
+
+#mqm-panel {
+  background: #3F4752;
+  height: calc(60% - 104px);
+  position: relative;
+}
+
+#source-pane.pluralized ~ #mqm-panel {
+  height: calc(60% - 147px);
+}
+
+#mqm-panel > section {
+  bottom: 0;
+  left: 0;
+  overflow-y: auto;
+  padding-top: 25px;
+  position: absolute;
+  right: 0;
+  top: 43px;
+}
+
+.history-list {
+
+}
+
+#comment {
+    height: 70px !important;
+}
+.comments {
+    padding: 1em;
+}
+
+
 .mqm_item {
 	cursor: pointer;
 	list-style: none;
@@ -120,8 +222,8 @@ position: relative;
 .close_mqm_btn {
 	border: 1px solid lightblue;
 	padding: 2px 5px;
-	border-radius: 4px;
-	font-size: 12px;
+border-radius: 4px;
+font-size: 10px;
 	margin-right: 10px;
 	cursor: pointer;
 	color: lightblue;
@@ -151,12 +253,18 @@ position: relative;
 	color: #4FC4F6;
 }
 
+.issues_button {
+	margin-left: 15px;
+	margin-right: 5px;
+
+}
+
 .mqm_popular_title {
 	/* border-right: 1px solid lightblue; */
 	list-style: none;
 	padding: 8px;
 	margin: 0;
-	font-size: 120%;
+	font-size: 1em;
 	font-weight: bold;
 }
 

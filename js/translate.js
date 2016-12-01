@@ -1554,33 +1554,44 @@ var Pontoon = (function (my) {
       });
 
       // Approve and delete translations
-      $('#helpers .history').on('click', 'menu .approve', function (e) {
-        $(this).parents('li').click();
-        var entity = self.getEditorEntity(),
-            translation = $('#translation').val();
+    //   $('#helpers .history').on('click', 'menu .approve', function (e) {
+    //     $(this).parents('li').click();
+    //     var entity = self.getEditorEntity(),
+    //         translation = $('#translation').val();
+      //
+    //     // Mark that user approved translation instead of submitting it
+    //     self.approvedNotSubmitted = true;
+    //     self.updateOnServer(entity, translation, true);
+    //   });
 
-        // Mark that user approved translation instead of submitting it
-        self.approvedNotSubmitted = true;
-        self.updateOnServer(entity, translation, true);
-      });
 
 
-
-      $('#helpers .history').on('click', 'menu .review_button', function (e) {
+      $('#helpers .history').on('click', '.review_button, .issues_button', function (e) {
          var button = $(this),
              translationId = $(this).parents('li').children('p.translation')[0].innerText;
 
              $('#translation_suggestion').innerText = translationId;
              $('#mqm_review').show();
              $(' #translation, menu, #helpers').hide();
-
-             console.log("hjererere; ", translationId)
-
              $('#translation_suggestion').text(translationId);
-
-            // SHOW MQM_REVIEW Tabs with MQM and comments tabs
-
+             $('#mqm_tabs a[href="#tag-issues"]').trigger('click');
         });
+
+        $('.comments').click(function (e) {
+           var button = $(this),
+               translationId = $(this).parents('li').children('p.translation')[0].innerText;
+
+               $('#translation_suggestion').innerText = translationId;
+               $('#mqm_review').show();
+               $(' #translation, menu, #helpers').hide().end();
+
+               $('#translation_suggestion').text(translationId).end();
+
+            $('#mqm_tabs a[href="#comments"]').trigger('click');
+
+          });
+        //
+
 
         $(".close_mqm_btn").on('click', function() {
             $(' #translation, menu, #helpers').show();

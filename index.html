@@ -2915,12 +2915,9 @@ the menu icon in the top-left corner.</p>
 
 <aside id="sidebar" class="advanced" style="width: 100%;">
   <!-- Strings placeholder -->
-  <div id="entitylist" class="show-hamburger-menu-overlay">
-    <div id="hamburger-btn">
-        <div class="icon fa fa-bars"></div>
-    </div>
+  
 
-
+<div id="entitylist">
     <div class="search-wrapper clearfix">
       <div class="icon fa fa-search"></div>
       <input id="search" autocomplete="off" placeholder="Search in All" title="Search Strings (Ctrl + Shift + F)" type="search">
@@ -2931,7 +2928,6 @@ the menu icon in the top-left corner.</p>
         <div class="menu" style="display: none;">
           <ul>
             <li class="horizontal-separator">Translation Status</li>
-
 
 
 <li class="all" data-type="all">
@@ -3370,14 +3366,14 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
                           <a href="http://localhost:8000/contributors/dvgiVCmoeidF2xcqSnBHtpzLTFU" title="Approved by Matjaž Horvat">Matjaž Horvat</a>
                           <time class="stress" datetime="2016-08-17T18:18:18.948113+00:00+0000" title="Aug 17, 2016 18:18 UTC">about a month ago</time>
 
-                          <span class="review-btns">
-                              <span class="">
+                          <span class="">
+                              <span class="review-btns issues_button">
                                   Issues
                                   <span class="count current_issue_count">
                                     0
                                   </span>
                               </span>
-                              <span class="header-btn">
+                              <span class="review-btns comments">
                                   Comments
                                   <span class="count">
                                     5
@@ -3425,19 +3421,20 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
                       </span>
 
                       <span>
-                          Matjaž Horvat | Nov 2, 2016
+                          MQM Review for translation:
+
                       </span>
 
                   </div>
 
-                  <!-- <div>
-                      MQM Review for translation:
 
-                  </div> -->
               </div>
 
 
-              <span id="translation_suggestion">TRANSLATION</span>
+              <div id="translation_suggestion">TRANSLATION</div>
+              <div style="margin-top: 10px; color: #ccc; font-size: 12px;">
+                  Matjaž Horvat | Nov 2, 2016
+              </div>
           </div>
 
           <div id="issues_container">
@@ -3452,7 +3449,7 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
           <div id="mqm_tabs" class="tabs">
             <nav>
               <ul>
-                <li class="active">
+                <li class="issues_tab active">
                   <a href="#tag-issues" title="Translation history" class="">
                     <span>MQM Review
                       <span class="fa fa-cog fa-lg fa-spin"></span>
@@ -3460,7 +3457,7 @@ tipko Esc ali gumb Prekliči v orodni vrstici.</span></p><span class="arrow fa f
                     </span>
                   </a>
                 </li>
-                <li>
+                <li class="comments_tab">
                   <a href="#comments" title="Tag new issues with this translation" class="">
                     <span>Comments
                         <span class="fa fa-cog fa-lg fa-spin"></span>
