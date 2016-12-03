@@ -1625,6 +1625,12 @@ var Pontoon = (function (my) {
 		$('#review').parent().addClass('active'); 
 		$('#review').parents(".tabs").find('section').hide().end()
         $('section .review').show();
+		
+		//Show Translation Text
+		var txt = $(this).parents("li").find("p").text();
+		//var txt = $(".history p[class='translation']").text();
+		$("span[class='txtFromTrans']").text(txt);
+		
         // Delete
         /*$.ajax({
           url: '/delete-translation/',
@@ -1725,7 +1731,10 @@ var Pontoon = (function (my) {
 		$('#comment').parent().addClass('active'); 
 		$('#comment').parents(".tabs").find('section').hide().end()
         $('section .comment').show();
-
+		
+		//Show Translation Text
+		var txt = $(this).parents("li").find("p").text();
+		$("span[class='txtFromTrans']").text(txt);
 	  });
 	  
 	  //show/hide issues by clicking 'issues' on history item
@@ -1744,6 +1753,10 @@ var Pontoon = (function (my) {
 		$('#review').parent().addClass('active'); 
 		$('#review').parents(".tabs").find('section').hide().end()
         $('section .review').show();
+		
+		//Show Translation Text
+		var txt = $(this).parents("li").find("p").text();
+		$("span[class='txtFromTrans']").text(txt);
 
 	  });
 	  
@@ -1784,7 +1797,6 @@ var Pontoon = (function (my) {
 		
 		//Update comments count
 		$("span[title='comments-count']").text(document.getElementById("all-comments").childElementCount);
-
 	  });
 	  
 	  //Delete button for issue tags

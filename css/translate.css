@@ -1752,8 +1752,10 @@ p#sign-in-required > a#sidebar-signin {
 
 #helpers2 > section.comment #comment-text {
 	float:left;
-	width: calc(100% - 90px);
+	width: calc(100% - 100px);
 	display: block;
+	margin-left: 10px;
+	margin-bottom: 7px;
 }
 
 #helpers2 > section.comment #clear {
@@ -2012,4 +2014,22 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
 #issues-pop button.delete:hover:before {
   content: "";
   color: #d6633c;
+}
+
+.transText {
+	border: 1px solid #7BC876;
+    font-size: 1em;
+    color: #7BC876;
+    padding: 5px 5px;
+    margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 7px;
+    font-weight: bold;
+	display: block;
+	text-align: left;
+	font-style: italic;
+}
+
+.txtFromTrans{
+	font-style: normal;
 }
