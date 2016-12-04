@@ -141,11 +141,11 @@ color: #7BC876;
 
 
 .has_children {
-	color: #4FC4F6;
+	color: lightblue;
 }
 
 .has_children:hover {
-	color: lightblue;
+	color: #4FC4F6;
 }
 
 .has_children .fa {
@@ -158,8 +158,8 @@ color: #7BC876;
 	color: #ffa10f;
 }
 .mqm_active_sub {
-	color: lightblue;
-	border: 1px solid #5E6475;
+	color: #4FC4F6;
+	border: 2px solid #5E6475;
 border-right: 0px;
 margin-left: 5px;
 border-radius: 5px 0px 0px 5px;
@@ -306,15 +306,15 @@ padding: 10px;
 	border-right: 1px solid lightblue;
 	border-left: 1px solid lightblue;*/
 	display: inline-block;
-border: 1px solid lightblue;
-border-radius: 3px;
-font-size: 0.9em;
-color: lightblue;
-padding: 1px 5px;
-margin-right: 5px;
-font-weight: bold;
-cursor: pointer;
-margin-bottom: 3px;
+	border: 0px;
+	border-radius: 3px;
+	font-size: 0.9em;
+	color: lightblue;
+	padding: 1px 7px;
+	margin-right: 5px;
+	font-weight: bold;
+	cursor: pointer;
+	margin-bottom: 3px;
 }
 
 .mqm_popular_selected {
@@ -326,4 +326,8 @@ margin-bottom: 3px;
 .mqm_popular:hover {
 	border-color: #4FC4F6;
 	color: #4FC4F6;
+}
+
+.mqm_popular_selected:hover {
+	color: #ffa10f;
 }
