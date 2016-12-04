@@ -1,7 +1,22 @@
 #mqm_wrapper {
-	padding: 1em;
+	/*padding: 1em;*/
 }
 
+#mqm_level1 {
+
+}
+
+#mqm_level2 {
+	left: 25%;
+}
+
+#mqm_level3 {
+	left: 50%;
+}
+
+#mqm_level4 {
+	left: 75%;
+}
 
 #issues_container {
     display: block;
@@ -9,6 +24,9 @@
     text-align: left;
     padding: 10px 15px;
     border-top: 1px solid #7E8B9B;
+	height: 24px;
+	white-space: nowrap;
+	overflow-x: auto;
 }
 
 #translation_suggestion_box {
@@ -110,30 +128,23 @@ color: #7BC876;
 	padding: 10px;
 	margin: 0;
 	text-align: right;
-	border-right: 1px solid lightblue;
+	border-right: 2px solid #5E6475;
 }
+
+.mqm_item:hover {
+	color: #ffa10f;
+}
+
 .mqm_hidden {
 	display: none;
 }
-.mqm_selected {
-	background-color: #566678;
-	color: #ffa10f;
-}
-.mqm_active_sub {
-	/*background-color: #4D5967;*/
-	border: 1px solid lightblue;
-border-right: 0px;
-margin-left: 5px;
-border-radius: 5px 0px 0px 5px;
-}
-
-/*.mqm_active_sub:before {
-	content: "\f0c4";
-}*/
-
 
 
 .has_children {
+	color: #4FC4F6;
+}
+
+.has_children:hover {
 	color: lightblue;
 }
 
@@ -142,14 +153,26 @@ border-radius: 5px 0px 0px 5px;
 }
 
 
+.mqm_selected {
+	background-color: #566678;
+	color: #ffa10f;
+}
+.mqm_active_sub {
+	color: lightblue;
+	border: 1px solid #5E6475;
+border-right: 0px;
+margin-left: 5px;
+border-radius: 5px 0px 0px 5px;
+}
+
 .mqm_column {
 	width: 25%;
 	float: left;
 	margin: 0px;
-	/*overflow-y: scroll;
+	overflow-y: scroll;
 position: absolute;
-top: 0;
-bottom: 0;*/
+top: 54px;
+bottom: 0;
 }
 
 .mqm_column ul {
@@ -182,12 +205,11 @@ position: relative;
 
 #mqm_tabs section {
 	bottom: 0;
-	left: 0;
-	overflow-y: auto;
-	position: absolute;
-	right: 0;
-	top: 54px;
-	height: 100%;
+left: 0;
+position: relative;
+right: 0;
+top: 0px;
+height: 100%;
 }
 
 #mqm_tabs section.comments {
@@ -195,7 +217,7 @@ position: relative;
 }
 
 #mqm_tabs li.active {
-	border-top: 1px solid #5E6475;
+	border-top: 2px solid #5E6475;
 }
 
 #mqm_comments_list {
@@ -259,6 +281,13 @@ font-size: 10px;
 
 }
 
+.popular_issues_list {
+	position: absolute;
+border-bottom: 1px solid #5E6475;
+width: 100%;
+padding: 10px;
+}
+
 .mqm_popular_title {
 	/* border-right: 1px solid lightblue; */
 	list-style: none;
@@ -269,18 +298,29 @@ font-size: 10px;
 }
 
 .mqm_popular {
-	cursor: pointer;
+	/*cursor: pointer;
 	list-style: none;
 	padding: 10px;
 	margin: 0;
 	text-align: right;
 	border-right: 1px solid lightblue;
-	border-left: 1px solid lightblue;
+	border-left: 1px solid lightblue;*/
+	display: inline-block;
+border: 1px solid lightblue;
+border-radius: 3px;
+font-size: 0.9em;
+color: lightblue;
+padding: 1px 5px;
+margin-right: 5px;
+font-weight: bold;
+cursor: pointer;
+margin-bottom: 3px;
 }
 
 .mqm_popular_selected {
 	background-color: #566678;
 	color: #ffa10f;
+	border-color: none;
 }
 
 .mqm_popular:hover {

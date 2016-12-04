@@ -23,10 +23,10 @@ var create_popular = function(selector) {
         // Create a popular bubble element for this popular item
         var new_element = sprintf("<span id='mqm_pop_{0}' class='mqm_popular' title='{1}'>{2}</span>",
             favourite_divs[i], current.attr("title"), current.html());
-        popular_div.append(new_element);   
+        popular_div.append(new_element);
     }
     // Add a hr and the favourite selector data
-    $(selector).prepend($('<hr>'));
+    // $(selector).prepend($('<hr>'));
     $(selector).prepend(popular_div);
 }
 
@@ -242,7 +242,7 @@ select_item = function(item) {
 // Helps generate the table
 table_helper = function(data, selector) {
 	// Create the lists for the different levels in the mqm tree
-	var $level_1 = $('<ul class="mqm_column" id="mqm_level1"></ul>');
+	var $level_1 = $('<div class="mqm_column" id="mqm_level1"></div>');
 	var $level_2 = $('<div class="mqm_column" id="mqm_level2"></div>');
 	var $level_3 = $('<div class="mqm_column" id="mqm_level3"></div>');
 	var $level_4 = $('<div class="mqm_column" id="mqm_level4"></div>');
