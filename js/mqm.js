@@ -242,10 +242,10 @@ select_item = function(item) {
 // Helps generate the table
 table_helper = function(data, selector) {
 	// Create the lists for the different levels in the mqm tree
-	var $level_1 = $('<div class="mqm_column" id="mqm_level1"></div>');
-	var $level_2 = $('<div class="mqm_column" id="mqm_level2"></div>');
-	var $level_3 = $('<div class="mqm_column" id="mqm_level3"></div>');
-	var $level_4 = $('<div class="mqm_column" id="mqm_level4"></div>');
+	var $level_1 = $('<div class="mqm_column"></div>');
+	var $level_2 = $('<div class="mqm_column"></div>');
+	var $level_3 = $('<div class="mqm_column"></div>');
+	var $level_4 = $('<div class="mqm_column"></div>');
 
 	// Hit the top level items
 	for (l1_iterator = 0; l1_iterator < data.length; l1_iterator++) {
@@ -322,6 +322,35 @@ table_helper = function(data, selector) {
 		// Add this list to the collection of second level mqm items
 		$l2_list.appendTo($level_2);
 	}
+
+    var $mqm_col_parent1 = $('<div class="mqm_col_parent" id="mqm_level1"><div class="shadow-top"></div></div>')
+    var $mqm_col_parent2 = $('<div class="mqm_col_parent" id="mqm_level2"><div class="shadow-top"></div></div>')
+    var $mqm_col_parent3 = $('<div class="mqm_col_parent" id="mqm_level3"><div class="shadow-top"></div></div>')
+    var $mqm_col_parent4 = $('<div class="mqm_col_parent" id="mqm_level4"><div class="shadow-top"></div></div>')
+    $level_1.appendTo($mqm_col_parent1)
+    $level_2.appendTo($mqm_col_parent2)
+    $level_3.appendTo($mqm_col_parent3)
+    $level_4.appendTo($mqm_col_parent4)
+
+    $level_1.scroll(function (event) {
+        if ($level_1.scrollTop() > 0) $level_1.siblings(".shadow-top").css("visibility", "visible");
+        else  $level_1.siblings(".shadow-top").css("visibility", "hidden")
+    });
+
+    $level_2.scroll(function (event) {
+        if ($level_2.scrollTop() > 0) $level_2.siblings(".shadow-top").css("visibility", "visible");
+        else  $level_2.siblings(".shadow-top").css("visibility", "hidden")
+    });
+    $level_3.scroll(function (event) {
+        if ($level_3.scrollTop() > 0) $level_3.siblings(".shadow-top").css("visibility", "visible");
+        else  $level_3.siblings(".shadow-top").css("visibility", "hidden")
+    });
+
+    $level_4.scroll(function (event) {
+        if ($level_4.scrollTop() > 0) $level_4.siblings(".shadow-top").css("visibility", "visible");
+        else  $level_4.siblings(".shadow-top").css("visibility", "hidden")
+    });
+
 	// Append the different levels to the DOM
-	$(selector).append($level_1, $level_2, $level_3, $level_4);
+	$(selector).append($mqm_col_parent1, $mqm_col_parent2, $mqm_col_parent3, $mqm_col_parent4);
 }

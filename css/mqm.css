@@ -2,21 +2,6 @@
 	/*padding: 1em;*/
 }
 
-#mqm_level1 {
-
-}
-
-#mqm_level2 {
-	left: 25%;
-}
-
-#mqm_level3 {
-	left: 50%;
-}
-
-#mqm_level4 {
-	left: 75%;
-}
 
 #issues_container {
     display: block;
@@ -165,13 +150,39 @@ margin-left: 5px;
 border-radius: 5px 0px 0px 5px;
 }
 
-.mqm_column {
+.mqm_col_parent {
 	width: 25%;
+	float: left;
+	margin: 0px;
+	/*overflow-y: scroll;*/
+	position: absolute;
+	top: 48px;
+	bottom: 0;
+}
+
+#mqm_level1 {
+
+}
+
+#mqm_level2 {
+	left: 25%;
+}
+
+#mqm_level3 {
+	left: 50%;
+}
+
+#mqm_level4 {
+	left: 75%;
+}
+
+.mqm_column {
+	width: 100%;
 	float: left;
 	margin: 0px;
 	overflow-y: scroll;
 position: absolute;
-top: 54px;
+top: 0px;
 bottom: 0;
 }
 
@@ -330,4 +341,15 @@ padding: 10px;
 
 .mqm_popular_selected:hover {
 	color: #ffa10f;
+}
+
+.shadow-top {
+    position: relative;
+    z-index: 200;
+    box-shadow: 0px 10px 10px -10px #000 inset;
+    height: 20px;
+	width: 100%;
+    margin-bottom: -20px;
+	margin-right: 17px;
+	visibility: hidden;
 }
