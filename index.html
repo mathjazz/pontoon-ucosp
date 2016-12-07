@@ -3308,6 +3308,7 @@
 		<div id="drag-1" draggable="true"></div>
 
 		<!-- Single string editor -->
+
 		<section id="single">
 			<div class="topbar clearfix">
 				<a id="back" href="#back" title="Cancel Translation (Esc)"><span
@@ -3320,7 +3321,216 @@
 
 			<div class="trans-info-pane">
 				<div class="translation-frame">
+                    <div class="translation-frame">
+                        <p id="translation" contentEditable="true" dir="auto" placeholder="Type translation and press Enter to save" lang="sl" autofocus>Bizgec-dd</p>
+                    </div>
+                    <div id="issues" class="noselect">
+                        <span class="title">Issues</span>
+                        <span id="issue-tag-list">
+                </span>
+                    </div>
+                    <section id="menu-bar">
+                        <menu>
+                            <div id="unsaved" class="warning-overlay">
+                                <a href="#" class="cancel">×</a>
+                                <h2>You have unsaved changes</h2>
+                                <p>Sure you want to leave?</p>
+                                <button id="leave-anyway">Leave anyway</button>
+                            </div>
+                            <div id="quality" class="warning-overlay">
+                                <a href="#" class="cancel">×</a>
+                                <h2>The following checks have failed</h2>
+                                <ul></ul>
+                                <button id="save-anyway"></button>
+                            </div>
 
+                            <!-- Settings -->
+                            <div id="settings" class="select">
+                                <div class="selector fa fa-cog" title="Settings"></div>
+                                <aside class="menu" style="display: none;">
+                                    <ul>
+
+                                        <li class="check-box quality-checks enabled" data-attribute="quality_checks"><i
+                                                class="fa fa-fw"></i>Quality Checks
+                                        </li>
+
+
+                                        <li class="check-box force-suggestions" data-attribute="force_suggestions"><i
+                                                class="fa fa-fw"></i>Make Suggestions
+                                        </li>
+
+
+                                        <li class="horizontal-separator"></li>
+                                        <li><a href="http://localhost:8000/settings/">Change All Settings</a></li>
+                                    </ul>
+                                </aside>
+                            </div>
+
+                            <!-- Keyboard shortcuts -->
+                            <div id="hotkeys" class="select">
+                                <div class="selector fa fa-keyboard-o" title="Keyboard Shortcuts"></div>
+                                <aside class="menu" style="display: none;">
+                                    <h2>Keyboard shortcuts</h2>
+                                    <table>
+                                        <tbody>
+
+                                        <tr>
+                                            <td>Save Translation</td>
+                                            <td>
+
+                                                <span>Enter</span>
+
+
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>Cancel Translation</td>
+                                            <td>
+
+                                                <span>Esc</span>
+
+
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>Insert A New Line</td>
+                                            <td>
+
+                                                <span>Shift</span>
+                                                +
+
+                                                <span>Enter</span>
+
+
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>Go To Next String</td>
+                                            <td>
+
+                                                <span>Alt</span>
+                                                +
+
+                                                <span>Down</span>
+
+
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>Go To Previous String</td>
+                                            <td>
+
+                                                <span>Alt</span>
+                                                +
+
+                                                <span>Up</span>
+
+
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>Copy From Source</td>
+                                            <td>
+
+                                                <span>Ctrl</span>
+                                                +
+
+                                                <span>Shift</span>
+                                                +
+
+                                                <span>C</span>
+
+
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>Clear Translation</td>
+                                            <td>
+
+                                                <span>Ctrl</span>
+                                                +
+
+                                                <span>Shift</span>
+                                                +
+
+                                                <span>Backspace</span>
+
+
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>Search Strings</td>
+                                            <td>
+
+                                                <span>Ctrl</span>
+                                                +
+
+                                                <span>Shift</span>
+                                                +
+
+                                                <span>F</span>
+
+
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>Select All Strings</td>
+                                            <td>
+
+                                                <span>Ctrl</span>
+                                                +
+
+                                                <span>Shift</span>
+                                                +
+
+                                                <span>A</span>
+
+
+                                            </td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>Copy From Helpers</td>
+                                            <td>
+
+                                                <span>Tab</span>
+
+
+                                            </td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </aside>
+                            </div>
+
+                            <div id="translation-length" style="display: block;">
+                                <span class="current-length">9</span>|<span class="original-length">4</span>
+                            </div>
+
+                            <button id="copy" title="Copy From Source (Ctrl + Shift + C)">Copy</button>
+                            <button id="clear" title="Clear Translation (Ctrl + Shift + Backspace)">Clear</button>
+                            <button id="save" title="Save Translation (Enter)"></button>
+
+                        </menu>
+                    </section>
 					<h2></h2>
 					<p id="original">Novo</p>
 					<div id="metadata"><p><span class="title">Comment</span> <span class="content">Navigation</span></p>
@@ -3372,6 +3582,23 @@
 							</span>
 							</a>
 						</li>
+                        <li class="active">
+                            <a href="#issues" title="Issues" class="">
+									<span>Issues
+										<span class=""></span>
+										<span id="issue-count" class="count" style="display: none">0</span>
+									</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#comments" title="Comments"
+                               class="">
+								<span>Comments
+									<span class=""></span>
+									<span id="comment-count" class="count">2</span>
+								</span>
+                            </a>
+                        </li>
 					</ul>
 				</nav>
 
@@ -3447,6 +3674,50 @@
 							<p class="translation" dir="auto" lang="a">Qwe</p></li>
 					</ul>
 				</section>
+                <section class="issues" style="display: block;">
+                    <div class="search-wrapper clearfix">
+                        <div class="icon fa fa-search"></div>
+                        <input id="issue-search" autocomplete="off" placeholder="Type to search for issue types" type="search">
+                    </div>
+                    <div style="overflow: auto">
+                        <div id="issue-tree">
+
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="comments">
+                    <ul id="comment-view">
+                        <li>
+                            <header class="clearfix translator">
+                                <div class="info"><a
+                                        href="http://localhost:8000/contributors/dvgiVCmoeidF2xcqSnBHtpzLTFU">Some User</a>
+                                    <time class="stress" datetime="2016-08-17T18:18:18.948113+00:00+0000"
+                                          title="Aug 17, 2016 18:18 UTC">about a month ago
+                                    </time>
+                                </div>
+                            </header>
+                            <p class="comment" dir="auto" lang="sl">Something's not right here</p>
+                        </li>
+                        <li>
+                            <header class="clearfix translator">
+                                <div class="info"><a
+                                        href="http://localhost:8000/contributors/dvgiVCmoeidF2xcqSnBHtpzLTFU"
+                                        title="Approved by Another User">Another User</a>
+                                    <time class="stress" datetime="2016-08-17T18:18:18.948113+00:00+0000"
+                                          title="Aug 17, 2016 18:18 UTC">about a month ago
+                                    </time>
+                                </div>
+                            </header>
+                            <p class="comment" dir="auto" lang="sl">Looks fine to me!</p>
+                        </li>
+                    </ul>
+                    <div id="add-comment">
+                        <input id="add-comment-text" type="text" placeholder="Add Comment"/>
+                        <button id="add-comment-button">Send</button>
+                    </div>
+                </section>
 			</div>
 
 
@@ -3511,297 +3782,6 @@
 			</div>
 		</section>
 	</div>
-
-	<div id="editor-2" class="opened">
-		<div class="topbar clearfix">
-			<span class="fa fa-lg"></span>
-		</div>
-
-		<div id="trans-col" class="trans-info-pane">
-			<div class="translation-frame">
-				<p id="translation" contentEditable="true" dir="auto" placeholder="Type translation and press Enter to save" lang="sl" autofocus>Bizgec-dd</p>
-            </div>
-            <div id="issues" class="noselect">
-				<span class="title">Issues</span>
-				<span id="issue-tag-list">
-                </span>
-            </div>
-			<section id="menu-bar">
-				<menu>
-					<div id="unsaved" class="warning-overlay">
-						<a href="#" class="cancel">×</a>
-						<h2>You have unsaved changes</h2>
-						<p>Sure you want to leave?</p>
-						<button id="leave-anyway">Leave anyway</button>
-					</div>
-					<div id="quality" class="warning-overlay">
-						<a href="#" class="cancel">×</a>
-						<h2>The following checks have failed</h2>
-						<ul></ul>
-						<button id="save-anyway"></button>
-					</div>
-
-					<!-- Settings -->
-					<div id="settings" class="select">
-						<div class="selector fa fa-cog" title="Settings"></div>
-						<aside class="menu" style="display: none;">
-							<ul>
-
-								<li class="check-box quality-checks enabled" data-attribute="quality_checks"><i
-										class="fa fa-fw"></i>Quality Checks
-								</li>
-
-
-								<li class="check-box force-suggestions" data-attribute="force_suggestions"><i
-										class="fa fa-fw"></i>Make Suggestions
-								</li>
-
-
-								<li class="horizontal-separator"></li>
-								<li><a href="http://localhost:8000/settings/">Change All Settings</a></li>
-							</ul>
-						</aside>
-					</div>
-
-					<!-- Keyboard shortcuts -->
-					<div id="hotkeys" class="select">
-						<div class="selector fa fa-keyboard-o" title="Keyboard Shortcuts"></div>
-						<aside class="menu" style="display: none;">
-							<h2>Keyboard shortcuts</h2>
-							<table>
-								<tbody>
-
-								<tr>
-									<td>Save Translation</td>
-									<td>
-
-										<span>Enter</span>
-
-
-									</td>
-								</tr>
-
-
-								<tr>
-									<td>Cancel Translation</td>
-									<td>
-
-										<span>Esc</span>
-
-
-									</td>
-								</tr>
-
-
-								<tr>
-									<td>Insert A New Line</td>
-									<td>
-
-										<span>Shift</span>
-										+
-
-										<span>Enter</span>
-
-
-									</td>
-								</tr>
-
-
-								<tr>
-									<td>Go To Next String</td>
-									<td>
-
-										<span>Alt</span>
-										+
-
-										<span>Down</span>
-
-
-									</td>
-								</tr>
-
-
-								<tr>
-									<td>Go To Previous String</td>
-									<td>
-
-										<span>Alt</span>
-										+
-
-										<span>Up</span>
-
-
-									</td>
-								</tr>
-
-
-								<tr>
-									<td>Copy From Source</td>
-									<td>
-
-										<span>Ctrl</span>
-										+
-
-										<span>Shift</span>
-										+
-
-										<span>C</span>
-
-
-									</td>
-								</tr>
-
-
-								<tr>
-									<td>Clear Translation</td>
-									<td>
-
-										<span>Ctrl</span>
-										+
-
-										<span>Shift</span>
-										+
-
-										<span>Backspace</span>
-
-
-									</td>
-								</tr>
-
-
-								<tr>
-									<td>Search Strings</td>
-									<td>
-
-										<span>Ctrl</span>
-										+
-
-										<span>Shift</span>
-										+
-
-										<span>F</span>
-
-
-									</td>
-								</tr>
-
-
-								<tr>
-									<td>Select All Strings</td>
-									<td>
-
-										<span>Ctrl</span>
-										+
-
-										<span>Shift</span>
-										+
-
-										<span>A</span>
-
-
-									</td>
-								</tr>
-
-
-								<tr>
-									<td>Copy From Helpers</td>
-									<td>
-
-										<span>Tab</span>
-
-
-									</td>
-								</tr>
-
-								</tbody>
-							</table>
-						</aside>
-					</div>
-
-					<div id="translation-length" style="display: block;">
-						<span class="current-length">9</span>|<span class="original-length">4</span>
-					</div>
-
-					<button id="copy" title="Copy From Source (Ctrl + Shift + C)">Copy</button>
-					<button id="clear" title="Clear Translation (Ctrl + Shift + Backspace)">Clear</button>
-					<button id="save" title="Save Translation (Enter)"></button>
-
-				</menu>
-			</section>
-		</div>
-
-		<div id="properties" class="tabs">
-			<nav>
-				<ul>
-					<li class="active">
-						<a href="#issues" title="Issues" class="">
-									<span>Issues
-										<span class=""></span>
-										<span id="issue-count" class="count" style="display: none">0</span>
-									</span>
-						</a>
-					</li>
-					<li>
-						<a href="#comments" title="Comments"
-						   class="">
-								<span>Comments
-									<span class=""></span>
-									<span id="comment-count" class="count">2</span>
-								</span>
-						</a>
-					</li>
-				</ul>
-			</nav>
-
-			<section class="issues" style="display: block;">
-				<div class="search-wrapper clearfix">
-					<div class="icon fa fa-search"></div>
-					<input id="issue-search" autocomplete="off" placeholder="Type to search for issue types" type="search">
-				</div>
-				<div style="overflow: auto">
-					<div id="issue-tree">
-
-					</div>
-				</div>
-
-			</section>
-
-            <section class="comments">
-				<ul id="comment-view">
-					<li>
-						<header class="clearfix translator">
-							<div class="info"><a
-									href="http://localhost:8000/contributors/dvgiVCmoeidF2xcqSnBHtpzLTFU">Some User</a>
-								<time class="stress" datetime="2016-08-17T18:18:18.948113+00:00+0000"
-									  title="Aug 17, 2016 18:18 UTC">about a month ago
-								</time>
-							</div>
-						</header>
-						<p class="comment" dir="auto" lang="sl">Something's not right here</p>
-					</li>
-					<li>
-						<header class="clearfix translator">
-							<div class="info"><a
-									href="http://localhost:8000/contributors/dvgiVCmoeidF2xcqSnBHtpzLTFU"
-									title="Approved by Another User">Another User</a>
-								<time class="stress" datetime="2016-08-17T18:18:18.948113+00:00+0000"
-									  title="Aug 17, 2016 18:18 UTC">about a month ago
-								</time>
-							</div>
-						</header>
-						<p class="comment" dir="auto" lang="sl">Looks fine to me!</p>
-					</li>
-				</ul>
-				<div id="add-comment">
-					<input id="add-comment-text" type="text" placeholder="Add Comment"/>
-					<button id="add-comment-button">Send</button>
-				</div>
-            </section>
-
-		</div>
-
-	</div>
-
 	<!-- Element for dragging sidebar -->
 	<div id="drag" draggable="true" class="hidden" style="display: none;"></div>
 </aside>
