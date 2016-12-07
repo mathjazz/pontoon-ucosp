@@ -618,13 +618,16 @@ body > header aside p {
 
 #sidebar .search-wrapper .icon {
   font-size: 19px;
-  left: auto;
-  right: 10px;
   top: 12px;
 }
 
+#entitylist .icon {
+  left: auto;
+  right: 10px;
+}
+
 #sidebar .search-wrapper input[type=search] {
-  background: #4D5967;
+  background: transparent;
   color: #FFFFFF;
   font-size: 16px;
   font-weight: 300;
@@ -1373,17 +1376,6 @@ body > header aside p {
   padding-left: 1px;
 }
 
-#editor-2 #menu-bar > menu {
-  border-bottom: 1px solid #5E6475;
-  padding: 10px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  /*width: 100%;*/
-  text-align: right;
-}
-
 .warning-overlay {
   background: #272A2F;
   bottom: 0;
@@ -1561,7 +1553,7 @@ p#sign-in-required > a#sidebar-signin {
 
 #helpers {
   background: #3F4752;
-  height: 100%;
+  height: calc(80% - 44px);
   position: relative;
   overflow-y: auto;
 }
@@ -1574,22 +1566,17 @@ p#sign-in-required > a#sidebar-signin {
   bottom: 0;
   left: 0;
   overflow-y: auto;
-  padding-top: 5px;
+  /*padding-top: 5px;*/
   position: absolute;
   right: 0;
   top: 43px;
 }
 
-#helpers > section.machinery .search-wrapper {
+#helpers > section .search-wrapper {
   margin: 0 10px 10px;
 }
 
-#helpers > section.machinery .icon {
-  left: 2px;
-  right: auto;
-}
-
-#helpers > section.machinery input[type=search] {
+#helpers input[type=search] {
   background: transparent;
   padding: 10px 10px 5px 25px;
 }
@@ -1599,6 +1586,7 @@ p#sign-in-required > a#sidebar-signin {
   padding-left: 10px;
   padding-right: 10px;
   transition: all 0.1s ease-out;
+  text-align: left;
 }
 
 #helpers > section ul li.delete {
@@ -1894,16 +1882,6 @@ p#sign-in-required > a#sidebar-signin {
   display: inline-block;
 }
 
-#properties {
-  height: calc(80% - 44px);
-}
-
-#properties > section {
-  height: calc(100% - 43px);
-  position: relative;
-  padding-top: 5px;
-}
-
 #comment-view > li {
   padding-bottom: 10px;
   list-style: none;
@@ -1956,18 +1934,8 @@ p#sign-in-required > a#sidebar-signin {
   color: whitesmoke;
 }
 
-#properties > section.issues .search-wrapper {
+#helpers > section.issues .search-wrapper {
   margin: 0 10px 10px;
-}
-
-#properties > section.issues .icon {
-  left: 2px;
-  right: auto;
-}
-
-#properties > section.issues input[type=search] {
-  background: transparent;
-  padding: 10px 10px 5px 25px;
 }
 
 #issue-tree {
@@ -2004,7 +1972,7 @@ p#sign-in-required > a#sidebar-signin {
 }
 
 #issue-tree li > .issue-node {
-    padding: 10px 0px;
+    /*padding: 10px 0px;*/
     box-sizing: border-box;
     display: flex;
     cursor: pointer;
