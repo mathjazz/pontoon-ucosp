@@ -108,6 +108,28 @@ create_table = function(selector) {
 
 // Sets the event bindings
 set_bindings = function(selector) {
+    // Event: User hovers over top-level mqm item
+    $(selector).on("mouseover", ".mqm_item.l1", function () {
+        clean_levels(1,2,3);
+        clear_levels(2,3,4);
+        expand_item($(this));
+    });
+    // Event: User hovers over second-level mqm item
+    $(selector).on("mouseover", ".mqm_item.l2", function () {
+        clean_levels(2,3);
+        clear_levels(3,4);
+        expand_item($(this));
+    });
+    // Event: User hovers over third-level mqm item
+    $(selector).on("mouseover", ".mqm_item.l3", function() {
+        clean_levels(3);
+        clear_levels(4);
+        expand_item($(this));
+    });
+    // Event: User hovers over fourth-level mqm otem
+    $(selector).on("mouseover", ".mqm_item.l4", function () {
+        expand_item($(this));
+    });
 	// Event: User selects top-level mqm item
 	$(selector).on("click", ".mqm_item.l1", function () {
 		clean_levels(1,2,3);
@@ -141,6 +163,30 @@ $(document).on("click", ".issue-bubbles", function() {
 	var name = $(this).attr('id').split('_')[2];
 	select_item(sprintf("#mqm_{0}", name));
 });
+
+
+// Select a specific menu item from the mqm tree
+select_item = function(item) {
+    var childs_name = sprintf("#mqm_{0}_childs", $(item).attr('id').split('_')[1]);
+    // If the item has no children select it as a tag
+    $(item).toggleClass("mqm_selected");
+    toggle_bubble(item);
+    toggle_popular_tag($(item).attr('id').split('_')[1]);
+    recount_active();
+}
+
+
+expand_item = function (item) {
+    var childs_name = sprintf("#mqm_{0}_childs", $(item).attr('id').split('_')[1]);
+    // If the item has no children just move on
+    if ($(childs_name).length < 1) {
+        return;
+    } else {
+        // Show the sub ment for the selected item
+        $(item).addClass("mqm_active_sub");
+        $(childs_name).removeClass("mqm_hidden");
+    }
+}
 
 // Expand the tree to reveil a specific element
 expand_mqm_element = function (element) {
@@ -177,7 +223,7 @@ toggle_bubble = function(item) {
 		return;
 	}
 	var new_bubble = $(sprintf("<span id='{0}' class='issue-bubbles' title='{1}'>{2}</span>",
-        bubble_id, $(item).attr('title'), $(item).html()));
+        bubble_id, $(item).attr('title'), $(item).text()));
 	$("#issues").append(new_bubble);
 }
 
@@ -220,23 +266,6 @@ toggle_popular_tag = function(name) {
         return;
     }
     $(popular_element).toggleClass("mqm_popular_selected");
-}
-
-// Select a specific menu item from the mqm tree
-select_item = function(item) {
-	var childs_name = sprintf("#mqm_{0}_childs", $(item).attr('id').split('_')[1]);
-	// If the item has no children select it as a tag
-	if ($(childs_name).length < 1) {
-		$(item).toggleClass("mqm_selected");
-		toggle_bubble(item);
-        //TODO: toggle the popular
-        toggle_popular_tag($(item).attr('id').split('_')[1]);
-		recount_active();
-	} else {
-		// Show the sub menu for the selected item
-		$(item).addClass("mqm_active_sub");
-		$(childs_name).removeClass("mqm_hidden");
-	}
 }
 
 // Helps generate the table
